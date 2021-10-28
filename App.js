@@ -1,13 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+
+import LocationCard from './comps/LocationCard';
+import BigButton from './comps/BigButton';
+import Input from './comps/Input';
+import SmallButton from './comps/SmallButton';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <StatusBar style="auto" />
+        <LocationCard />
+        <BigButton />
+        <Input />
+        <SmallButton />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
