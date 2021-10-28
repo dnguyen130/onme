@@ -6,6 +6,7 @@ import LocationCard from './comps/LocationCard';
 import BigButton from './comps/BigButton';
 import Input from './comps/Input';
 import SmallButton from './comps/SmallButton';
+import NavBar from './comps/NavBar';
 
 export default function App() {
   return (
@@ -14,8 +15,12 @@ export default function App() {
         <StatusBar style="auto" />
         <LocationCard />
         <BigButton />
+        <BigButton />
         <Input />
         <SmallButton />
+        <Input />
+        <SmallButton />
+        <NavBar />
       </ScrollView>
     </SafeAreaView>
   );

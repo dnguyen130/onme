@@ -7,6 +7,8 @@ const Cont = styled.View`
   border-color: rgba(165, 119, 96, 0.5);
   border-radius: 20px;
   padding: 10px;
+  width: 330px;
+  min-height: 79px;
 `;
 
 const TextCont = styled.View`

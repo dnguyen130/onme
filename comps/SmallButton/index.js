@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Button = styled.TouchableOpacity`
+  flex-direction: row;
   background-color: #fff;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
   border-width: 1px;
@@ -17,11 +18,17 @@ const ButtonText = styled.Text`
   font-size: 15px;
 `;
 
+const SmallIcon = styled.Image`
+  width: 13px;
+  height: 13px;
+`;
+
 const SmallButton = ({
   buttonText = "Sign in"
 }) => {
   return (
     <Button>
+      <SmallIcon source={{uri:"https://reactnative.dev/img/tiny_logo.png"}} />
       <ButtonText>{buttonText}</ButtonText>
     </Button>
   );
