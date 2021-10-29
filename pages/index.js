@@ -11,15 +11,11 @@ import Title from './comps/Title';
 import TextLink from './comps/TextLink';
 import TextDivider from './comps/TextDivider';
 
-// export {default} from './storybook'; 
-
-export default function App() {
+export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <StatusBar style="auto" />
-        <LocationCard />
-        <NavBar />
+      <StatusBar style="auto" />
       <View style={styles.centerCont}>
         <Title />
         <Input placeholder = "Email"/>
