@@ -6,13 +6,14 @@ const InputCont = styled.TextInput`
   padding: 5px;
   min-height: 55px;
   border-radius: 15px;
+  width: 353px;
 `;
 
 const Input = ({
-  
+  placeholder = "Placeholder"
 }) => {
   return (
-    <InputCont type="text" placeholder="Placeholder"/>
+    <InputCont type="text" placeholder={placeholder}/>
   );
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Button = styled.TouchableOpacity`
-  background-color: #FE4370;
+  background-color: ${props => props.changeButtonColor};
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -18,10 +18,11 @@ const ButtonText = styled.Text`
 `;
 
 const BigButton = ({
-  buttonText = "Sign In"
+  buttonText = "Sign In",
+  bgColor = "#FE4370;"
 }) => {
   return (
-    <Button>
+    <Button changeButtonColor={bgColor}>
       <ButtonText>{buttonText}</ButtonText>
     </Button>
   );
