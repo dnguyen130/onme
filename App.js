@@ -2,48 +2,24 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 
-import LocationCard from './comps/LocationCard';
-import BigButton from './comps/BigButton';
-import Input from './comps/Input';
-import SmallButton from './comps/SmallButton';
-import NavBar from './comps/NavBar';
-import Title from './comps/Title';
-import TextLink from './comps/TextLink';
-import TextDivider from './comps/TextDivider';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export {default} from './storybook'; 
+import Login from './pages/index';
 
-// export default function App() {
-//   return (
-//     <SafeAreaView style={styles.container}>
-//       <ScrollView>
-//         <StatusBar style="auto" />
-//         <LocationCard />
-//         <NavBar />
-//       <View style={styles.centerCont}>
-//         <Title />
-//         <Input placeholder = "Email"/>
-//         <Input placeholder = "Password" />
-//         <LocationCard />
+const Stack = createNativeStackNavigator();
 
-//         <TextLink />
-//         <BigButton />
-//         <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
-//         <TextDivider />
-//       </View>
-//       <View style={styles.rowCont}>
-//         <SmallButton />
-//         <SmallButton />
-//       </View>
-//       <View style={styles.centerCont}>
-//         <TextLink changeText = "restaurant login" />
-//       </View>
+// export {default} from './storybook'; 
 
-
-//       </ScrollView>
-//     </SafeAreaView>
-//   );
-// }
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {

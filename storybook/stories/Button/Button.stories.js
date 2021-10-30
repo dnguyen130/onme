@@ -7,6 +7,7 @@ import CenterView from '../CenterView';
 
 import BigButton from '../../../comps/BigButton';
 import Input from '../../../comps/Input';
+import LocationCard from '../../../comps/LocationCard';
 import NavBar from '../../../comps/NavBar';
 import SmallButton from '../../../comps/SmallButton';
 import TextDivider from '../../../comps/TextDivider';
@@ -21,6 +22,9 @@ storiesOf('Comps', module)
   ))
   .add('Input', () => (
     <Input />
+  ))
+  .add('LocationCard', () => (
+    <LocationCard />
   ))
   .add('NavBar', () => (
     <NavBar />

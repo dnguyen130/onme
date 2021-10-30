@@ -2,14 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 
-import LocationCard from './comps/LocationCard';
-import BigButton from './comps/BigButton';
-import Input from './comps/Input';
-import SmallButton from './comps/SmallButton';
-import NavBar from './comps/NavBar';
-import Title from './comps/Title';
-import TextLink from './comps/TextLink';
-import TextDivider from './comps/TextDivider';
+import LocationCard from '../comps/LocationCard';
+import BigButton from '../comps/BigButton';
+import Input from '../comps/Input';
+import SmallButton from '../comps/SmallButton';
+import NavBar from '../comps/NavBar';
+import Title from '../comps/Title';
+import TextLink from '../comps/TextLink';
+import TextDivider from '../comps/TextDivider';
 
 export default function Login({navigation}) {
   return (
