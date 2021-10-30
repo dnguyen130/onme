@@ -9,17 +9,17 @@ import Login from './pages/index';
 
 const Stack = createNativeStackNavigator();
 
-// export {default} from './storybook'; 
+export {default} from './storybook'; 
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Login} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+// export default function App() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName="Login">
+//         <Stack.Screen name="Login" component={Login} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 
 const styles = StyleSheet.create({
   container: {
