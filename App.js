@@ -11,39 +11,39 @@ import Title from './comps/Title';
 import TextLink from './comps/TextLink';
 import TextDivider from './comps/TextDivider';
 
-// export {default} from './storybook'; 
+export {default} from './storybook'; 
 
-export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <StatusBar style="auto" />
-        <LocationCard />
-        <NavBar />
-      <View style={styles.centerCont}>
-        <Title />
-        <Input placeholder = "Email"/>
-        <Input placeholder = "Password" />
-        <LocationCard />
+// export default function App() {
+//   return (
+//     <SafeAreaView style={styles.container}>
+//       <ScrollView>
+//         <StatusBar style="auto" />
+//         <LocationCard />
+//         <NavBar />
+//       <View style={styles.centerCont}>
+//         <Title />
+//         <Input placeholder = "Email"/>
+//         <Input placeholder = "Password" />
+//         <LocationCard />
 
-        <TextLink />
-        <BigButton />
-        <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
-        <TextDivider />
-      </View>
-      <View style={styles.rowCont}>
-        <SmallButton />
-        <SmallButton />
-      </View>
-      <View style={styles.centerCont}>
-        <TextLink changeText = "restaurant login" />
-      </View>
+//         <TextLink />
+//         <BigButton />
+//         <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
+//         <TextDivider />
+//       </View>
+//       <View style={styles.rowCont}>
+//         <SmallButton />
+//         <SmallButton />
+//       </View>
+//       <View style={styles.centerCont}>
+//         <TextLink changeText = "restaurant login" />
+//       </View>
 
 
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+//       </ScrollView>
+//     </SafeAreaView>
+//   );
+// }
 
 const styles = StyleSheet.create({
   container: {
