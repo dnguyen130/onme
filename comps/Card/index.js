@@ -10,21 +10,30 @@ const CardCont = styled.View`
   background-color: #FE4370;
 `;
 
-const Name = styled.Text`
+const CardBackground = styled.ImageBackground`
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+`;
 
+const Name = styled.Text`
+  color: #fff;
 `;
 
 const Address = styled.Text`
-
+  color: #fff;
 `;
 
 const Card = ({
-  
+  icon = "https://reactnative.dev/img/tiny_logo.png",
 }) => {
   return (
     <CardCont>
-      <Name>Earl's</Name>
-      <Address>4700 Kingsway</Address>
+      {/* <CardBackground source={{uri:icon}} resizeMode="cover" borderRadius="15px"> */}
+        <Name>Earl's</Name>
+        <Address>4700 Kingsway</Address>
+      {/* </CardBackground> */}
     </CardCont>
   );
 }

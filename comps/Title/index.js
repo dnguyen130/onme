@@ -7,7 +7,7 @@ const Text = styled.Text`
 `;
 
 const Title = ({
-  changeText = "Welcome"
+  changeText = "Welcome !"
 }) => {
   return (
     <Text>{changeText}</Text>

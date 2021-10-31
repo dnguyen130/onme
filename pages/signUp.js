@@ -18,29 +18,20 @@ export default function Login({navigation}) {
       <View>
         <StatusBar style="auto" />
         <Title />
+        <Title />
         <View style={styles.centerCont}>
-          <View styles={styles.colCont}>
-            <Input placeholder = "Email"/>
-            <Input placeholder = "Password" />
-          </View>
-
-          <TextLink />
-
-          <View>
-            <BigButton />
-            <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
-          </View>
-
+          <Input />
+          <Input />
+          <Input />
+          <Input />
+          <Input />
+          <Input />
+          <Input />
+          <Input />
+          <BigButton />
           <TextDivider />
-        </View>
-
-        <View style={styles.rowCont}>
           <SmallButton />
           <SmallButton />
-        </View>
-
-        <View style={styles.centerCont}>
-          <TextLink changeText = "restaurant login" />
         </View>
       </View>
     </SafeAreaView>

@@ -5,21 +5,23 @@ import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Login from './pages/index';
+import Login from './pages';
+import Signup from './pages/signUp';
 
 const Stack = createNativeStackNavigator();
 
-export {default} from './storybook'; 
+// export {default} from './storybook'; 
 
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="Login">
-//         <Stack.Screen name="Login" component={Login} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
+export default function App() {
+  return (
+    <NavigationContainer styles={styles.centerCont}>
+      <Stack.Navigator initialRouteName="Login">
+        {/* <Stack.Screen name="Login" component={Login} /> */}
+        <Stack.Screen name="Signup" component={Signup} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -30,12 +32,5 @@ const styles = StyleSheet.create({
   },
   centerCont: {
     alignItems: 'center',
-  },
-  rowCont: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    margin: 10,
-    paddingLeft: 50,
-    paddingRight: 50,
   }
 });
