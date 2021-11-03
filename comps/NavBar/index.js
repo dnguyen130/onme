@@ -8,7 +8,7 @@ const Cont = styled.View`
   border-color: rgba(100, 100, 100, 1);
   border-radius: 20px;
   padding: 10px;
-  width: 428px;
+  width: auto;
   min-height: 100px;
   justify-content: space-around;
   align-items: center;
@@ -34,15 +34,15 @@ const NavBar = ({
     <Cont>
       <IconCont>
         <Icon source={{uri:icon}}/>
-        <NavBarText>Hello</NavBarText>
+        <NavBarText>Home</NavBarText>
       </IconCont>
       <IconCont>
         <Icon source={{uri:icon}}/>
-        <NavBarText>Hello</NavBarText>
+        <NavBarText>Mid</NavBarText>
       </IconCont>
       <IconCont>
         <Icon source={{uri:icon}}/>
-        <NavBarText>Hello</NavBarText>
+        <NavBarText>Settings</NavBarText>
       </IconCont>
     </Cont>
   );
