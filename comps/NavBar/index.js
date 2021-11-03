@@ -8,7 +8,7 @@ const Cont = styled.View`
   border-color: rgba(100, 100, 100, 1);
   border-radius: 20px;
   padding: 10px;
-  width: auto;
+  width: 100%;
   min-height: 100px;
   justify-content: space-around;
   align-items: center;

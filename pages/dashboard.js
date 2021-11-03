@@ -24,7 +24,7 @@ export default function Login({navigation}) {
             <Title changeText="Min" textColor="#fff" />
           </View>
           <View style={styles.centerCont}>
-            <Input placeholder="Search" borderRadius="30px" />
+            <Input textInputPlaceholder="Search" />
           </View>
         </ImageBackground>
         <View style={styles.centerCont}>

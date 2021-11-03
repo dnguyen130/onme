@@ -39,7 +39,7 @@ export default function Login({navigation}) {
         <Input textInputLabel="Create Password"/>
         <Input textInputLabel="Confirm Password"/>
         <CenterCont>
-          <BigButton buttonText="Sign Up" />
+          <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
           <TextDivider />
           <RowCont>
             <SmallButton />

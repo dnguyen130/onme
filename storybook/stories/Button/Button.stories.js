@@ -22,6 +22,9 @@ storiesOf('Comps', module)
   .add('BackButton', () => (
     <BackButton />
   ))
+  .add('PopUp', () => (
+    <BackButton />
+  ))
   .add('BigButton', () => (
     <BigButton />
   ))
