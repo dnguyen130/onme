@@ -10,39 +10,39 @@ import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
 import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
+import Card from '../comps/Card'
 import styled from 'styled-components';
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
+      <View>
         <StatusBar style="auto" />
-        <View style={styles.centerCont}>
-          <Title textColor="#fff" />
-          <View styles={styles.colCont}>
-            <Input placeholder = "Email"/>
-            <Input placeholder = "Password" />
-          </View>
-
-          <TextLink textColor="#fff" />
-
+        <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
           <View>
-            <BigButton />
-            <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
+            <Title changeText="Welcome," textColor="#fff" />
+            <Title changeText="Min" textColor="#fff" />
           </View>
-
-          <TextDivider textColor="#fff" />
-        </View>
-
-        <View style={styles.rowCont}>
-          <SmallButton />
-          <SmallButton />
-        </View>
-
+          <View style={styles.centerCont}>
+            <Input placeholder="Search" borderRadius="30px" />
+          </View>
+        </ImageBackground>
         <View style={styles.centerCont}>
-          <TextLink textColor="#fff" changeText = "restaurant login" />
+          <Title fontSize="20px" changeText="Frequently visited" textColor="#fff" />
+          <View style={styles.rowCont}>
+            <Card />
+            <Card />
+          </View>
+          <Title fontSize="20px" changeText="Recent items" textColor="#fff" />
+          <View style={styles.rowCont}>
+            <Card />
+            <Card />
+          </View>
         </View>
-      </ImageBackground>
+      </View>
+      <View style={styles.navBarCont}>
+        <NavBar />
+      </View>
     </SafeAreaView>
   );
 }
@@ -50,7 +50,7 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#2E2E2E',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -59,17 +59,20 @@ const styles = StyleSheet.create({
   },
   rowCont: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    margin: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
   },
   colCont: {
     justifyContent: 'space-evenly',
-  }, 
+  },
+  navBarCont: {
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
   imgBg: {
     flex: 1,
     justifyContent: 'center',
-    width: '100%',
+    width: 'auto',
+    padding: '10%'
   }
 });
