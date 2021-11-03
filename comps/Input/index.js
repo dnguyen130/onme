@@ -10,9 +10,9 @@ const InputField = styled.TextInput`
   border-width: 1px;
   padding: 5px;
   min-height: 55px;
-  border-radius: ${props => props.changeBorderRadius};
-  width: 353px;
-  background-color: #fff;
+  border-radius: 20px;
+  background-color: white;
+  color: #9C9C9C;
 `;
 
 const InputLabel = styled.Text`
@@ -21,11 +21,14 @@ const InputLabel = styled.Text`
 `
 
 const Input = ({
-  placeholder = "Placeholder",
-  borderRadius = "15px"
+  textInputPlaceholder = "",
+  textInputLabel = ""
 }) => {
   return (
-    <InputCont type="text" placeholder={placeholder} changeBorderRadius={borderRadius} />
+    <InputCont>
+      <InputLabel>{textInputLabel}</InputLabel>
+      <InputField>{textInputPlaceholder}</InputField>
+    </InputCont>
   );
 }
 

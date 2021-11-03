@@ -19,8 +19,8 @@ export default function App() {
     <NavigationContainer styles={styles.centerCont}>
       <Stack.Navigator initialRouteName="Login">
         {/* <Stack.Screen name="Login" component={Login} /> */}
-        {/* <Stack.Screen name="Signup" component={Signup} /> */}
-        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Signup" component={Signup} />
+        {/* <Stack.Screen name="Dashboard" component={Dashboard} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
