@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 const Text = styled.Text`
   font-size: 16px;
   font-weight: 700;
+  color: #888888;
 `;
 
 
