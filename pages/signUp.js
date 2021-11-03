@@ -2,38 +2,50 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
 import SmallButton from '../comps/SmallButton';
-import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
-import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
 import styled from 'styled-components';
+
+const CenterCont = styled.View`
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
+const RowCont = styled.View`
+  flex-direction: row;
+  justify-content: flex-start;
+`
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <StatusBar style="auto" />
-        <Title />
-        <Title />
-        <View style={styles.centerCont}>
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-          <BigButton />
+      <StatusBar style="auto" />
+      <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
+      <Title titleSize="32px" titleText="Create your account" />
+        <RowCont>
+          <Input textInputLabel="Name" textInputPlaceholder="First Name"/>
+          <Input textInputPlaceholder="Last Name" />
+        </RowCont>
+        <RowCont>
+          <Input textInputLabel="Date of Birth" textInputPlaceholder="Month" />
+          <Input textInputPlaceholder="Day"/>
+          <Input textInputPlaceholder="Year"/>
+        </RowCont>
+        <Input textInputLabel="Email"/>
+        <Input textInputLabel="Create Password"/>
+        <Input textInputLabel="Confirm Password"/>
+        <CenterCont>
+          <BigButton buttonText="Sign Up" />
           <TextDivider />
-          <SmallButton />
-          <SmallButton />
-        </View>
-      </View>
+          <RowCont>
+            <SmallButton />
+            <SmallButton />
+          </RowCont>
+        </CenterCont>
     </SafeAreaView>
   );
 }
@@ -41,21 +53,12 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  centerCont: {
-    alignItems: 'center'
-  },
-  rowCont: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    margin: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-  colCont: {
-    justifyContent: 'space-evenly',
+    backgroundColor: '#2E2E2E',
+    alignItems: 'flex-start',
+    borderColor: 'red',
+    padding: 20,
+    // borderWidth: 5,
+    // borderStyle: 'solid',
+    // flexDirection: 'column'
   }
 });

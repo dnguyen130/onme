@@ -19,10 +19,11 @@ const ButtonText = styled.Text`
 
 const BigButton = ({
   buttonText = "Sign In",
-  bgColor = "#FE4370;"
+  bgColor = "#FE4370;",
+  onPress = ()=>{}
 }) => {
   return (
-    <Button changeButtonColor={bgColor}>
+    <Button changeButtonColor={bgColor} onPress={onPress}>
       <ButtonText>{buttonText}</ButtonText>
     </Button>
   );
