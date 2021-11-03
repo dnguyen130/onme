@@ -2,15 +2,18 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Text = styled.Text`
-  font-size: 36px;
+  font-size: ${props => props.changeFontSize};
   font-weight: 700;
+  color: ${props => props.changeTextColor};
 `;
 
 const Title = ({
-  changeText = "Welcome !"
+  changeText = "Welcome !",
+  textColor = "#000;",
+  fontSize = "36px"
 }) => {
   return (
-    <Text>{changeText}</Text>
+    <Text changeTextColor={textColor} changeFontSize={fontSize}>{changeText}</Text>
   );
 }
 
