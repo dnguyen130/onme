@@ -6,8 +6,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from './pages/login';
-import Signup from './pages/signUp';
+import SignUp from './pages/signUp';
 import Dashboard from './pages/dashboard';
+import RestaurantSelection from './pages/restaurantSelection';
 
 
 const Stack = createNativeStackNavigator();
@@ -18,9 +19,10 @@ export default function App() {
   return (
     <NavigationContainer styles={styles.centerCont}>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
+        {/* <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Sign Up" component={SignUp} />
+        <Stack.Screen name="Dashboard" component={Dashboard} /> */}
+        <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
       </Stack.Navigator>
     </NavigationContainer>
   );

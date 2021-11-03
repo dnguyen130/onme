@@ -20,26 +20,23 @@ export default function Login({navigation}) {
         <StatusBar style="auto" />
         <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
           <View>
-            <Title titleText="Welcome," />
-            <Title titleText="Min" />
+            <Title titleText="Frequently" />
+            <Title titleText="Visted" />
           </View>
           <View style={styles.centerCont}>
             <Input textInputPlaceholder="Search" />
           </View>
         </ImageBackground>
         <View style={styles.centerCont}>
-          <Title titleSize="20px" titleText="Frequently visited" />
-          <View style={styles.rowCont}>
-            <Card />
-            <Card />
-          </View>
-          <Title titleSize="20px" titleText="Recent items" />
-          <View style={styles.rowCont}>
-            <Card />
-            <Card />
-          </View>
+          <LocationCard />
+          <LocationCard />
+          <LocationCard />
+          <LocationCard />
+          <LocationCard />
         </View>
+        
       </View>
+
       <View style={styles.navBarCont}>
         <NavBar />
       </View>
@@ -74,6 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 438,
     height: '90%',
-    padding: '10%'
+    padding: '10%',
+    borderWidth: 1
   }
 });
