@@ -6,6 +6,7 @@ import { Text } from 'react-native';
 import CenterView from '../CenterView';
 
 import BigButton from '../../../comps/BigButton';
+import BackButton from '../../../comps/BackButton';
 import Card from '../../../comps/Card';
 import Input from '../../../comps/Input';
 import LocationCard from '../../../comps/LocationCard';
@@ -18,6 +19,9 @@ import Title from '../../../comps/Title';
 
 storiesOf('Comps', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('BackButton', () => (
+    <BackButton />
+  ))
   .add('BigButton', () => (
     <BigButton />
   ))

@@ -12,19 +12,19 @@ import Dashboard from './pages/dashboard';
 
 const Stack = createNativeStackNavigator();
 
-// export {default} from './storybook'; 
+export {default} from './storybook'; 
 
-export default function App() {
-  return (
-    <NavigationContainer styles={styles.centerCont}>
-      <Stack.Navigator initialRouteName="Login">
-        {/* <Stack.Screen name="Login" component={Login} /> */}
-        {/* <Stack.Screen name="Signup" component={Signup} /> */}
-        <Stack.Screen name="Dashboard" component={Dashboard} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+// export default function App() {
+//   return (
+//     <NavigationContainer styles={styles.centerCont}>
+//       <Stack.Navigator initialRouteName="Login">
+//         {/* <Stack.Screen name="Login" component={Login} /> */}
+//         {/* <Stack.Screen name="Signup" component={Signup} /> */}
+//         {/* <Stack.Screen name="Dashboard" component={Dashboard} /> */}
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 
 const styles = StyleSheet.create({
   container: {
