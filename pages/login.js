@@ -26,7 +26,7 @@ export default function Login({navigation}) {
           <TextLink textColor="#fff" />
           <BigButton />
           <BigButton 
-            onPress={() => navigation.navigate('Signup')}
+            onPress={() => navigation.navigate('Sign Up')}
             bgColor = "#BCB5B7" 
             buttonText = "Sign Up"
           />

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const Cont = styled.View`
+const Cont = styled.TouchableOpacity`
   flex-direction: row;
   border-width: 3px;
   border-color: rgba(165, 119, 96, 0.5);
