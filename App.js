@@ -9,7 +9,7 @@ import Login from './pages/login';
 import SignUp from './pages/signUp';
 import Dashboard from './pages/dashboard';
 import RestaurantSelection from './pages/restaurantSelection';
-
+import RestaurantMenuFood from './pages/restaurantMenuFood';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,10 +19,11 @@ export default function App() {
   return (
     <NavigationContainer styles={styles.centerCont}>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
+        {/* <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Dashboard" component={Dashboard} /> */}
         {/* <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} /> */}
+        <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
       </Stack.Navigator>
     </NavigationContainer>
   );

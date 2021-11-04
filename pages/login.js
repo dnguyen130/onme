@@ -24,7 +24,7 @@ export default function Login({navigation}) {
         
         <View style={styles.centerCont}>
           <TextLink textColor="#fff" />
-          <BigButton />
+          <BigButton onPress={() => navigation.navigate('Dashboard')} />
           <BigButton 
             onPress={() => navigation.navigate('Sign Up')}
             bgColor = "#BCB5B7" 
@@ -40,32 +40,6 @@ export default function Login({navigation}) {
         <View style={styles.centerCont}>
           <TextLink textColor="#fff" changeText = "restaurant login" />
         </View>
-
-        {/* <View style={styles.centerCont}>
-          <Title textColor="#fff" />
-          <View styles={styles.colCont}>
-            <Input placeholder = "Email"/>
-            <Input placeholder = "Password" />
-          </View>
-
-          <TextLink textColor="#fff" />
-
-          <View>
-            <BigButton />
-            <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
-          </View>
-
-          <TextDivider textColor="#fff" />
-        </View>
-
-        <View style={styles.rowCont}>
-          <SmallButton />
-          <SmallButton />
-        </View>
-
-        <View style={styles.centerCont}>
-          <TextLink textColor="#fff" changeText = "restaurant login" />
-        </View> */}
       </ImageBackground>
     </SafeAreaView>
   );

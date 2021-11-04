@@ -7,6 +7,8 @@ import Input from '../comps/Input';
 import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
 import styled from 'styled-components';
+import Card from '../comps/Card';
+import { style } from 'dom-helpers';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
@@ -16,8 +18,14 @@ const ImgBg = styled.ImageBackground`
 `;
 
 const CenterCont = styled.View`
-  
   align-items: center;
+`;
+
+const TwoXTwoGrid = styled.View`
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 `;
 
 const NavBarCont = styled.View`
@@ -32,15 +40,17 @@ export default function Login({navigation}) {
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
         <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
-          <Title titleText="Where would you like to go?" />
+          <Title titleText="The Habitat" />
+          <Title titleText="3700 Willingdon Ave" />
         </ImgBg>
         <Input textInputPlaceholder="Search" />
         <CenterCont>
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
+          <TwoXTwoGrid>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </TwoXTwoGrid>
         </CenterCont>
       <NavBarCont>
         <NavBar />
