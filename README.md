@@ -2,7 +2,7 @@
 
 "Create a connection, with a little liquid courage."
 
-Just
+Just a few BCIT D3 students developing Vancity's next big dating app!
 
 ### Naming Conventions
 
