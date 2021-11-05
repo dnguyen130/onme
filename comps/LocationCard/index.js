@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const Cont = styled.View`
+const Cont = styled.TouchableOpacity`
   flex-direction: row;
   border-width: 3px;
   border-color: rgba(165, 119, 96, 0.5);
@@ -27,19 +27,23 @@ const NameCont = styled.View`
 
 const IconCont = styled.View`
   flex-direction: row;
-  padding-left: 5%;
+  margin-left: 35%;
 `;
 
 const Name = styled.Text`
   font-size: 15px;
+  color: #fff;
 `;
 
 const City = styled.Text`
   font-size: 12px;
+  color: #fff;
+
 `;
 
 const Address = styled.Text`
   font-size: 10px;
+  color: #fff;
 `;
 
 const LocIcon = styled.Image`
@@ -54,24 +58,22 @@ const SmallIcon = styled.Image`
 `;
 
 const LocationCard = ({
-  icon = "https://reactnative.dev/img/tiny_logo.png",
-  name = "Earl's Metrotown",
+  icon = require('../../assets/resImg.png'),
+  name = "The Habitat",
   city = "Burnaby",
-  address = "4700 Kingsway, Burnaby"
+  address = "3700 Willingdon Ave"
 }) => {
   return (
     <Cont>
       <LocCont>
-        <LocIcon source={{uri:icon}} />
+        <LocIcon source={icon} />
       </LocCont>
       <TextCont>
         <NameCont>
           <Name>{name}</Name>
           <IconCont>
-            <SmallIcon source={{uri:icon}} />
-          </IconCont>
-          <IconCont>
-            <SmallIcon source={{uri:icon}} />
+            <SmallIcon source={icon} />
+            <SmallIcon source={icon} />
           </IconCont>
         </NameCont>
         <City>{city}</City>

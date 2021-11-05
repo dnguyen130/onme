@@ -26,14 +26,14 @@ const Address = styled.Text`
 `;
 
 const Card = ({
-  icon = "https://reactnative.dev/img/tiny_logo.png",
+  icon = require('../../assets/food_1.png'),
 }) => {
   return (
     <CardCont>
-      {/* <CardBackground source={{uri:icon}} resizeMode="cover" borderRadius="15px"> */}
+      <CardBackground source={icon} resizeMode="cover" borderRadius="15px">
         <Name>Earl's</Name>
         <Address>4700 Kingsway</Address>
-      {/* </CardBackground> */}
+      </CardBackground>
     </CardCont>
   );
 }
