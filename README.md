@@ -1,5 +1,9 @@
 # onme
 
+"Create a connection, with a little liquid courage."
+
+Just
+
 ### Naming Conventions
 
 __Indent Tab Size__
@@ -47,4 +51,45 @@ const BigButton = ({
     </Button>
   );
 }
+```
+
+__Viewing Screens and Components__
+
+
+Viewing Screens
+* Comment out first export as shown below
+```
+// export {default} from './storybook'; 
+
+export default function App() {
+  return (
+    <NavigationContainer styles={styles.centerCont}>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Sign Up" component={SignUp} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+```
+
+Viewing Components
+* Comment out second export as shown below
+```
+export {default} from './storybook'; 
+
+// export default function App() {
+//   return (
+//     <NavigationContainer styles={styles.centerCont}>
+//       <Stack.Navigator>
+//         <Stack.Screen name="Login" component={Login} />
+//         <Stack.Screen name="Sign Up" component={SignUp} />
+//         <Stack.Screen name="Dashboard" component={Dashboard} />
+//         {/* <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} /> */}
+//         {/* <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} /> */}
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 ```
