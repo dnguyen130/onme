@@ -18,6 +18,7 @@ const Title = ({
       titleColor={titleColor}
       titleWeight={titleWeight}
       titleSize={titleSize}
+      titleWeight={titleWeight}
       >
         {titleText}
     </Text>

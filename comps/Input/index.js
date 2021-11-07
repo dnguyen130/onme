@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 const InputCont = styled.View`
   width: 100%;
   flex: 1;
+  margin: 5px;
 `
 
 const InputField = styled.TextInput`
@@ -12,7 +13,8 @@ const InputField = styled.TextInput`
   min-height: 55px;
   border-radius: 20px;
   background-color: white;
-  color: #9C9C9C;
+  color: black;
+  padding: 0 20px;
 `;
 
 const InputLabel = styled.Text`
@@ -27,7 +29,7 @@ const Input = ({
   return (
     <InputCont>
       <InputLabel>{textInputLabel}</InputLabel>
-      <InputField>{textInputPlaceholder}</InputField>
+      <InputField placeholder={textInputPlaceholder}></InputField>
     </InputCont>
   );
 }

@@ -5,9 +5,10 @@ import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Login from './pages';
+import Login from './pages/login';
 import Signup from './pages/signUp';
 import Dashboard from './pages/dashboard';
+import OrderSummary from './pages/orderSummary';
 
 
 const Stack = createNativeStackNavigator();
@@ -19,8 +20,9 @@ export default function App() {
     <NavigationContainer styles={styles.centerCont}>
       <Stack.Navigator initialRouteName="Login">
         {/* <Stack.Screen name="Login" component={Login} /> */}
-        <Stack.Screen name="Signup" component={Signup} />
+        {/* <Stack.Screen name="Signup" component={Signup} /> */}
         {/* <Stack.Screen name="Dashboard" component={Dashboard} /> */}
+        <Stack.Screen name="OrderSummary" component={OrderSummary} />
       </Stack.Navigator>
     </NavigationContainer>
   );
