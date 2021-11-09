@@ -16,7 +16,7 @@ const CenterCont = styled.View`
 `
 
 const RowCont = styled.View`
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
 `

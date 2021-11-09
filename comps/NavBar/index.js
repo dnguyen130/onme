@@ -30,7 +30,7 @@ const NavBarText = styled.Text`
 `;
 
 const NavBar = ({
-  icon = "https://reactnative.dev/img/tiny_logo.png",
+  
 }) => {
   return (
     <Cont>

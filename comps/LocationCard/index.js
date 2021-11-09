@@ -7,7 +7,7 @@ const Cont = styled.TouchableOpacity`
   border-color: rgba(165, 119, 96, 0.5);
   border-radius: 20px;
   padding: 10px;
-  width: 330px;
+  width: 80%;
   min-height: 79px;
 `;
 

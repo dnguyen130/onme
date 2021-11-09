@@ -34,11 +34,8 @@ export default function Login({navigation}) {
 
         </View>
         <View style={styles.rowCont}>
-          <SmallButton />
-          <SmallButton />
-        </View>
-        <View style={styles.centerCont}>
-          <TextLink textColor="#fff" changeText = "restaurant login" />
+          <SmallButton iconColor="#699BF7" />
+          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
         </View>
       </ImageBackground>
     </SafeAreaView>
