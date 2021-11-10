@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 const InputCont = styled.View`
   width: 100%;
-  flex: 1;
+  /* flex: 1; */
   margin: 5px;
 `
 

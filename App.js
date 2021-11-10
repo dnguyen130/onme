@@ -6,10 +6,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from './pages/login';
-import Signup from './pages/signUp';
+import SignUp from './pages/signUp';
 import Dashboard from './pages/dashboard';
 import OrderSummary from './pages/orderSummary';
-import Dashboard from './pages/dashboard';
 import RestaurantSelection from './pages/restaurantSelection';
 import RestaurantMenuFood from './pages/restaurantMenuFood';
 
