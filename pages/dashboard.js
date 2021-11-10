@@ -12,37 +12,28 @@ import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
 import Card from '../comps/Card'
 import styled from 'styled-components';
+import Header from '../comps/Header';
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <StatusBar style="auto" />
-        <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
-          <View>
-            <Title titleText="Welcome," />
-            <Title titleText="Min" />
-          </View>
-          <View style={styles.centerCont}>
-            <Input textInputPlaceholder="Search" />
-          </View>
-        </ImageBackground>
-        <View style={styles.centerCont}>
-          <Title titleSize="20px" titleText="Frequently visited" />
-          <View style={styles.rowCont}>
-            <Card />
-            <Card />
-          </View>
-          <Title titleSize="20px" titleText="Recent items" />
-          <View style={styles.rowCont}>
-            <Card />
-            <Card />
-          </View>
+      <StatusBar style="auto" />
+      <Header mainTitle="Welcome," subTitle="Min" />
+      <View style={styles.centerCont}>
+        <Title titleSize="20px" titleText="Frequently visited" />
+        <View style={styles.rowCont}>
+          <Card />
+          <Card />
+        </View>
+        <Title titleSize="20px" titleText="Recent items" />
+        <View style={styles.rowCont}>
+          <Card />
+          <Card />
         </View>
       </View>
-      <View style={styles.navBarCont}>
-        <NavBar />
-      </View>
+    <View style={styles.navBarCont}>
+      <NavBar />
+    </View>
     </SafeAreaView>
   );
 }
@@ -50,9 +41,7 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#2E2E2E'
   },
   centerCont: {
     alignItems: 'center'
@@ -68,12 +57,5 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
-  },
-  imgBg: {
-    flex: 1,
-    justifyContent: 'center',
-    width: 438,
-    height: '90%',
-    padding: '10%'
   }
 });

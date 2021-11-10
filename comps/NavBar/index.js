@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
 
 const Cont = styled.View`
   flex-direction: row;
   background-color: #2E2E2E;
-  border-width: 3px;
+  border-top-width: 2px;
+  border-left-width: 0.5px;
+  border-right-width: 0.5px;
   border-color: rgba(100, 100, 100, 1);
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding: 10px;
   width: 100%;
   min-height: 100px;

@@ -16,9 +16,10 @@ const CenterCont = styled.View`
 `
 
 const RowCont = styled.View`
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
+  flex: 1;
+  max-width: 100%;
 `
 
 export default function SignUp({navigation}) {

@@ -5,15 +5,17 @@ const Text = styled.Text`
   font-size: 16px;
   font-weight: 700;
   color: ${props => props.changeTextColor};
+  align-self: ${props => props.alignSelf};
 
 `;
 
 const TextLink = ({
   changeText = "Forgot Password?",
-  textColor = "#000;"
+  textColor = "#000;",
+  alignSelf = "center"
 }) => {
   return (
-    <Text changeTextColor={textColor}>{changeText}</Text>
+    <Text changeTextColor={textColor} alignSelf={alignSelf}>{changeText}</Text>
   );
 }
 
