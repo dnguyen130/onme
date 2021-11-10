@@ -17,30 +17,25 @@ export default function Login({navigation}) {
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
         <StatusBar style="auto" />
+        <Title />
+        
+        <Input textInputPlaceholder = "Email"/>
+        <Input textInputPlaceholder = "Password" />
+        
         <View style={styles.centerCont}>
-          <Title textColor="#fff" />
-          <View styles={styles.colCont}>
-            <Input placeholder = "Email"/>
-            <Input placeholder = "Password" />
-          </View>
-
           <TextLink textColor="#fff" />
-
-          <View>
-            <BigButton />
-            <BigButton bgColor = "#BCB5B7" buttonText = "Sign Up"/>
-          </View>
-
+          <BigButton onPress={() => navigation.navigate('Dashboard')} />
+          <BigButton 
+            onPress={() => navigation.navigate('Sign Up')}
+            bgColor = "#BCB5B7" 
+            buttonText = "Sign Up"
+          />
           <TextDivider textColor="#fff" />
-        </View>
 
+        </View>
         <View style={styles.rowCont}>
-          <SmallButton />
-          <SmallButton />
-        </View>
-
-        <View style={styles.centerCont}>
-          <TextLink textColor="#fff" changeText = "restaurant login" />
+          <SmallButton iconColor="#699BF7" />
+          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -65,7 +60,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   colCont: {
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around'
   }, 
   imgBg: {
     flex: 1,

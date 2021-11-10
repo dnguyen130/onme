@@ -16,6 +16,7 @@ const CenterCont = styled.View`
 `
 
 const RowCont = styled.View`
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
 `
@@ -39,7 +40,7 @@ export default function Login({navigation}) {
         <Input textInputLabel="Create Password"/>
         <Input textInputLabel="Confirm Password"/>
         <CenterCont>
-          <BigButton buttonText="Sign Up" />
+          <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
           <TextDivider />
           <RowCont>
             <SmallButton />

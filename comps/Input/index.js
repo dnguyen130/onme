@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 
 const InputCont = styled.View`
   width: 100%;
-  flex: 1;
+  /* flex: 1; */
+  /* flex-wrap: wrap; */
 `
 
 const InputField = styled.TextInput`
@@ -27,7 +28,7 @@ const Input = ({
   return (
     <InputCont>
       <InputLabel>{textInputLabel}</InputLabel>
-      <InputField>{textInputPlaceholder}</InputField>
+      <InputField placeholder={textInputPlaceholder}></InputField>
     </InputCont>
   );
 }
