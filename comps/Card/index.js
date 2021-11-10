@@ -7,7 +7,7 @@ const CardCont = styled.TouchableOpacity`
   width: 152px;
   height: 179px;
   border-radius: 15px;
-  /* background-color: #FE4370; */
+  background-color: #000;
 `;
 
 const CardBackground = styled.ImageBackground`
@@ -31,7 +31,7 @@ const Card = ({
 }) => {
   return (
     <CardCont onPress={onPress}>
-      <CardBackground source={icon} resizeMode="cover" borderRadius="15px">
+      <CardBackground source={icon} resizeMode="cover" borderRadius="15px" opacity="0.5">
         <Name>Earl's</Name>
         <Address>4700 Kingsway</Address>
       </CardBackground>

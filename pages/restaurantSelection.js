@@ -1,22 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, View } from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
+import LocButton from '../comps/LocButton';
 import Input from '../comps/Input';
 import NavBar from '../comps/NavBar';
-import Title from '../comps/Title';
+import Header from '../comps/Header';
 import styled from 'styled-components';
 
-const ImgBg = styled.ImageBackground`
-  flex: 1;
-  justify-content: center;
-  width: 100%;
-  padding: 10%;
-`;
-
-const CenterCont = styled.View`
-  align-items: center;
+const CenterCont = styled.ScrollView`
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  max-height: 100%;
+  z-index: -9;
 `;
 
 const NavBarCont = styled.View`
@@ -30,17 +27,21 @@ export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
-        <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
-          <Title titleText="Where would you like to go?" />
-        </ImgBg>
-        <Input textInputPlaceholder="Search" />
-        <CenterCont>
-          <LocationCard onPress={() => navigation.navigate('Restaurant Menu Food')} />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-        </CenterCont>
+        <Header mainTitle="The Habitat" subTitle="3700 Willingdon Ave, Burnaby" />
+        <View>
+          <Input textInputPlaceholder="Search" />
+        </View>
+          <CenterCont alignItems='center' justifyContent='center'>
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton />
+              <LocButton />
+              <LocButton/>
+              <LocButton />
+              <LocButton />
+              <LocButton />
+              <LocButton/>
+              <LocButton />
+          </CenterCont>
       <NavBarCont>
         <NavBar />
       </NavBarCont>
@@ -51,8 +52,6 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#2E2E2E'
   }
 });

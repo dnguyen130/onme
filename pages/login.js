@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
@@ -20,36 +20,53 @@ const CenterCont = styled.View`
   align-items: center;
 `;
 
+const ColCont = styled.View`
+  justify-content: space-around;
+  height: 70%;
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
 const RowCont = styled.View`
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
-        <StatusBar style="auto" />
-        <Title />
+        <ColCont>
         
-        <Input textInputPlaceholder = "Email"/>
-        <Input textInputPlaceholder = "Password" />
-        
-        <CenterCont>
-          <TextLink textColor="#fff" />
-          <BigButton onPress={() => navigation.navigate('Dashboard')} />
-          <BigButton 
-            onPress={() => navigation.navigate('Sign Up')}
-            bgColor = "#BCB5B7" 
-            buttonText = "Sign Up"
-          />
-          <TextDivider textColor="#fff" />
+          <StatusBar style="auto" />
+          <Title />
+          <View>
+            <Input textInputPlaceholder = "Email" />
+          </View>
+          <View>
+            <Input textInputPlaceholder = "Password" />
+          </View>
+          
+          
+          <CenterCont>
+            <TextLink textColor="#fff" alignSelf="flex-end" />
+            <BigButton onPress={() => navigation.navigate('Dashboard')} />
+            <BigButton 
+              onPress={() => navigation.navigate('Sign Up')}
+              bgColor = "#BCB5B7" 
+              buttonText = "Sign Up"
+            />
+            <TextDivider textColor="#fff" />
 
-        </CenterCont>
-        <RowCont>
-          <SmallButton iconColor="#699BF7" />
-          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
-        </RowCont>
+          </CenterCont>
+          <RowCont>
+            <SmallButton iconColor="#699BF7" />
+            <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+          </RowCont>
+        </ColCont>
       </ImgBg>
     </SafeAreaView>
   );

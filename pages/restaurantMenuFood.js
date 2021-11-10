@@ -7,13 +7,7 @@ import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
 import styled from 'styled-components';
 import Card from '../comps/Card';
-
-const ImgBg = styled.ImageBackground`
-  flex: 1;
-  justify-content: center;
-  width: 100%;
-  padding: 10%;
-`;
+import Header from '../comps/Header';
 
 const CenterCont = styled.View`
   align-items: center;
@@ -37,10 +31,7 @@ export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
-        <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
-          <Title titleText="The Habitat" />
-          <Title titleText="3700 Willingdon Ave" />
-        </ImgBg>
+        <Header mainTitle="The Habitat" subTitle="3700 Willingdon Ave, Burnaby" />
         <Input textInputPlaceholder="Search" />
         <CenterCont>
           <TwoXTwoGrid>
@@ -60,8 +51,6 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#2E2E2E'
   }
 });

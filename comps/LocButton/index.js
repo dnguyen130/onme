@@ -9,6 +9,7 @@ const Cont = styled.TouchableOpacity`
   padding: 10px;
   width: 80%;
   min-height: 79px;
+  margin-bottom: 2%;
 `;
 
 const TextCont = styled.View`
@@ -57,7 +58,7 @@ const SmallIcon = styled.Image`
   height: 13px;
 `;
 
-const LocationCard = ({
+const LocButton = ({
   icon = require('../../assets/resImg.png'),
   name = "The Habitat",
   city = "Burnaby",
@@ -84,4 +85,4 @@ const LocationCard = ({
   );
 }
 
-export default LocationCard;
+export default LocButton;
