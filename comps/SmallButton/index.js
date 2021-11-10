@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import { Icon } from 'react-native-elements';
+
 const Button = styled.TouchableOpacity`
   flex-direction: row;
   background-color: #fff;
@@ -24,11 +26,17 @@ const SmallIcon = styled.Image`
 `;
 
 const SmallButton = ({
-  buttonText = "Sign in"
+  buttonText = "Sign in",
+  iconName = "logo-facebook",
+  iconColor = "#000"
 }) => {
   return (
     <Button>
-      <SmallIcon source={{uri:"https://reactnative.dev/img/tiny_logo.png"}} />
+      <Icon 
+        name={iconName}
+        type='ionicon'
+        color={iconColor}
+      />
       <ButtonText>{buttonText}</ButtonText>
     </Button>
   );

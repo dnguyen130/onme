@@ -20,20 +20,20 @@ export default function Login({navigation}) {
         <StatusBar style="auto" />
         <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
           <View>
-            <Title changeText="Welcome," textColor="#fff" />
-            <Title changeText="Min" textColor="#fff" />
+            <Title titleText="Welcome," />
+            <Title titleText="Min" />
           </View>
           <View style={styles.centerCont}>
-            <Input placeholder="Search" borderRadius="30px" />
+            <Input textInputPlaceholder="Search" />
           </View>
         </ImageBackground>
         <View style={styles.centerCont}>
-          <Title fontSize="20px" changeText="Frequently visited" textColor="#fff" />
+          <Title titleSize="20px" titleText="Frequently visited" />
           <View style={styles.rowCont}>
             <Card />
             <Card />
           </View>
-          <Title fontSize="20px" changeText="Recent items" textColor="#fff" />
+          <Title titleSize="20px" titleText="Recent items" />
           <View style={styles.rowCont}>
             <Card />
             <Card />
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
   imgBg: {
     flex: 1,
     justifyContent: 'center',
-    width: 'auto',
+    width: 438,
+    height: '90%',
     padding: '10%'
   }
 });
