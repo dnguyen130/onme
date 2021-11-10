@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';  
 
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
@@ -16,12 +16,13 @@ const CenterCont = styled.View`
 `
 
 const RowCont = styled.View`
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
+  flex: 1;
+  max-width: 100%;
 `
 
-export default function Login({navigation}) {
+export default function SignUp({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
