@@ -1,21 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, View , SafeAreaView, ImageBackground} from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
 import SmallButton from '../comps/SmallButton';
-import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
 import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
-import styled from 'styled-components';
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
+        <View style={styles.colCont}>
         <StatusBar style="auto" />
         <Title />
         
@@ -23,7 +21,7 @@ export default function Login({navigation}) {
         <Input textInputPlaceholder = "Password" />
         
         <View style={styles.centerCont}>
-          <TextLink textColor="#fff" />
+          <TextLink textColor="#fff" alignSelf="flex-end" />
           <BigButton onPress={() => navigation.navigate('Dashboard')} />
           <BigButton 
             onPress={() => navigation.navigate('Sign Up')}
@@ -36,6 +34,7 @@ export default function Login({navigation}) {
         <View style={styles.rowCont}>
           <SmallButton iconColor="#699BF7" />
           <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+        </View>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -60,7 +59,9 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   colCont: {
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    height: '70%',
+    marginHorizontal: 10
   }, 
   imgBg: {
     flex: 1,

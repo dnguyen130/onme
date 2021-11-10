@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements'
 
 const BackBtnCont = styled.TouchableOpacity`
-  
+  align-self: flex-start;
 `;
 
 const BackButton = ({

@@ -30,7 +30,7 @@ const Card = ({
 }) => {
   return (
     <CardCont>
-      <CardBackground source={icon} resizeMode="cover" borderRadius="15px">
+      <CardBackground source={icon} resizeMode="cover">
         <Name>Earl's</Name>
         <Address>4700 Kingsway</Address>
       </CardBackground>

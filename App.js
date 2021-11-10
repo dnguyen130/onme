@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './pages/login';
 import SignUp from './pages/signUp';
 import Dashboard from './pages/dashboard';
+import OrderSummary from './pages/orderSummary';
 import RestaurantSelection from './pages/restaurantSelection';
 import RestaurantMenuFood from './pages/restaurantMenuFood';
 
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={Dashboard} />
         {/* <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} /> */}
         {/* <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} /> */}
+        {/* <Stack.Screen name="OrderSummary" component={OrderSummary} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
