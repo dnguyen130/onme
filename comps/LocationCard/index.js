@@ -61,10 +61,11 @@ const LocationCard = ({
   icon = require('../../assets/resImg.png'),
   name = "The Habitat",
   city = "Burnaby",
-  address = "3700 Willingdon Ave"
+  address = "3700 Willingdon Ave",
+  onPress = ()=>{}
 }) => {
   return (
-    <Cont>
+    <Cont onPress={onPress}>
       <LocCont>
         <LocIcon source={icon} />
       </LocCont>

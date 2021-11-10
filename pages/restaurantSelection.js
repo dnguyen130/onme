@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
 import LocationCard from '../comps/LocationCard';
 import Input from '../comps/Input';
@@ -16,7 +16,6 @@ const ImgBg = styled.ImageBackground`
 `;
 
 const CenterCont = styled.View`
-  
   align-items: center;
 `;
 
@@ -36,7 +35,7 @@ export default function Login({navigation}) {
         </ImgBg>
         <Input textInputPlaceholder="Search" />
         <CenterCont>
-          <LocationCard />
+          <LocationCard onPress={() => navigation.navigate('Restaurant Menu Food')} />
           <LocationCard />
           <LocationCard />
           <LocationCard />

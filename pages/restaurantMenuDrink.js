@@ -1,14 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
 import Input from '../comps/Input';
 import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
 import styled from 'styled-components';
 import Card from '../comps/Card';
-import { style } from 'dom-helpers';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;

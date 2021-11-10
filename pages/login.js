@@ -1,28 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
 import SmallButton from '../comps/SmallButton';
-import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
 import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
+
+const ImgBg = styled.ImageBackground`
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+`;
+
+const CenterCont = styled.View`
+  align-items: center;
+`;
+
+const RowCont = styled.View`
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
+      <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
         <StatusBar style="auto" />
         <Title />
         
         <Input textInputPlaceholder = "Email"/>
         <Input textInputPlaceholder = "Password" />
         
-        <View style={styles.centerCont}>
+        <CenterCont>
           <TextLink textColor="#fff" />
           <BigButton onPress={() => navigation.navigate('Dashboard')} />
           <BigButton 
@@ -32,12 +45,12 @@ export default function Login({navigation}) {
           />
           <TextDivider textColor="#fff" />
 
-        </View>
-        <View style={styles.rowCont}>
+        </CenterCont>
+        <RowCont>
           <SmallButton iconColor="#699BF7" />
           <SmallButton iconName="logo-google" iconColor="#EC452E"/>
-        </View>
-      </ImageBackground>
+        </RowCont>
+      </ImgBg>
     </SafeAreaView>
   );
 }
@@ -49,22 +62,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  centerCont: {
-    alignItems: 'center'
-  },
-  rowCont: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    margin: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-  colCont: {
-    justifyContent: 'space-around'
-  }, 
-  imgBg: {
-    flex: 1,
-    justifyContent: 'center',
-    width: '100%',
-  }
 });

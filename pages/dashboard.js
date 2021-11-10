@@ -11,7 +11,7 @@ import Title from '../comps/Title';
 import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
 import Card from '../comps/Card'
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export default function Login({navigation}) {
   return (
@@ -30,13 +30,13 @@ export default function Login({navigation}) {
         <View style={styles.centerCont}>
           <Title titleSize="20px" titleText="Frequently visited" />
           <View style={styles.rowCont}>
-            <Card />
-            <Card />
+            <Card onPress={() => navigation.navigate('Restaurant Selection')} />
+            <Card onPress={() => navigation.navigate('Restaurant Selection')} />
           </View>
           <Title titleSize="20px" titleText="Recent items" />
           <View style={styles.rowCont}>
-            <Card />
-            <Card />
+            <Card onPress={() => navigation.navigate('Restaurant Selection')} />
+            <Card onPress={() => navigation.navigate('Restaurant Selection')} />
           </View>
         </View>
       </View>
@@ -59,9 +59,6 @@ const styles = StyleSheet.create({
   },
   rowCont: {
     flexDirection: 'row',
-  },
-  colCont: {
-    justifyContent: 'space-evenly',
   },
   navBarCont: {
     position: 'absolute',
