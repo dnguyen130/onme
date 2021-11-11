@@ -10,6 +10,8 @@ const Cont = styled.TouchableOpacity`
   width: 80%;
   min-height: 79px;
   margin-bottom: 2%;
+  background-color: #2E2E2E;
+  box-shadow: 0px 3px 3px #000;
 `;
 
 const TextCont = styled.View`
@@ -56,6 +58,7 @@ const LocIcon = styled.Image`
 const SmallIcon = styled.Image`
   width: 13px;
   height: 13px;
+  margin-left: 5px;
 `;
 
 const LocButton = ({
@@ -74,8 +77,8 @@ const LocButton = ({
         <NameCont>
           <Name>{name}</Name>
           <IconCont>
-            <SmallIcon source={icon} />
-            <SmallIcon source={icon} />
+            <SmallIcon source={require('../../assets/forkKnife.png')} />
+            <SmallIcon source={require('../../assets/wineGlass.png')} />
           </IconCont>
         </NameCont>
         <City>{city}</City>
