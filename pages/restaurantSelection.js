@@ -8,11 +8,13 @@ import NavBar from '../comps/NavBar';
 import Header from '../comps/Header';
 import styled from 'styled-components';
 
-const CenterCont = styled.ScrollView`
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  max-height: 100%;
+const ScrollCont = styled.View`
+  flex: 1;
+  top: 3%;
+  max-height: 60%;
+`;
+
+const CenterScrollCont = styled.ScrollView`
   z-index: -9;
 `;
 
@@ -23,25 +25,38 @@ const NavBarCont = styled.View`
   right: 0;
 `;
 
+const InputCont = styled.View`
+  padding-bottom: 5%;
+  top: -4%;
+`;
+
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
-        <Header mainTitle="The Habitat" subTitle="3700 Willingdon Ave, Burnaby" />
-        <View>
+        <Header mainTitle="The Habitat" subTitle="3700 Willingdon Ave, Burnaby" subTitleSize="15px" />
+        <InputCont>
           <Input textInputPlaceholder="Search" />
-        </View>
-          <CenterCont alignItems='center' justifyContent='center'>
+        </InputCont>
+        <ScrollCont>
+          <CenterScrollCont alignItems='center'>
               <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton />
-              <LocButton />
-              <LocButton/>
-              <LocButton />
-              <LocButton />
-              <LocButton />
-              <LocButton/>
-              <LocButton />
-          </CenterCont>
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+          </CenterScrollCont>
+        </ScrollCont>
       <NavBarCont>
         <NavBar />
       </NavBarCont>
@@ -52,6 +67,6 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2E2E2E'
+    backgroundColor: '#2E2E2E',
   }
 });

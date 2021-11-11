@@ -43,12 +43,12 @@ export default function Login({navigation}) {
         
           <StatusBar style="auto" />
           <Title />
-          <View>
+          {/* <View> */}
             <Input textInputPlaceholder = "Email" />
-          </View>
-          <View>
+          {/* </View> */}
+          {/* <View> */}
             <Input textInputPlaceholder = "Password" />
-          </View>
+          {/* </View> */}
           
           
           <CenterCont>

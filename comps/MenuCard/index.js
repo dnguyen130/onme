@@ -13,33 +13,45 @@ const CardCont = styled.TouchableOpacity`
 `;
 
 const CardBackground = styled.ImageBackground`
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   height: 100%;
   width: 100%;
-  
+  padding: 0 0 10px 10px;
+`;
+
+const Title = styled.Text`
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 5px;
 `;
 
 const Name = styled.Text`
   color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 5px;
+
 `;
 
-const Address = styled.Text`
+const Price = styled.Text`
   color: #fff;
+  font-size: 10px;
 `;
 
-const Card = ({
-  cardImg = require('../../assets/food_1.png'),
+const MenuCard = ({
+  cardImg = require('../../assets/drink_1.png'),
   onPress = ()=>{}
 }) => {
   return (
     <CardCont onPress={onPress}>
-      <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.5">
-        <Name>Earl's</Name>
-        <Address>4700 Kingsway</Address>
+      <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.8">
+        <Title>The Habitat</Title>
+        <Name>Zesty Calimari</Name>
+        <Price>$9.99</Price>
       </CardBackground>
     </CardCont>
   );
 }
 
-export default Card;
+export default MenuCard;
