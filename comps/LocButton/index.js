@@ -9,6 +9,9 @@ const Cont = styled.TouchableOpacity`
   padding: 10px;
   width: 80%;
   min-height: 79px;
+  margin-bottom: 2%;
+  background-color: #2E2E2E;
+  box-shadow: 0px 3px 3px #000;
 `;
 
 const TextCont = styled.View`
@@ -55,16 +58,18 @@ const LocIcon = styled.Image`
 const SmallIcon = styled.Image`
   width: 13px;
   height: 13px;
+  margin-left: 5px;
 `;
 
-const LocationCard = ({
+const LocButton = ({
   icon = require('../../assets/resImg.png'),
   name = "The Habitat",
   city = "Burnaby",
-  address = "3700 Willingdon Ave"
+  address = "3700 Willingdon Ave",
+  onPress = ()=>{}
 }) => {
   return (
-    <Cont>
+    <Cont onPress={onPress}>
       <LocCont>
         <LocIcon source={icon} />
       </LocCont>
@@ -72,8 +77,8 @@ const LocationCard = ({
         <NameCont>
           <Name>{name}</Name>
           <IconCont>
-            <SmallIcon source={icon} />
-            <SmallIcon source={icon} />
+            <SmallIcon source={require('../../assets/forkKnife.png')} />
+            <SmallIcon source={require('../../assets/wineGlass.png')} />
           </IconCont>
         </NameCont>
         <City>{city}</City>
@@ -83,4 +88,4 @@ const LocationCard = ({
   );
 }
 
-export default LocationCard;
+export default LocButton;

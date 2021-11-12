@@ -7,6 +7,8 @@ const Text = styled.Text`
   color: ${props => props.titleColor};
   margin: ${props => props.titleMargin};
   text-align: ${props => props.titleAlign};
+  text-decoration-line: ${props => props.textDecorationLine};
+  margin-right: ${props => props.titleMarginRight};
 `;
 
 const Title = ({
@@ -16,6 +18,8 @@ const Title = ({
   titleSize = "36px",
   titleMargin = "0px",
   titleAlign = "left"
+  titleMarginRight = "0px",
+  textDecorationLine = "none"
 }) => {
   return (
     <Text 
@@ -25,6 +29,8 @@ const Title = ({
       titleWeight={titleWeight}
       titleMargin={titleMargin}
       titleAlign={titleAlign}
+      textDecorationLine={textDecorationLine}
+      titleMarginRight={titleMarginRight}
       >
         {titleText}
     </Text>

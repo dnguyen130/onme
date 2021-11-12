@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const CardCont = styled.View`
+const CardCont = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   width: 152px;
   height: 179px;
   border-radius: 15px;
-  background-color: #FE4370;
+  background-color: #000;
+  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 const CardBackground = styled.ImageBackground`
@@ -15,6 +17,7 @@ const CardBackground = styled.ImageBackground`
   justify-content: center;
   height: 100%;
   width: 100%;
+  
 `;
 
 const Name = styled.Text`
@@ -26,11 +29,12 @@ const Address = styled.Text`
 `;
 
 const Card = ({
-  icon = require('../../assets/food_1.png'),
+  cardImg = require('../../assets/food_1.png'),
+  onPress = ()=>{}
 }) => {
   return (
-    <CardCont>
-      <CardBackground source={icon} resizeMode="cover">
+    <CardCont onPress={onPress}>
+      <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.5">
         <Name>Earl's</Name>
         <Address>4700 Kingsway</Address>
       </CardBackground>

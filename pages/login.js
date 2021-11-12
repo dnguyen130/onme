@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View , SafeAreaView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
@@ -8,35 +8,66 @@ import SmallButton from '../comps/SmallButton';
 import Title from '../comps/Title';
 import TextLink from '../comps/TextLink';
 import TextDivider from '../comps/TextDivider';
+import styled from 'styled-components/native';
+
+const ImgBg = styled.ImageBackground`
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+`;
+
+const CenterCont = styled.View`
+  align-items: center;
+`;
+
+const ColCont = styled.View`
+  justify-content: space-around;
+  height: 70%;
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
+const RowCont = styled.View`
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+`;
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground source={require("../assets/imgBg.png")} resizeMode="cover" style={styles.imgBg}>
-        <View style={styles.colCont}>
-        <StatusBar style="auto" />
-        <Title />
+      <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
+        <ColCont>
         
-        <Input textInputPlaceholder = "Email"/>
-        <Input textInputPlaceholder = "Password" />
-        
-        <View style={styles.centerCont}>
-          <TextLink textColor="#fff" alignSelf="flex-end" />
-          <BigButton onPress={() => navigation.navigate('Dashboard')} />
-          <BigButton 
-            onPress={() => navigation.navigate('Sign Up')}
-            bgColor = "#BCB5B7" 
-            buttonText = "Sign Up"
-          />
-          <TextDivider textColor="#fff" />
+          <StatusBar style="auto" />
+          <Title />
+          {/* <View> */}
+            <Input textInputPlaceholder = "Email" />
+          {/* </View> */}
+          {/* <View> */}
+            <Input textInputPlaceholder = "Password" />
+          {/* </View> */}
+          
+          
+          <CenterCont>
+            <TextLink textColor="#fff" alignSelf="flex-end" />
+            <BigButton onPress={() => navigation.navigate('Dashboard')} />
+            <BigButton 
+              onPress={() => navigation.navigate('Sign Up')}
+              bgColor = "#BCB5B7" 
+              buttonText = "Sign Up"
+            />
+            <TextDivider textColor="#fff" />
 
-        </View>
-        <View style={styles.rowCont}>
-          <SmallButton iconColor="#699BF7" />
-          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
-        </View>
-        </View>
-      </ImageBackground>
+          </CenterCont>
+          <RowCont>
+            <SmallButton iconColor="#699BF7" />
+            <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+          </RowCont>
+        </ColCont>
+      </ImgBg>
     </SafeAreaView>
   );
 }
@@ -48,24 +79,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  centerCont: {
-    alignItems: 'center'
-  },
-  rowCont: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    margin: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-  colCont: {
-    justifyContent: 'space-around',
-    height: '70%',
-    marginHorizontal: 10
-  }, 
-  imgBg: {
-    flex: 1,
-    justifyContent: 'center',
-    width: '100%',
-  }
 });

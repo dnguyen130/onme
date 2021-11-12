@@ -23,10 +23,10 @@ const IconCont = styled.TouchableOpacity`
   align-items: center;
 `;
 
-// const Icon = styled.Image`
-//   width: 25px;
-//   height: 25px;
-// `;
+const MidIcon = styled.Image`
+  width: 65px;
+  height: 65px;
+`;
 
 const NavBarText = styled.Text`
   color: #fff;
@@ -46,12 +46,7 @@ const NavBar = ({
         <NavBarText>Home</NavBarText>
       </IconCont>
       <IconCont>
-        <Icon 
-          name='wine'
-          type='ionicon'
-          color='#fff'
-        />
-        <NavBarText>Mid</NavBarText>
+        <MidIcon source={require('../../assets/midIcon.png')}/>
       </IconCont>
       <IconCont>
         <Icon 

@@ -1,23 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, View } from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
+import LocButton from '../comps/LocButton';
 import Input from '../comps/Input';
 import NavBar from '../comps/NavBar';
-import Title from '../comps/Title';
+import Header from '../comps/Header';
 import styled from 'styled-components';
 
-const ImgBg = styled.ImageBackground`
+const ScrollCont = styled.View`
   flex: 1;
-  justify-content: center;
-  width: 100%;
-  padding: 10%;
+  top: 3%;
+  max-height: 60%;
 `;
 
-const CenterCont = styled.View`
-  
-  align-items: center;
+const CenterScrollCont = styled.ScrollView`
+  z-index: -9;
 `;
 
 const NavBarCont = styled.View`
@@ -27,21 +25,38 @@ const NavBarCont = styled.View`
   right: 0;
 `;
 
-export default function Login({navigation}) {
+const InputCont = styled.View`
+  padding-bottom: 5%;
+  top: -4%;
+`;
+
+export default function RestaurantSelection({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
-        <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
-          <Title titleText="Where would you like to go?" />
-        </ImgBg>
-        <Input textInputPlaceholder="Search" />
-        <CenterCont>
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-        </CenterCont>
+        <Header mainTitle="The Habitat" subTitle="3700 Willingdon Ave, Burnaby" subTitleSize="15px" />
+        <InputCont>
+          <Input textInputPlaceholder="Search" />
+        </InputCont>
+        <ScrollCont>
+          <CenterScrollCont alignItems='center'>
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+          </CenterScrollCont>
+        </ScrollCont>
       <NavBarCont>
         <NavBar />
       </NavBarCont>
@@ -53,7 +68,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
