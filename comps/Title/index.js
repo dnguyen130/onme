@@ -6,6 +6,7 @@ const Text = styled.Text`
   font-weight: ${props => props.titleWeight};
   color: ${props => props.titleColor};
   margin: ${props => props.titleMargin};
+  text-align: ${props => props.titleAlign};
 `;
 
 const Title = ({
@@ -13,7 +14,8 @@ const Title = ({
   titleColor = "#FFF",
   titleWeight = "400",
   titleSize = "36px",
-  titleMargin = "0px"
+  titleMargin = "0px",
+  titleAlign = "left"
 }) => {
   return (
     <Text 
@@ -22,6 +24,7 @@ const Title = ({
       titleSize={titleSize}
       titleWeight={titleWeight}
       titleMargin={titleMargin}
+      titleAlign={titleAlign}
       >
         {titleText}
     </Text>

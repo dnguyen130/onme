@@ -13,7 +13,7 @@ import TextDivider from '../comps/TextDivider';
 import Card from '../comps/Card'
 import styled from 'styled-components';
 import Header from '../comps/Header';
-import FloatingBox from '../comps/floatingBox';
+import FloatingBox from '../comps/FloatingBox';
 
 export default function OrderConfirmation({navigation}) {
   return (
@@ -24,7 +24,9 @@ export default function OrderConfirmation({navigation}) {
         boxHeight="40%" 
         boxWidth="70%" 
         mainTitle="Awesome, Order Received!" mainSize="15px"
-        subTitle="We hope you get some :)" subSize="15px" />
+        subTitle="We hope you get some :)" subSize="15px" 
+      />
+      <BigButton buttonText="Send Another :)" />
       <NavBar />
     </SafeAreaView>
   );

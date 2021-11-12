@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { View } from "react-native";
 
 import Title from "../Title";
 import ProgressCheck from "../ProgressCheck";
@@ -9,6 +10,7 @@ const FloatingBoxCont = styled.View`
   height: ${props => props.boxHeight};
   padding: 15px;
   align-items: center;
+  justify-content: center;
 
   border-top-color: rgba(117, 117, 117, 0.5);
   border-top-width: 5px;
@@ -18,11 +20,17 @@ const FloatingBoxCont = styled.View`
 
   border-bottom-color: rgba(0, 0, 0, 0.5);
   border-bottom-width: 5px;
+  
   border-right-color: rgba(0, 0, 0, 0.5);
   border-right-width: 5px;
 
   border-radius: 25px;
   border-style: solid;
+`
+
+const TopTitle = styled.View`
+  position: absolute;
+  top: 0px;
 `
 
 const FloatingBox = ({
@@ -41,8 +49,10 @@ const FloatingBox = ({
 }) => {
   return (
     <FloatingBoxCont boxWidth={boxWidth} boxHeight={boxHeight}>
+      <TopTitle>
       <Title titleText={mainTitle} titleSize={mainSize} titleWeight={mainWeight} titleMargin={mainMargin} />
       <Title titleText={subTitle} titleSize={subSize} titleWeight={subWeight} titleMargin={subMargin} />
+      </TopTitle>
       <ProgressCheck />
     </FloatingBoxCont>
   )

@@ -9,15 +9,21 @@ const IconTextCont = styled.View`
 `
 
 const LineCont = styled.View`
-
+  width: 40px;
+  border-radius: 1px;
+  height: 1px;
+  border-style: dashed;
+  border-top-width: 5px;
+  border-top-color: gray;
 `
 
 const RowCont = styled.View`
   flex-direction: row;
+  align-items: center;
 `
 
 const ColCont = styled.View`
-
+  margin: 20px;
 `
 
 const ProgressCheck = ({
@@ -28,12 +34,14 @@ const ProgressCheck = ({
       <RowCont>
         <ColCont>
           <Icon name='checkmark-circle' type='ionicon' color='#FE4370' />
-          <Title titleText="Order Received" titleSize="10px"/>
+          <Title titleText="Order" titleSize="10px" titleAlign="center"/>
+          <Title titleText="Received" titleSize="10px" titleAlign="center"/>
         </ColCont>
         <LineCont />
         <ColCont>
           <Icon name='checkmark-circle' type='ionicon' color='#FE4370' />
-          <Title titleText="Drink Sent" titleSize="10px" />
+          <Title titleText="Drink" titleSize="10px" titleAlign="center" />
+          <Title titleText="Sent" titleSize="10px" titleAlign="center" />
         </ColCont>
       </RowCont>
     </IconTextCont>
