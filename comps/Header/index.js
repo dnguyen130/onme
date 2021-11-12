@@ -5,12 +5,6 @@ import { View } from 'react-native';
 import Title from '../Title';
 import BackButton from '../BackButton';
 
-const Cont = styled.View`
-  flex: 1;
-  background-color: #A57760;
-  max-height: 25%;
-`;
-
 const ImgBg = styled.ImageBackground`
   flex: 1;
   justify-content: space-between;
@@ -21,23 +15,20 @@ const ImgBg = styled.ImageBackground`
 ;
 
 const Header = ({
-  source=require("../../assets/headerImg.png"),
+  source=require("../../assets/imgBg.png"),
   mainTitle="",
   mainWeight="700",
   subTitle="",
-  subWeight="400",
-  subTitleSize="36px"
+  subWeight="400"
 }) => {
   return (
-    <Cont>
-      <ImgBg source={source} resizeMode="cover" opacity="0.5">
-        <BackButton />
-        <View top="-8%">
-          <Title titleText={mainTitle} titleWeight={mainWeight} />
-          <Title titleText={subTitle} titleWeight={subWeight} titleSize={subTitleSize} />
-        </View>
-      </ImgBg>
-    </Cont>
+    <ImgBg source={source} resizeMode="cover">
+      <BackButton />
+      <View>
+        <Title titleText={mainTitle} titleWeight={mainWeight} />
+        <Title titleText={subTitle} titleWeight={subWeight} />
+      </View>
+    </ImgBg>
   );
 }
 
