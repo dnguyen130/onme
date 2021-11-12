@@ -12,19 +12,21 @@ import styled from 'styled-components/native';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
 `;
 
 const CenterCont = styled.View`
   align-items: center;
+  width: 100%;
 `;
 
 const ColCont = styled.View`
   justify-content: space-around;
-  height: 70%;
-  margin-left: 10px;
-  margin-right: 10px;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  padding: 10px;
 `;
 
 const RowCont = styled.View`
@@ -35,24 +37,24 @@ const RowCont = styled.View`
   padding-right: 20px;
 `;
 
+const InputCont = styled.View`
+width: 100%;
+height: auto;
+`
+
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
         <ColCont>
-        
           <StatusBar style="auto" />
-          <Title />
-          {/* <View> */}
-            <Input textInputPlaceholder = "Email" />
-          {/* </View> */}
-          {/* <View> */}
-            <Input textInputPlaceholder = "Password" />
-          {/* </View> */}
-          
-          
-          <CenterCont>
+          <Title alignSelf="flex-start" />
+          <InputCont>
+            <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
+            <Input textInputPlaceholder = "Password" textInputLabelSize="0px" />
             <TextLink textColor="#fff" alignSelf="flex-end" />
+          </InputCont>
+          <CenterCont>
             <BigButton onPress={() => navigation.navigate('Dashboard')} />
             <BigButton 
               onPress={() => navigation.navigate('Sign Up')}
@@ -60,7 +62,6 @@ export default function Login({navigation}) {
               buttonText = "Sign Up"
             />
             <TextDivider textColor="#fff" />
-
           </CenterCont>
           <RowCont>
             <SmallButton iconColor="#699BF7" />
