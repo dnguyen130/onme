@@ -13,6 +13,7 @@ import Header from '../comps/Header';
 import OrderCard from '../comps/OrderCard';
 import NavBar from '../comps/NavBar';
 import RoundedButton from '../comps/RoundedButton';
+import MessageBox from '../comps/MessageBox';
 
 const OrderList = styled.View`
   flex: 1;
@@ -30,13 +31,14 @@ const TipCont = styled.View`
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 10px;
 `
 
 const PaddingCont = styled.ScrollView`
   padding: 0 10%;
   width: 100%;
   flex: 1;
-`
+  `
 
 const PinkCircleCont = styled.View`
   background-color: #FE4370;
@@ -50,32 +52,34 @@ export default function OrderSummary({navigation}) {
     <SafeAreaView style={styles.container}>
       <Header subTitle="Order Summary" />
       <Title titleText="Your orders for table C1" />
-      <PaddingCont>
-      <OrderList contentContainerStyle={styles.scrollList}>
-        <OrderCard />
+      <PaddingCont contentContainerStyle={styles.scrollList}>
+        <OrderList>
+          <OrderCard />
+          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
+          <OrderCard />
+          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
+          <OrderCard />
+          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
+          <OrderCard />
+          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
+          <OrderCard />
+        </OrderList>
         <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-        <OrderCard />
-        <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-        <OrderCard />
-        <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-        <OrderCard />
-        <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-        <OrderCard />
-      </OrderList>
-      <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-      <TotalCont>
-        <PinkCircleCont>
-          <Title titleText="3" titleSize="14px" />
-        </PinkCircleCont>
-        <Title titleText="Total:" titleSize="17px" />
-        <Title titleText="$27.97" titleSize="17px " />
-      </TotalCont>
-      <Title titleText="Tip:" titleSize="20px" />
-      <TipCont>
-        <RoundedButton titleText="15%" />
-        <RoundedButton titleText="18%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
-        <RoundedButton titleText="20%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
-      </TipCont>
+        <TotalCont>
+          <PinkCircleCont>
+            <Title titleText="3" titleSize="14px" />
+          </PinkCircleCont>
+          <Title titleText="Total:" titleSize="17px" />
+          <Title titleText="$27.97" titleSize="17px " />
+        </TotalCont>
+        <Title titleText="Tip:" titleSize="20px" />
+        <TipCont>
+          <RoundedButton titleText="15%" />
+          <RoundedButton titleText="18%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
+          <RoundedButton titleText="20%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
+        </TipCont>
+        <MessageBox />
+        <BigButton buttonText="Proceed to Payment" />
       </PaddingCont>
       <NavBar />
     </SafeAreaView>
