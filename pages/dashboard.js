@@ -44,7 +44,7 @@ export default function Dashboard({navigation}) {
       <TitleCont>
         <TitleIcon source={require('../assets/star.png')} />
         <Title titleSize="20px" titleText="Frequently visited" titleMarginRight="3%"/>
-        <Title titleColor="#FE4370" titleSize="10px" titleText="See All" textDecorationLine="underline" />
+        <Title titleColor="#FE4370" titleSize="10px" titleText="See All" textDecorationLine="underline" titleAlignSelf="center" />
       </TitleCont>
         <RowCont horizontal>
           <Card onPress={() => navigation.navigate('Restaurant Selection')} />
@@ -57,7 +57,7 @@ export default function Dashboard({navigation}) {
         <TitleCont>
           <TitleIcon source={require('../assets/clock.png')} />
           <Title titleSize="20px" titleText="Recent items" titleMarginRight="3%" />
-          <Title titleColor="#FE4370" titleSize="10px" titleText="See All" textDecorationLine="underline" />
+          <Title titleColor="#FE4370" titleSize="10px" titleText="See All" textDecorationLine="underline" titleAlignSelf="center" />
         </TitleCont>
         <RowCont horizontal>
           <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />

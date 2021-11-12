@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const CardCont = styled.TouchableOpacity`
   align-items: center;
@@ -65,6 +66,12 @@ const MenuCard = ({
   return (
     <CardCont onPress={onPress}>
       <CardBackground source={cardImg} resizeMode="cover">
+      <LinearGradient 
+          colors={['rgba(0,0,0,0.8)', 'rgba(196, 196, 196, 0)']} 
+          style={{flex: 1, justifyContent: 'flex-end', width: 160, borderRadius: 15 }}
+          start={{ x: 0.5, y: 1 }}
+          end={{ x: 0.2, y: 0.2 }}
+          >
         <Title>The Habitat</Title>
         <RowCont>
           <ColCont>
@@ -75,6 +82,7 @@ const MenuCard = ({
             <Name>+</Name>
           </PrimaryButton>
         </RowCont>
+      </LinearGradient>
       </CardBackground>
     </CardCont>
   );
