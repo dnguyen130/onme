@@ -9,12 +9,13 @@ import BigButton from '../../../comps/BigButton';
 import BackButton from '../../../comps/BackButton';
 import Card from '../../../comps/Card';
 import Input from '../../../comps/Input';
-import LocationCard from '../../../comps/LocationCard';
+import LocButton from '../../../comps/LocButton';
 import NavBar from '../../../comps/NavBar';
 import SmallButton from '../../../comps/SmallButton';
 import TextDivider from '../../../comps/TextDivider';
 import TextLink from '../../../comps/TextLink';
 import Title from '../../../comps/Title';
+import Toggle from '../../../comps/Toggle';
 
 
 storiesOf('Comps', module)
@@ -34,8 +35,8 @@ storiesOf('Comps', module)
   .add('Input', () => (
     <Input />
   ))
-  .add('LocationCard', () => (
-    <LocationCard />
+  .add('LocButton', () => (
+    <LocButton />
   ))
   .add('NavBar', () => (
     <NavBar />
@@ -51,4 +52,7 @@ storiesOf('Comps', module)
   ))
   .add('Title', () => (
     <Title />
+  ))
+  .add('Toggle', () => (
+    <Toggle />
   ));

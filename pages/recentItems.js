@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
-import LocationCard from '../comps/LocationCard';
+import LocButton from '../comps/LocButton';
 import Input from '../comps/Input';
 import NavBar from '../comps/NavBar';
 import Title from '../comps/Title';
@@ -27,7 +27,7 @@ const NavBarCont = styled.View`
   right: 0;
 `;
 
-export default function Login({navigation}) {
+export default function RecentItems({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
@@ -38,11 +38,11 @@ export default function Login({navigation}) {
           </CenterCont>
         </ImgBg>
         <CenterCont>
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
-          <LocationCard />
+          <LocButton />
+          <LocButton />
+          <LocButton />
+          <LocButton />
+          <LocButton />
         </CenterCont>
       <NavBarCont>
         <NavBar />
