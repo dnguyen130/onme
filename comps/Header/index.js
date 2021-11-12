@@ -14,8 +14,11 @@ const Cont = styled.View`
 const ImgBg = styled.ImageBackground`
   flex: 1;
   justify-content: space-between;
+  max-height: 25%;
   padding: 5%;
-`;
+  min-width: 100%;
+  `
+;
 
 const Header = ({
   source=require("../../assets/headerImg.png"),
