@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 
 const Cont = styled.View`
@@ -27,14 +27,19 @@ const ButtonText = styled.Text`
 `;
 
 const Toggle = ({
-  
+  drinksOnPress = ()=>{},
+  foodOnPress = ()=>{},
 }) => {
   return (
     <Cont>
-      <Button>
+      <Button 
+        onPress={drinksOnPress}
+      >
         <ButtonText>Drinks</ButtonText>
       </Button>
-      <Button>
+      <Button 
+        onPress={foodOnPress} 
+      >
         <ButtonText>Food</ButtonText>
       </Button>
     </Cont>

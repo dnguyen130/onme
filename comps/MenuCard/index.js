@@ -19,6 +19,25 @@ const CardBackground = styled.ImageBackground`
   padding: 0 0 10px 10px;
 `;
 
+const PrimaryButton = styled.Pressable`
+  align-items: center;
+  justify-content: center;  
+  width: 25px;
+  height: 25px;
+  background-color: #FE4370;
+  border-radius: 30px;
+  margin-right: 10px;
+`;
+
+const RowCont = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const ColCont = styled.View`
+  flex-direction: column;
+`;
+
 const Title = styled.Text`
   color: #fff;
   font-size: 12px;
@@ -47,8 +66,15 @@ const MenuCard = ({
     <CardCont onPress={onPress}>
       <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.8">
         <Title>The Habitat</Title>
-        <Name>Zesty Calimari</Name>
-        <Price>$9.99</Price>
+        <RowCont>
+          <ColCont>
+            <Name>Zesty Calimari</Name>
+            <Price>$9.99</Price>
+          </ColCont>
+          <PrimaryButton>
+            <Name>+</Name>
+          </PrimaryButton>
+        </RowCont>
       </CardBackground>
     </CardCont>
   );

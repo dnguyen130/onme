@@ -28,7 +28,7 @@ const NavBarCont = styled.View`
   right: 0;
 `;
 
-export default function Login({navigation}) {
+export default function FrequentlyVisited({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />

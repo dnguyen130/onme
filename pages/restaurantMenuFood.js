@@ -33,7 +33,7 @@ const InputCont = styled.View`
   top: -4%;
 `;
 
-export default function Login({navigation}) {
+export default function RestaurantMenuFood({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
@@ -42,7 +42,7 @@ export default function Login({navigation}) {
           <Input textInputPlaceholder="Search" />
         </InputCont>
         <CenterCont>
-          <Toggle />
+          <Toggle drinksOnPress={() => navigation.navigate('Restaurant Menu Drinks')} foodOnPress={() => navigation.navigate('Restaurant Menu Food')}/>
           <CategoryList alignSelf="flex-start"/>
           <RowCont>
             <MenuCard />

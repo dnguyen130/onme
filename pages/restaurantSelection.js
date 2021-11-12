@@ -30,7 +30,7 @@ const InputCont = styled.View`
   top: -4%;
 `;
 
-export default function Login({navigation}) {
+export default function RestaurantSelection({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
