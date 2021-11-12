@@ -26,8 +26,8 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={Dashboard} /> */}
         {/* <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} /> */}
         {/* <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} /> */}
-        {/* <Stack.Screen name="OrderSummary" component={OrderSummary} /> */}
-        <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
+        <Stack.Screen name="OrderSummary" component={OrderSummary} />
+        {/* <Stack.Screen name="Order Confirmation" component={OrderConfirmation} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
