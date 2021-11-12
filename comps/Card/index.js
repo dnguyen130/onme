@@ -34,7 +34,7 @@ const Card = ({
 }) => {
   return (
     <CardCont onPress={onPress}>
-      <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.5">
+      <CardBackground source={cardImg} resizeMode="cover">
         <Name>Earl's</Name>
         <Address>4700 Kingsway</Address>
       </CardBackground>

@@ -64,7 +64,7 @@ const MenuCard = ({
 }) => {
   return (
     <CardCont onPress={onPress}>
-      <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.8">
+      <CardBackground source={cardImg} resizeMode="cover">
         <Title>The Habitat</Title>
         <RowCont>
           <ColCont>

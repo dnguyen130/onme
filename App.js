@@ -22,14 +22,14 @@ export default function App() {
   return (
     <NavigationContainer styles={styles.centerCont}>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="OrderSummary" component={OrderSummary} />
-        {/* <Stack.Screen name="Order Confirmation" component={OrderConfirmation} /> */}
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
         <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
         <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
+        <Stack.Screen name="OrderSummary" component={OrderSummary} />
+        <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
