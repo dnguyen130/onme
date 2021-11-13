@@ -5,19 +5,20 @@ import { Icon } from 'react-native-elements';
 
 const Button = styled.TouchableOpacity`
   flex-direction: row;
-  background-color: #fff;
+  background-color: ${props => props.buttonColor};
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  border-width: 1px;
+  border-width: ${props => props.buttonBorderWidth};
   border-radius: 10px;
   width: 117px;
   min-height: 37px;
 `;
 
 const ButtonText = styled.Text`
-  color: #000;
+  color: ${props => props.buttonTextcolor};
   font-size: 15px;
+  font-weight: ${props => props.buttonTextWeight};
 `;
 
 const SmallIcon = styled.Image`
@@ -28,16 +29,21 @@ const SmallIcon = styled.Image`
 const SmallButton = ({
   buttonText = "Sign in",
   iconName = "logo-facebook",
-  iconColor = "#000"
+  iconBrand = 'ionicon',
+  iconColor = "#000",
+  buttonTextcolor = "#000",
+  buttonColor = "#FFF",
+  buttonTextWeight = "400",
+  buttonBorderWidth = "1px"
 }) => {
   return (
-    <Button>
+    <Button buttonColor={buttonColor} buttonBorderWidth={buttonBorderWidth}>
       <Icon 
         name={iconName}
-        type='ionicon'
+        type={iconBrand}
         color={iconColor}
       />
-      <ButtonText>{buttonText}</ButtonText>
+      <ButtonText buttonTextcolor={buttonTextcolor} buttonTextWeight={buttonTextWeight} >{buttonText}</ButtonText>
     </Button>
   );
 }
