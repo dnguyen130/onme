@@ -13,6 +13,9 @@ import RestaurantSelection from './pages/restaurantSelection';
 import RestaurantMenuFood from './pages/restaurantMenuFood';
 import OrderConfirmation from './pages/orderReceived';
 import RestaurantMenuDrink from './pages/restaurantMenuDrink';
+import FrequentlyVisited from './pages/frequentlyVisted';
+import RecentItems from './pages/recentItems';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +28,8 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Frequently Visited" component={FrequentlyVisited} />
+        <Stack.Screen name="Recent Items" component={RecentItems} />
         <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
         <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
         <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
