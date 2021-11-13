@@ -60,7 +60,11 @@ export default function FrequentlyVisited({navigation}) {
           </CenterScrollCont>
         </ScrollCont>
       <NavBarCont>
-        <NavBar />
+        <NavBar 
+          homeOnPress={() => navigation.navigate('Dashboard')}
+          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          settingsOnPress={() => navigation.navigate('Settings')}
+        />
       </NavBarCont>
     </SafeAreaView>
   );

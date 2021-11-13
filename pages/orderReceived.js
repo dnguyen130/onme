@@ -25,8 +25,12 @@ export default function OrderConfirmation({navigation}) {
         mainTitle="Awesome, Order Received!" mainSize="15px"
         subTitle="We hope you get some :)" subSize="15px" 
       />
-      <BigButton buttonText="Send Another :)" />
-      <NavBar />
+      <BigButton buttonText="Send Another :)" onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+      <NavBar 
+        homeOnPress={() => navigation.navigate('Dashboard')}
+        midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+        settingsOnPress={() => navigation.navigate('Settings')}
+      />
     </SafeAreaView>
   );
 }
