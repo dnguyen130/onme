@@ -52,7 +52,8 @@ export default function Dashboard({navigation}) {
           titleColor="#FE4370" 
           titleSize="10px" 
           titleText="See All" 
-          textDecorationLine="underline" 
+          textDecorationLine="underline"
+          titleAlignSelf="center"
           onPress={() => navigation.navigate('Frequently Visited')} 
         />
       </TitleCont>
@@ -75,7 +76,8 @@ export default function Dashboard({navigation}) {
             titleColor="#FE4370" 
             titleSize="10px" 
             titleText="See All" 
-            textDecorationLine="underline" 
+            textDecorationLine="underline"
+            titleAlignSelf="center"
             onPress={() => navigation.navigate('Recent Items')} 
           />
         </TitleCont>

@@ -33,7 +33,7 @@ const NavBarText = styled.Text`
 `;
 
 const NavBar = ({
-  
+
 }) => {
   return (
     <Cont>
