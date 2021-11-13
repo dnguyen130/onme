@@ -10,6 +10,7 @@ const OrderCardCont = styled.View`
   max-width: 100%;
   align-items: flex-start;
   justify-content: center;
+  margin: 10px;
 `
 
 const OrderCardImage = styled.Image`
@@ -32,7 +33,7 @@ const EndColumnCont = styled.View`
 const RowCont = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
 `
 
 const OrderCard = ({
