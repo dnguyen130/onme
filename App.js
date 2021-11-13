@@ -30,6 +30,7 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Settings" component={Settings} />
         <Stack.Screen name="Frequently Visited" component={FrequentlyVisited} />
+        <Stack.Screen name="Recent Items" component={RecentItems} />
         <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
         <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
         <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
