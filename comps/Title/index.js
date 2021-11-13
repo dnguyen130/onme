@@ -15,7 +15,8 @@ const Title = ({
   titleWeight = "400",
   titleSize = "36px",
   titleMarginRight = "0px",
-  textDecorationLine = "none"
+  textDecorationLine = "none",
+  onPress = () => {}
 }) => {
   return (
     <Text 
@@ -25,6 +26,7 @@ const Title = ({
       titleWeight={titleWeight}
       textDecorationLine={textDecorationLine}
       titleMarginRight={titleMarginRight}
+      onPress={onPress}
       >
         {titleText}
     </Text>
