@@ -15,7 +15,7 @@ const BackButton = ({
       <Icon 
         name='chevron-back-outline'
         type='ionicon'
-        color='#517fa4'
+        color='#fff'
       />
     </BackBtnCont>
   );

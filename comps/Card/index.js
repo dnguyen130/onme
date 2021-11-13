@@ -22,21 +22,26 @@ const CardBackground = styled.ImageBackground`
 
 const Name = styled.Text`
   color: #fff;
+  font-size: 13px;
+  font-weight: 700;
 `;
 
 const Address = styled.Text`
   color: #fff;
+  font-size: 10px;
 `;
 
 const Card = ({
   cardImg = require('../../assets/food_1.png'),
+  restaurantName = "The Habitat",
+  restaurantAddress = "3700 Willingdon Ave",
   onPress = ()=>{}
 }) => {
   return (
     <CardCont onPress={onPress}>
       <CardBackground source={cardImg} resizeMode="cover" borderRadius="15px" opacity="0.5">
-        <Name>Earl's</Name>
-        <Address>4700 Kingsway</Address>
+        <Name>{restaurantName}</Name>
+        <Address>{restaurantAddress}</Address>
       </CardBackground>
     </CardCont>
   );
