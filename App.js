@@ -11,6 +11,7 @@ import Dashboard from './pages/dashboard';
 import OrderSummary from './pages/orderSummary';
 import RestaurantSelection from './pages/restaurantSelection';
 import RestaurantMenuFood from './pages/restaurantMenuFood';
+import OrderConfirmation from './pages/orderReceived';
 import RestaurantMenuDrink from './pages/restaurantMenuDrink';
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +28,8 @@ export default function App() {
         <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
         <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
         <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
+        <Stack.Screen name="OrderSummary" component={OrderSummary} />
+        <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
