@@ -60,12 +60,12 @@ export default function Dashboard({navigation}) {
           <Title titleColor="#FE4370" titleSize="10px" titleText="See All" textDecorationLine="underline" />
         </TitleCont>
         <RowCont horizontal>
-          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />
-          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />
-          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />
-          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />
-          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />
-          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} />
+          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
+          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
+          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
+          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
+          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
+          <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
         </RowCont>
       {/* </CenterCont> */}
     <NavBarCont>

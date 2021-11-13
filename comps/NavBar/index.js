@@ -37,7 +37,7 @@ const NavBar = ({
 }) => {
   return (
     <Cont>
-      <IconCont>
+      <IconCont onPress={() => navigation.navigate('Dashboard')}>
         <Icon 
           name='home'
           type='ionicon'
@@ -45,10 +45,10 @@ const NavBar = ({
         />
         <NavBarText>Home</NavBarText>
       </IconCont>
-      <IconCont>
+      <IconCont onPress={() => navigation.navigate('Restaurant Menu Drinks')}>
         <MidIcon source={require('../../assets/midIcon.png')}/>
       </IconCont>
-      <IconCont>
+      <IconCont onPress={() => navigation.navigate('')}>
         <Icon 
           name='settings'
           type='ionicon'
