@@ -57,7 +57,7 @@ export default function RestaurantMenuDrink({navigation}) {
         <NavBar 
           homeOnPress={() => navigation.navigate('Dashboard')}
           midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
-          settingsOnPress={() => navigation.navigate('')}
+          settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>
     </SafeAreaView>
