@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 
 const InputCont = styled.View`
   min-height: 55px;
-  width: 100%;
+  margin: 0 3px;
+  flex: 1;
 `
 
 const InputField = styled.TextInput`
@@ -20,7 +21,7 @@ const InputLabel = styled.Text`
   font-size: ${props => props.textInputLabelSize};
 `
 
-const Input = ({
+const FlexInput = ({
   textInputPlaceholder = "",
   textInputLabel = "",
   textInputLabelSize = "14px"
@@ -33,4 +34,4 @@ const Input = ({
   );
 }
 
-export default Input;
+export default FlexInput;

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
+import FlexInput from '../comps/FlexInput';
 import SmallButton from '../comps/SmallButton';
 import Title from '../comps/Title';
 import TextDivider from '../comps/TextDivider';
@@ -13,13 +14,14 @@ const CenterCont = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex: 1;
 `
 
 const RowCont = styled.View`
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
   flex: 1;
-  max-width: 100%;
 `
 
 export default function SignUp({navigation}) {
@@ -28,26 +30,32 @@ export default function SignUp({navigation}) {
       <StatusBar style="auto" />
       <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
       <Title titleSize="32px" titleText="Create your account" />
-        <RowCont>
-          <Input textInputLabel="Name" textInputPlaceholder="First Name"/>
-          <Input textInputPlaceholder="Last Name" />
-        </RowCont>
-        <RowCont>
-          <Input textInputLabel="Date of Birth" textInputPlaceholder="Month" />
-          <Input textInputPlaceholder="Day"/>
-          <Input textInputPlaceholder="Year"/>
-        </RowCont>
+      <RowCont>
+        <FlexInput textInputLabel="Name" textInputPlaceholder="First Name"/>
+        <FlexInput textInputPlaceholder="Last Name" />
+      </RowCont>
+      <RowCont>
+        <FlexInput textInputLabel="Date of Birth" textInputPlaceholder="Month" />
+        <FlexInput textInputPlaceholder="Day"/>
+        <FlexInput textInputPlaceholder="Year"/>
+      </RowCont>
+      <RowCont>
         <Input textInputLabel="Email"/>
+      </RowCont>
+      <RowCont>
         <Input textInputLabel="Create Password"/>
+      </RowCont>
+      <RowCont>
         <Input textInputLabel="Confirm Password"/>
-        <CenterCont>
-          <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
-          <TextDivider />
-          <RowCont>
-            <SmallButton />
-            <SmallButton />
-          </RowCont>
-        </CenterCont>
+      </RowCont>
+      <CenterCont>
+        <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
+        <TextDivider />
+        <RowCont>
+          <SmallButton />
+          <SmallButton />
+        </RowCont>
+      </CenterCont>
     </SafeAreaView>
   );
 }
@@ -57,10 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#2E2E2E',
     alignItems: 'flex-start',
-    borderColor: 'red',
-    padding: 20,
-    // borderWidth: 5,
-    // borderStyle: 'solid',
-    // flexDirection: 'column'
+    padding: 30,
   }
 });

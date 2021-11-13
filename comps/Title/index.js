@@ -9,6 +9,7 @@ const Text = styled.Text`
   text-align: ${props => props.titleAlign};
   text-decoration-line: ${props => props.textDecorationLine};
   margin-right: ${props => props.titleMarginRight};
+  align-self: ${props => props.titleAlignSelf};
 `;
 
 const Title = ({
@@ -19,7 +20,8 @@ const Title = ({
   titleMargin = "0px",
   titleAlign = "left",
   titleMarginRight = "0px",
-  textDecorationLine = "none"
+  textDecorationLine = "none",
+  titleAlignSelf = "flex-start"
 }) => {
   return (
     <Text 
@@ -31,6 +33,7 @@ const Title = ({
       titleAlign={titleAlign}
       textDecorationLine={textDecorationLine}
       titleMarginRight={titleMarginRight}
+      titleAlignSelf={titleAlignSelf}
       >
         {titleText}
     </Text>
