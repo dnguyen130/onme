@@ -60,7 +60,10 @@ const Price = styled.Text`
 
 const MenuCard = ({
   cardImg = require('../../assets/drink_1.png'),
-  onPress = ()=>{}
+  restaurantText = "",
+  itemText = "Zesty Calimari",
+  priceText = "$9.99",
+  onPress = ()=>{},
 }) => {
   return (
     <CardCont onPress={onPress}>
@@ -71,11 +74,11 @@ const MenuCard = ({
           start={{ x: 0.5, y: 1 }}
           end={{ x: 0.2, y: 0.2 }}
           >
-        <Title>The Habitat</Title>
+        <Title>{restaurantText}</Title>
         <RowCont>
           <ColCont>
-            <Name>Zesty Calimari</Name>
-            <Price>$9.99</Price>
+            <Name>{itemText}</Name>
+            <Price>{priceText}</Price>
           </ColCont>
           <PrimaryButton>
             <Name>+</Name>

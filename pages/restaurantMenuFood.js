@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect, useState }  from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, View } from 'react-native';
 
 import Input from '../comps/Input';
@@ -34,6 +34,11 @@ const InputCont = styled.View`
 `;
 
 export default function RestaurantMenuFood({navigation}) {
+  const [toggle, setToggle] = useState(false);
+
+  const setDrink = () => {
+    setToggle(true);
+  }
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
@@ -42,7 +47,10 @@ export default function RestaurantMenuFood({navigation}) {
           <Input textInputPlaceholder="Search" />
         </InputCont>
         <CenterCont>
-          <Toggle drinksOnPress={() => navigation.navigate('Restaurant Menu Drinks')} foodOnPress={() => navigation.navigate('Restaurant Menu Food')}/>
+          <Toggle 
+            drinksOnPress={() => navigation.navigate('Restaurant Menu Drinks')} 
+            foodOnPress={() => navigation.navigate('Restaurant Menu Food')}
+          />
           <CategoryList alignSelf="flex-start"/>
           <RowCont>
             <MenuCard />

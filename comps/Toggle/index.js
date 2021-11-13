@@ -16,7 +16,7 @@ const Cont = styled.View`
 const Button = styled.Pressable`
   align-items: center;
   justify-content: center;
-  background-color: #838383;
+  background-color: ${props => props.bgColor};
   width: 40%;
   height: 36px;
   border-radius: 30px;
@@ -29,16 +29,19 @@ const ButtonText = styled.Text`
 const Toggle = ({
   drinksOnPress = ()=>{},
   foodOnPress = ()=>{},
+  toggleColor = "#838383"
 }) => {
   return (
     <Cont>
       <Button 
         onPress={drinksOnPress}
+        bgColor={toggleColor}
       >
         <ButtonText>Drinks</ButtonText>
       </Button>
       <Button 
         onPress={foodOnPress} 
+        bgColor={toggleColor}
       >
         <ButtonText>Food</ButtonText>
       </Button>

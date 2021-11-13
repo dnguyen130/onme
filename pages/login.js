@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
+import Video from 'react-native-video';
 
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
@@ -45,6 +46,15 @@ height: auto;
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
+      {/* <Video
+        source={require("../assets/video-1.mp4")}
+        style={styles.backgroundVideo}
+        muted={true}
+        repeat={true}
+        resizeMode={"cover"}
+        rate={1.0}
+        ignoreSilentSwitch={"obey"}
+      /> */}
       <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
         <ColCont>
           <StatusBar style="auto" />
@@ -80,4 +90,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  backgroundVideo: {
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    alignItems: "stretch",
+    bottom: 0,
+    right: 0
+  }
 });
