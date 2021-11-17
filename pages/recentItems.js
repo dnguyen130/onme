@@ -6,7 +6,6 @@ import styled from 'styled-components/native';
 import LocButton from '../components/buttons/LocButton';
 import Input from '../components/global/Input';
 import NavBar from '../components/global/NavBar';
-import Title from '../components/text/Title';
 
 const ScrollCont = styled.View`
   flex: 1;
