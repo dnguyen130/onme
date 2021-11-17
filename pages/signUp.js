@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';  
-
-import BigButton from '../comps/BigButton';
-import Input from '../comps/Input';
-import FlexInput from '../comps/FlexInput';
-import SmallButton from '../comps/SmallButton';
-import Title from '../comps/Title';
-import TextDivider from '../comps/TextDivider';
+import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 import styled from 'styled-components';
+
+import BigButton from '../components/buttons/BigButton';
+import Input from '../components/global/Input';
+import FlexInput from '../components/global/FlexInput';
+import SmallButton from '../components/buttons/SmallButton';
+import Title from '../components/text/Title';
+import TextDivider from '../components/text/TextDivider';
 
 const CenterCont = styled.View`
   justify-content: center;
