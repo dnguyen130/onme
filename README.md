@@ -4,7 +4,7 @@
 
 Just a few BCIT D3 students developing Vancity's next big dating app!
 
-### Naming Conventions
+### File/Folder Creation Conventions
 
 __Indent Tab Size__
 * 2
@@ -14,15 +14,11 @@ __Branch Naming__
 * firstinitialLastname (lowercase)
 * Examples: For Jeremy Carmona, branch name would be "jcarmona"
   
-__Component Naming__
-
-* ComponentName (Capitalize first letter of each word)
+__Component Location & Naming__
+* Pascal Case (Capitalize each word)
+* Name the file itself and put it in its relative location.
+* Button, card, and text components go in their respective folder. One-shot components go in that page's folder. Any other repeated components go in global
 * Examples: BigButton, SmallButton, Title, Input
-
-* For each component:
-  * Create a new folder under the Comps folder
-  * Name it (ComponentName)
-  * Create an index.js file under (ComponentName) folder
 
 __Props__
 
@@ -53,8 +49,21 @@ const BigButton = ({
 }
 ```
 
-__Viewing Screens and Components__
+__Coding Conventions__
+* Place global imports at the top (such as React, styled)
+* Create an empty new line
+* Place internal imports (components in components) after the new line
+* Name any styled components used within a component Pascal Case
+* Use '*Cont' for containing View elements
+* Generally, try and use names that are obvious and consistent
+* Name and export the main component the same name as the file
+* Place styles before the main component
 
+__Pages Location & Naming__
+* Pages are all located within the pages folder
+* Pascal Case (refer to component naming convention for examples)
+
+__Viewing Screens and Components__
 
 Viewing Screens
 * Comment out first export as shown below

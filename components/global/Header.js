@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { View } from 'react-native';
 
-import Title from '../Title';
-import BackButton from '../BackButton';
+import Title from '../text/Title';
+import BackButton from './BackButton';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;

@@ -5,15 +5,15 @@ import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Login from './pages/login';
-import SignUp from './pages/signUp';
-import Dashboard from './pages/dashboard';
-import OrderSummary from './pages/orderSummary';
-import RestaurantSelection from './pages/restaurantSelection';
-import RestaurantMenuFood from './pages/restaurantMenuFood';
-import OrderConfirmation from './pages/orderReceived';
-import RestaurantMenuDrink from './pages/restaurantMenuDrink';
-import Settings from './pages/settings';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import Dashboard from './pages/Dashboard';
+import OrderSummary from './pages/OrderSummary';
+import RestaurantSelection from './pages/RestaurantSelection';
+import RestaurantMenuFood from './pages/RestaurantMenuFood';
+import OrderConfirmation from './pages/OrderReceived';
+import RestaurantMenuDrink from './pages/RestaurantMenuDrink';
+import Settings from './pages/Settings';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +30,7 @@ export default function App() {
         <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
         <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
         <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
-        <Stack.Screen name="OrderSummary" component={OrderSummary} />
+        <Stack.Screen name="Order Summary" component={OrderSummary} />
         <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
       </Stack.Navigator>
     </NavigationContainer>

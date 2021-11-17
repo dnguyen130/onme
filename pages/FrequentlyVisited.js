@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
-
-
-import LocButton from '../comps/LocButton';
-import Input from '../comps/Input';
-import NavBar from '../comps/NavBar';
-import Title from '../comps/Title';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
+
+import LocButton from '../components/buttons/LocButton';
+import Input from '../components/global/Input';
+import NavBar from '../components/global/NavBar';
+import Title from '../components/text/Title';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
@@ -27,6 +26,15 @@ const NavBarCont = styled.View`
   bottom: 0;
   right: 0;
 `;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});
 
 export default function FrequentlyVisited({navigation}) {
   return (
@@ -52,12 +60,3 @@ export default function FrequentlyVisited({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});

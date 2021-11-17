@@ -1,15 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
-import Video from 'react-native-video';
-
-import BigButton from '../comps/BigButton';
-import Input from '../comps/Input';
-import SmallButton from '../comps/SmallButton';
-import Title from '../comps/Title';
-import TextLink from '../comps/TextLink';
-import TextDivider from '../comps/TextDivider';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+
+import BigButton from '../components/buttons/BigButton';
+import Input from '../components/global/Input';
+import SmallButton from '../components/buttons/SmallButton';
+import Title from '../components/text/Title';
+import TextLink from '../components/text/TextLink';
+import TextDivider from '../components/text/TextDivider';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
@@ -43,21 +42,30 @@ width: 100%;
 height: auto;
 `
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  backgroundVideo: {
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    alignItems: "stretch",
+    bottom: 0,
+    right: 0
+  }
+});
+
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Video
-        source={require("../assets/video-1.mp4")}
-        style={styles.backgroundVideo}
-        muted={true}
-        repeat={true}
-        resizeMode={"cover"}
-        rate={1.0}
-        ignoreSilentSwitch={"obey"}
-      /> */}
+      <StatusBar style="auto" />
       <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
         <ColCont>
-          <StatusBar style="auto" />
           <Title alignSelf="flex-start" />
           <InputCont>
             <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
@@ -82,21 +90,3 @@ export default function Login({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  backgroundVideo: {
-    height: "100%",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    alignItems: "stretch",
-    bottom: 0,
-    right: 0
-  }
-});

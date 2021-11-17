@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import styled from 'styled-components/native';
 
 const CardCont = styled.TouchableOpacity`
   align-items: center;

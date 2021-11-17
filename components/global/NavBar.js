@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/native';
-
 import { Icon } from 'react-native-elements';
 
 const Cont = styled.View`

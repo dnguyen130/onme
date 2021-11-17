@@ -24,6 +24,15 @@ const RowCont = styled.View`
   flex: 1;
 `
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E',
+    alignItems: 'flex-start',
+    padding: 30,
+  }
+});
+
 export default function SignUp({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
@@ -59,12 +68,3 @@ export default function SignUp({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'flex-start',
-    padding: 30,
-  }
-});

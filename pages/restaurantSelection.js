@@ -30,6 +30,13 @@ const InputCont = styled.View`
   top: -4%;
 `;
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E',
+  }
+});
+
 export default function RestaurantSelection({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
@@ -63,10 +70,3 @@ export default function RestaurantSelection({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E',
-  }
-});

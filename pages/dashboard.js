@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
-
-import NavBar from '../comps/NavBar';
-import Title from '../comps/Title';
-import Card from '../comps/Card'
-import Header from '../comps/Header';
-import MenuCard from '../comps/MenuCard';
-
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+
+import NavBar from '../components/global/NavBar';
+import Title from '../components/text/Title';
+import Card from '../components/cards/Card';
+import Header from '../components/global/Header';
+import MenuCard from '../components/cards/MenuCard';
 
 const TitleCont = styled.View`
   flex-direction: row;
@@ -35,12 +34,18 @@ const NavBarCont = styled.View`
   right: 0;
 `;
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E'
+  }
+});
+
 export default function Dashboard({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <Header mainTitle="Welcome," subTitle="Min" />
-      {/* <CenterCont> */}
       <TitleCont>
         <TitleIcon source={require('../assets/star.png')} />
         <Title titleSize="20px" titleText="Frequently visited" titleMarginRight="3%"/>
@@ -67,17 +72,9 @@ export default function Dashboard({navigation}) {
           <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
           <MenuCard onPress={() => navigation.navigate('Restaurant Selection')} restaurantText="The Habitat" />
         </RowCont>
-      {/* </CenterCont> */}
     <NavBarCont>
       <NavBar />
     </NavBarCont>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E'
-  }
-});

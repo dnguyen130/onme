@@ -1,19 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
-import styled from 'styled-components';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import { Divider } from 'react-native-elements';
+import styled from 'styled-components';
 
-import BigButton from '../comps/BigButton';
-import Input from '../comps/Input';
-import SmallButton from '../comps/SmallButton';
-import Title from '../comps/Title';
-import TextDivider from '../comps/TextDivider';
-import Header from '../comps/Header';
-import OrderCard from '../comps/OrderCard';
-import NavBar from '../comps/NavBar';
-import RoundedButton from '../comps/RoundedButton';
-import MessageBox from '../comps/MessageBox';
+import BigButton from '../components/buttons/BigButton';
+import Title from '../components/text/Title';
+import Header from '../components/global/Header';
+import OrderCard from '../components/cards/OrderCard';
+import NavBar from '../components/global/NavBar';
+import RoundedButton from '../components/buttons/RoundedButton';
+import MessageBox from '../components/summary/MessageBox';
 
 const OrderList = styled.View`
   flex: 1;
@@ -47,9 +44,23 @@ const PinkCircleCont = styled.View`
   border-radius: 50px;
 `
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E',
+    alignItems: 'center',
+    borderColor: 'red'
+  },
+
+  scrollList: {
+    alignItems: 'center'
+  }
+});
+
 export default function OrderSummary({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="auto" />
       <Header subTitle="Order Summary" />
       <Title titleText="Your orders for table C1" />
       <PaddingCont contentContainerStyle={styles.scrollList}>
@@ -85,19 +96,3 @@ export default function OrderSummary({navigation}) {
     </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    borderColor: 'red',
-    // borderWidth: 5,
-    // borderStyle: 'solid',
-    // flexDirection: 'column'
-  },
-
-  scrollList: {
-    alignItems: 'center'
-  }
-});
