@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
-import Video from 'react-native-video';
+import { Video } from 'expo-av';
 
 import BigButton from '../comps/BigButton';
 import Input from '../comps/Input';
@@ -31,6 +31,7 @@ const ColCont = styled.View`
 `;
 
 const RowCont = styled.View`
+  width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 10px;
@@ -41,22 +42,28 @@ const RowCont = styled.View`
 const InputCont = styled.View`
 width: 100%;
 height: auto;
-`
+`;
+
+const EmptyCont = styled.View`
+  flex: 0.5;
+`;
 
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Video
+      <Video
         source={require("../assets/video-1.mp4")}
         style={styles.backgroundVideo}
+        rate={1}
+        shouldPlay={true}
+        isLooping={true}
+        volume={1}
         muted={true}
-        repeat={true}
-        resizeMode={"cover"}
-        rate={1.0}
-        ignoreSilentSwitch={"obey"}
-      /> */}
-      <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
+        resizeMode="cover"
+      />
+      {/* <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover"> */}
         <ColCont>
+        <EmptyCont />
           <StatusBar style="auto" />
           <Title alignSelf="flex-start" />
           <InputCont>
@@ -71,14 +78,14 @@ export default function Login({navigation}) {
               bgColor = "#BCB5B7" 
               buttonText = "Sign Up"
             />
-            <TextDivider textColor="#fff" />
           </CenterCont>
+          <TextDivider textColor="#fff" />
           <RowCont>
             <SmallButton iconColor="#699BF7" />
             <SmallButton iconName="logo-google" iconColor="#EC452E"/>
           </RowCont>
         </ColCont>
-      </ImgBg>
+      {/* </ImgBg> */}
     </SafeAreaView>
   );
 }
@@ -91,12 +98,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   backgroundVideo: {
-    height: "100%",
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
-    alignItems: "stretch",
     bottom: 0,
-    right: 0
+    right: 0,
   }
 });

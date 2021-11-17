@@ -29,7 +29,6 @@ const NavBarCont = styled.View`
 `;
 
 const InputCont = styled.View`
-  padding-bottom: 5%;
   top: -4%;
 `;
 

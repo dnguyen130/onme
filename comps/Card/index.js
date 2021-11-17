@@ -40,7 +40,11 @@ const Card = ({
 }) => {
   return (
     <CardCont onPress={onPress}>
-      <CardBackground source={cardImg} resizeMode="cover">
+      <CardBackground 
+        source={cardImg} 
+        resizeMode="cover"
+        opacity="0.8"
+      >
         <LinearGradient 
           colors={['rgba(0,0,0,0.8)', 'rgba(196, 196, 196, 0)']} 
           style={{flex: 1, justifyContent: 'center', alignItems: 'center', width: 155}}
