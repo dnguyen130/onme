@@ -50,16 +50,20 @@ export default function RestaurantMenuDrink({navigation}) {
           <Toggle drinksOnPress={() => navigation.navigate('Restaurant Menu Drinks')} foodOnPress={() => navigation.navigate('Restaurant Menu Food')} />
           <CategoryList alignSelf="flex-start"/>
           <RowCont>
-            <MenuCard />
-            <MenuCard />
+            <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
+            <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
           </RowCont>
           <RowCont>
-            <MenuCard />
-            <MenuCard />
+          <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
+            <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
           </RowCont>
         </CenterCont>
       <NavBarCont>
-        <NavBar />
+        <NavBar 
+          homeOnPress={() => navigation.navigate('Dashboard')}
+          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          settingsOnPress={() => navigation.navigate('Settings')}
+        />
       </NavBarCont>
     </SafeAreaView>
   );

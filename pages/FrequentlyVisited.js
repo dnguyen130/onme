@@ -10,14 +10,12 @@ import Title from '../components/text/Title';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
-  justify-content: center;
-  width: 100%;
-  padding: 10%;
-  border-width: 1px;
+  top: 3%;
+  max-height: 60%;
 `;
 
-const CenterCont = styled.View`
-  align-items: center;
+const CenterScrollCont = styled.ScrollView`
+  z-index: -9;
 `;
 
 const NavBarCont = styled.View`
@@ -40,22 +38,39 @@ export default function FrequentlyVisited({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
-        <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
-          <Title titleText="Frequently" />
-          <Title titleText="Visited" />
-          <CenterCont>
-            <Input textInputPlaceholder="Search" />
-          </CenterCont>
-        </ImgBg>
-        <CenterCont>
-          <LocButton />
-          <LocButton />
-          <LocButton />
-          <LocButton />
-          <LocButton />
-        </CenterCont>
+        <Header 
+          mainTitle="Frequently" 
+          subTitle="Visited" 
+          subWeight="700"
+        />
+        <InputCont>
+          <Input textInputPlaceholder="Search" />
+        </InputCont>
+        <ScrollCont>
+          <CenterScrollCont alignItems='center'>
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+          </CenterScrollCont>
+        </ScrollCont>
       <NavBarCont>
-        <NavBar />
+        <NavBar 
+          homeOnPress={() => navigation.navigate('Dashboard')}
+          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          settingsOnPress={() => navigation.navigate('Settings')}
+        />
       </NavBarCont>
     </SafeAreaView>
   );

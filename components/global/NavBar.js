@@ -32,11 +32,13 @@ const NavBarText = styled.Text`
 `;
 
 const NavBar = ({
-
+  homeOnPress = ()=>{},
+  midOnPress = ()=>{},
+  settingsOnPress = ()=>{},
 }) => {
   return (
     <Cont>
-      <IconCont onPress={() => navigation.navigate('Dashboard')}>
+      <IconCont onPress={homeOnPress}>
         <Icon 
           name='home'
           type='ionicon'
@@ -44,10 +46,10 @@ const NavBar = ({
         />
         <NavBarText>Home</NavBarText>
       </IconCont>
-      <IconCont onPress={() => navigation.navigate('Restaurant Menu Drinks')}>
+      <IconCont onPress={midOnPress}>
         <MidIcon source={require('../../assets/midIcon.png')}/>
       </IconCont>
-      <IconCont onPress={() => navigation.navigate('')}>
+      <IconCont onPress={settingsOnPress}>
         <Icon 
           name='settings'
           type='ionicon'

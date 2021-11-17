@@ -65,7 +65,11 @@ export default function RestaurantSelection({navigation}) {
           </CenterScrollCont>
         </ScrollCont>
       <NavBarCont>
-        <NavBar />
+        <NavBar 
+          homeOnPress={() => navigation.navigate('Dashboard')}
+          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          settingsOnPress={() => navigation.navigate('Settings')}
+        />
       </NavBarCont>
     </SafeAreaView>
   );

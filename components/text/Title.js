@@ -21,6 +21,7 @@ const Title = ({
   titleAlign = "left",
   titleMarginRight = "0px",
   textDecorationLine = "none",
+  onPress = () => {},
   titleAlignSelf = "flex-start"
 }) => {
   return (
@@ -33,6 +34,7 @@ const Title = ({
       titleAlign={titleAlign}
       textDecorationLine={textDecorationLine}
       titleMarginRight={titleMarginRight}
+      onPress={onPress}
       titleAlignSelf={titleAlignSelf}
       >
         {titleText}
