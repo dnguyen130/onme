@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import { Divider } from 'react-native-elements';
 import styled from 'styled-components';
 
@@ -47,9 +47,7 @@ const PinkCircleCont = styled.View`
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    borderColor: 'red'
+    backgroundColor: '#2E2E2E'
   },
 
   scrollList: {
@@ -59,9 +57,12 @@ const styles = StyleSheet.create({
 
 export default function OrderSummary({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
-      <Header subTitle="Order Summary" />
+    <View style={styles.container}>
+      <StatusBar style="light" />
+      <Header 
+        subTitle="Order Summary" 
+        onPress={() => navigation.goBack()} 
+      />
       <Title titleText="Your orders for table C1" />
       <PaddingCont contentContainerStyle={styles.scrollList}>
         <OrderList>
@@ -97,6 +98,6 @@ export default function OrderSummary({navigation}) {
         midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
         settingsOnPress={() => navigation.navigate('Settings')}
       />
-    </SafeAreaView>
+    </View>
     )
 }

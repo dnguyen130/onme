@@ -9,7 +9,7 @@ const Cont = styled.TouchableOpacity`
   padding: 10px;
   width: 80%;
   min-height: 79px;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
   background-color: #2E2E2E;
   box-shadow: 0px 3px 3px #000;
 `;

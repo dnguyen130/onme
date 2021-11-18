@@ -26,7 +26,7 @@ const PrimaryButton = styled.Pressable`
   height: 25px;
   background-color: #FE4370;
   border-radius: 30px;
-  margin-right: 10px;
+  margin-right: 5px;
 `;
 
 const RowCont = styled.View`
@@ -64,6 +64,7 @@ const MenuCard = ({
   itemText = "Zesty Calimari",
   priceText = "$9.99",
   onPress = ()=>{},
+  addOnPress = ()=>{},
 }) => {
   return (
     <CardCont onPress={onPress}>
@@ -84,7 +85,7 @@ const MenuCard = ({
             <Name>{itemText}</Name>
             <Price>{priceText}</Price>
           </ColCont>
-          <PrimaryButton>
+          <PrimaryButton onPress={addOnPress}>
             <Name>+</Name>
           </PrimaryButton>
         </RowCont>

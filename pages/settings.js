@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView} from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import { Input } from 'react-native-elements';
 import styled from 'styled-components/native';
 
@@ -37,9 +37,12 @@ const styles = StyleSheet.create({
 
 export default function Settings({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
-      <Header subTitle="My Settings" subWeight="700" />
+    <View style={styles.container}>
+      <StatusBar style="light" />
+      <Header 
+        subTitle="My Settings" subWeight="700"
+        onPress={() => navigation.goBack()} 
+      />
       <PaddingCont>
         <RowCont>
         <SmallButton
@@ -80,6 +83,6 @@ export default function Settings({navigation}) {
           settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>
-    </SafeAreaView>
+    </View>
   );
 }

@@ -9,6 +9,7 @@ import FlexInput from '../components/global/FlexInput';
 import SmallButton from '../components/buttons/SmallButton';
 import Title from '../components/text/Title';
 import TextDivider from '../components/text/TextDivider';
+import BackButton from '../components/global/BackButton';
 
 const CenterCont = styled.View`
   justify-content: center;
@@ -36,7 +37,11 @@ const styles = StyleSheet.create({
 export default function SignUp({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
+      <BackButton 
+        onPress={() => navigation.navigate('Login')} 
+        onPress={() => navigation.goBack()} 
+      />
       <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
       <Title titleSize="32px" titleText="Create your account" />
       <RowCont>
@@ -59,10 +64,10 @@ export default function SignUp({navigation}) {
       </RowCont>
       <CenterCont>
         <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
-        <TextDivider />
+        <TextDivider textColor="#fff" borderColor="#888" />
         <RowCont>
-          <SmallButton />
-          <SmallButton />
+          <SmallButton iconColor="#699BF7" />
+          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
         </RowCont>
       </CenterCont>
     </SafeAreaView>

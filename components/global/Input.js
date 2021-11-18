@@ -7,12 +7,12 @@ const InputCont = styled.View`
 `
 
 const InputField = styled.TextInput`
-  border-width: 1px;
   min-height: 55px;
-  border-radius: 20px;
+  border-radius: ${props => props.borderRadius};
   background-color: white;
   color: black;
   padding: 0 20px;
+  text-align: ${props => props.textAlign};
 `;
 
 const InputLabel = styled.Text`
@@ -23,12 +23,14 @@ const InputLabel = styled.Text`
 const Input = ({
   textInputPlaceholder = "",
   textInputLabel = "",
-  textInputLabelSize = "14px"
+  textInputLabelSize = "14px",
+  borderRadius="20px",
+  textAlign="auto"
 }) => {
   return (
     <InputCont>
       <InputLabel textInputLabelSize={textInputLabelSize}>{textInputLabel}</InputLabel>
-      <InputField placeholder={textInputPlaceholder}></InputField>
+      <InputField placeholder={textInputPlaceholder} borderRadius={borderRadius} textAlign={textAlign}></InputField>
     </InputCont>
   );
 }

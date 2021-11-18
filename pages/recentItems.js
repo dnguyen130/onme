@@ -1,19 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components/native';
 
 import LocButton from '../components/buttons/LocButton';
 import Input from '../components/global/Input';
 import NavBar from '../components/global/NavBar';
+import Header from '../components/global/Header';
 
 const ScrollCont = styled.View`
   flex: 1;
-  top: 3%;
+  top: -2%;
   max-height: 60%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
+  flex: 1;
   z-index: -9;
 `;
 
@@ -24,24 +26,30 @@ const NavBarCont = styled.View`
   right: 0;
 `;
 
+const InputCont = styled.View`
+  top: -4%;
+`;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#2E2E2E',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
 
 export default function RecentItems({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
-        <StatusBar style="auto" />
+    <View style={styles.container}>
+        <StatusBar style="light" />
         <Header 
           mainTitle="Recent Items" 
+          iconTitleName='history'
+          iconTitleType='material'
+          iconTitleColor='#FE4370'
+          onPress={() => navigation.goBack()} 
         />
         <InputCont>
-          <Input textInputPlaceholder="Search" />
+          <Input textInputPlaceholder="Search" borderRadius="30px" textAlign="center" />
         </InputCont>
         <ScrollCont>
           <CenterScrollCont alignItems='center'>
@@ -69,6 +77,6 @@ export default function RecentItems({navigation}) {
           settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>
-    </SafeAreaView>
+    </View>
   );
 }

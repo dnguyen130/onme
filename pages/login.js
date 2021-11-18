@@ -11,12 +11,6 @@ import Title from '../components/text/Title';
 import TextLink from '../components/text/TextLink';
 import TextDivider from '../components/text/TextDivider';
 
-const ImgBg = styled.ImageBackground`
-  flex: 1;
-  justify-content: flex-end;
-  width: 100%;
-`;
-
 const CenterCont = styled.View`
   align-items: center;
   width: 100%;
@@ -25,7 +19,7 @@ const CenterCont = styled.View`
 const ColCont = styled.View`
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 80%;
   padding: 10px;
 `;
@@ -34,9 +28,6 @@ const RowCont = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
 `;
 
 const InputCont = styled.View`
@@ -67,7 +58,7 @@ const styles = StyleSheet.create({
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <Video
         source={require("../assets/video-1.mp4")}
         style={styles.backgroundVideo}
@@ -84,7 +75,11 @@ export default function Login({navigation}) {
           <InputCont>
             <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
             <Input textInputPlaceholder = "Password" textInputLabelSize="0px" />
-            <TextLink textColor="#fff" alignSelf="flex-end" />
+            <TextLink 
+              textColor="#fff" 
+              alignSelf="flex-end" 
+              paddingTop='5%'
+            />
           </InputCont>
           <CenterCont>
             <BigButton onPress={() => navigation.navigate('Dashboard')} />
@@ -94,7 +89,7 @@ export default function Login({navigation}) {
               buttonText = "Sign Up"
             />
           </CenterCont>
-          <TextDivider textColor="#fff" />
+          <TextDivider textColor="#fff" borderColor="#888" />
           <RowCont>
             <SmallButton iconColor="#699BF7" />
             <SmallButton iconName="logo-google" iconColor="#EC452E"/>

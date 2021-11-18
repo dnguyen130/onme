@@ -29,19 +29,21 @@ const ButtonText = styled.Text`
 const Toggle = ({
   drinksOnPress = ()=>{},
   foodOnPress = ()=>{},
-  toggleColor = "#838383"
+  toggleColor = "#838383",
+  drinksColor = "#838383",
+  foodColor = "#838383"
 }) => {
   return (
     <Cont>
       <Button 
         onPress={drinksOnPress}
-        bgColor={toggleColor}
+        bgColor={drinksColor}
       >
         <ButtonText>Drinks</ButtonText>
       </Button>
       <Button 
         onPress={foodOnPress} 
-        bgColor={toggleColor}
+        bgColor={foodColor}
       >
         <ButtonText>Food</ButtonText>
       </Button>

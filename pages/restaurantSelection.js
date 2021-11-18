@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components';
 
 import LocButton from '../components/buttons/LocButton';
@@ -8,14 +8,15 @@ import Input from '../components/global/Input';
 import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 
-const ScrollCont = styled.View`
+const Cont = styled.View`
   flex: 1;
-  top: -2%;
-  max-height: 60%;
+  top: -4%;
+  padding-bottom: 17%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
   z-index: -9;
+  margin-top: 3%;
 `;
 
 const NavBarCont = styled.View`
@@ -26,7 +27,9 @@ const NavBarCont = styled.View`
 `;
 
 const InputCont = styled.View`
-  top: -4%;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
 `;
 
 const styles = StyleSheet.create({
@@ -38,31 +41,37 @@ const styles = StyleSheet.create({
 
 export default function RestaurantSelection({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
-        <StatusBar style="auto" />
-        <Header mainTitle="The Habitat" subTitle="3700 Willingdon Ave, Burnaby" subTitleSize="15px" />
-        <InputCont>
-          <Input textInputPlaceholder="Search" />
-        </InputCont>
-        <ScrollCont>
+    <View style={styles.container}>
+        <StatusBar style="light" />
+        <Header 
+          mainTitle="The Habitat" 
+          subTitle="3700 Willingdon Ave, Burnaby" 
+          subTitleSize="15px" 
+          source={require("../assets/headerImg_2.png")} 
+          onPress={() => navigation.goBack()} 
+        />
+        <Cont>
+          <InputCont>
+            <Input textInputPlaceholder="Search" textAlign="center" />
+          </InputCont>
           <CenterScrollCont alignItems='center'>
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
+            <LocButton onPress={() => navigation.navigate('Restaurant Menu Drinks')} />
           </CenterScrollCont>
-        </ScrollCont>
+        </Cont>
       <NavBarCont>
         <NavBar 
           homeOnPress={() => navigation.navigate('Dashboard')}
@@ -70,6 +79,6 @@ export default function RestaurantSelection({navigation}) {
           settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>
-    </SafeAreaView>
+    </View>
   );
 }

@@ -5,10 +5,9 @@ const Button = styled.TouchableOpacity`
   background-color: ${props => props.changeButtonColor};
   justify-content: center;
   align-items: center;
-  padding: 10px;
   border-radius: 100px;
-  width: 80%;
-  min-height: 53px;
+  width: ${props => props.width};
+  min-height: 51px;
   margin: 5px;
 `;
 
@@ -21,10 +20,11 @@ const ButtonText = styled.Text`
 const BigButton = ({
   buttonText = "Sign In",
   bgColor = "#FE4370;",
+  width = '100%',
   onPress = ()=>{}
 }) => {
   return (
-    <Button changeButtonColor={bgColor} onPress={onPress}>
+    <Button changeButtonColor={bgColor} width={width} onPress={onPress}>
       <ButtonText>{buttonText}</ButtonText>
     </Button>
   );

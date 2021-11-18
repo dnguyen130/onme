@@ -16,15 +16,28 @@ import OrderConfirmation from './pages/OrderReceived';
 import Settings from './pages/Settings';
 import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
+import SeatMap from './pages/SeatMap';
 
 const Stack = createNativeStackNavigator();
+
+const MyTheme = {
+  dark: false,
+  colors: {
+    primary: 'rgb(254, 67, 112)',
+    background: 'rgb(255, 255, 255)',
+    card: 'rgb(255, 255, 255)',
+    text: 'rgb(254, 67, 112)',
+    border: 'rgb(199, 199, 204)',
+    notification: 'rgb(255, 255, 255)',
+  },
+};
 
 // export {default} from './storybook'; 
 
 export default function App() {
   return (
-    <NavigationContainer styles={styles.centerCont}>
-      <Stack.Navigator>
+    <NavigationContainer styles={styles.centerCont} theme={MyTheme}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
@@ -36,6 +49,7 @@ export default function App() {
         <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
         <Stack.Screen name="Order Summary" component={OrderSummary} />
         <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
+        <Stack.Screen name="Seat Map" component={SeatMap} />
       </Stack.Navigator>
     </NavigationContainer>
   );
