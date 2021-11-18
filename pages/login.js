@@ -13,6 +13,19 @@ import TextDivider from '../components/text/TextDivider';
 
 //Back-End
 import * as Google from 'expo-google-app-auth';
+import { initializeApp } from 'firebase/app';
+import { GoogleAuthProvider, getAuth, signInWithCredential, onAuthStateChanged, signOut } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDh5HPMY0Evs61NBCZMRlNua-T4ogJMQiQ",
+  authDomain: "onme-332507.firebaseapp.com",
+  projectId: "onme-332507",
+  storageBucket: "onme-332507.appspot.com",
+  messagingSenderId: "108300065119",
+  appId: "1:108300065119:web:f1778796e0ef0043a03eea"
+};
+
+const app = initializeApp(firebaseConfig);
 
 // const ImgBg = styled.ImageBackground`
 //   flex: 1;
@@ -75,10 +88,19 @@ export default function Login({navigation}) {
         androidClientId: "108300065119-dff8fg1n852gm6rqltstmc3m3docl4gr.apps.googleusercontent.com",
         iosClientId: "108300065119-7eujeanfp5k38hmtpa7gngmco603egse.apps.googleusercontent.com",
         expoClientId: "108300065119-hrp12dvecq7kdbo1mkvj14l23javki8t.apps.googleusercontent.com",
-        scopes: ['profile', 'email'],
+        scopes: ['profile', 'email', 'https://www.googleapis.com/auth/user.birthday.read'],
       });
   
       if (result.type === 'success') {
+        const auth = getAuth();
+        const provider = GoogleAuthProvider.credential(
+          result.idToken,
+          result.accessToken
+        );
+        const fbresult =  await signInWithCredential(auth, provider);
+        console.log("added to firebase");
+        console.log(result.user);
+        navigation.navigate('Dashboard');
         return result.accessToken;
       } else {
         return { cancelled: true };
