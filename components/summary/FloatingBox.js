@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { View } from "react-native";
 
-import Title from "../Title";
-import ProgressCheck from "../ProgressCheck";
+import Title from "../text/Title";
+import ProgressCheck from "./ProgressCheck";
 
 const FloatingBoxCont = styled.View`
   width: ${props => props.boxWidth};

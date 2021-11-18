@@ -1,16 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView, ImageBackground} from 'react-native';
+import { StyleSheet, SafeAreaView} from 'react-native';
 import { Input } from 'react-native-elements';
-
-import NavBar from '../comps/NavBar';
-import Title from '../comps/Title';
-import Card from '../comps/Card'
-import Header from '../comps/Header';
-import MenuCard from '../comps/MenuCard';
-import SmallButton from '../comps/SmallButton';
-
 import styled from 'styled-components/native';
+
+import NavBar from '../components/global/NavBar';
+import Header from '../components/global/Header';
+import SmallButton from '../components/buttons/SmallButton';
 
 const NavBarCont = styled.View`
   position: absolute;
@@ -32,10 +28,17 @@ const RowCont = styled.View`
   align-self: flex-end;
 `
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E'
+  }
+});
 
 export default function Settings({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="auto" />
       <Header subTitle="My Settings" subWeight="700" />
       <PaddingCont>
         <RowCont>
@@ -80,10 +83,3 @@ export default function Settings({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E'
-  }
-});

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Title from '../Title';
+import Title from '../text/Title';
 
 const RoundedCont = styled.View`
   justify-content: center;

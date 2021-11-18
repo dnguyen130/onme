@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
-import Video from 'react-native-video';
-
-import BigButton from '../comps/BigButton';
-import Input from '../comps/Input';
-import SmallButton from '../comps/SmallButton';
-import Title from '../comps/Title';
-import TextLink from '../comps/TextLink';
-import TextDivider from '../comps/TextDivider';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+import { Video } from 'expo-av';
+
+import BigButton from '../components/buttons/BigButton';
+import Input from '../components/global/Input';
+import SmallButton from '../components/buttons/SmallButton';
+import Title from '../components/text/Title';
+import TextLink from '../components/text/TextLink';
+import TextDivider from '../components/text/TextDivider';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
@@ -31,6 +31,7 @@ const ColCont = styled.View`
 `;
 
 const RowCont = styled.View`
+  width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 10px;
@@ -43,21 +44,42 @@ width: 100%;
 height: auto;
 `
 
+const EmptyCont = styled.View`
+  flex: 0.5;
+`
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0
+  }
+});
+
 export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Video
+      <StatusBar style="auto" />
+      <Video
         source={require("../assets/video-1.mp4")}
         style={styles.backgroundVideo}
-        muted={true}
-        repeat={true}
-        resizeMode={"cover"}
-        rate={1.0}
-        ignoreSilentSwitch={"obey"}
-      /> */}
-      <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
+        rate={1}
+        shouldPlay={true}
+        isLooping={true}
+        volume={1}
+        isMuted={true}
+        resizeMode="cover"
+      />
         <ColCont>
-          <StatusBar style="auto" />
+          <EmptyCont />
           <Title alignSelf="flex-start" />
           <InputCont>
             <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
@@ -71,32 +93,13 @@ export default function Login({navigation}) {
               bgColor = "#BCB5B7" 
               buttonText = "Sign Up"
             />
-            <TextDivider textColor="#fff" />
           </CenterCont>
+          <TextDivider textColor="#fff" />
           <RowCont>
             <SmallButton iconColor="#699BF7" />
             <SmallButton iconName="logo-google" iconColor="#EC452E"/>
           </RowCont>
         </ColCont>
-      </ImgBg>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  backgroundVideo: {
-    height: "100%",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    alignItems: "stretch",
-    bottom: 0,
-    right: 0
-  }
-});

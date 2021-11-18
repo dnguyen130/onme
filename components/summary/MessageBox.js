@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { View } from "react-native";
 import { Icon } from "react-native-elements";
 
-import Title from "../Title";
+import Title from "../text/Title";
 
 const FloatingBoxCont = styled.View`
   width: ${props => props.boxWidth};

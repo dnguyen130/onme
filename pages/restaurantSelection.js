@@ -1,16 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, View } from 'react-native';
-
-import LocButton from '../comps/LocButton';
-import Input from '../comps/Input';
-import NavBar from '../comps/NavBar';
-import Header from '../comps/Header';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
+
+import LocButton from '../components/buttons/LocButton';
+import Input from '../components/global/Input';
+import NavBar from '../components/global/NavBar';
+import Header from '../components/global/Header';
 
 const ScrollCont = styled.View`
   flex: 1;
-  top: 3%;
+  top: -2%;
   max-height: 60%;
 `;
 
@@ -26,9 +26,15 @@ const NavBarCont = styled.View`
 `;
 
 const InputCont = styled.View`
-  padding-bottom: 5%;
   top: -4%;
 `;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E',
+  }
+});
 
 export default function RestaurantSelection({navigation}) {
   return (
@@ -67,10 +73,3 @@ export default function RestaurantSelection({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E',
-  }
-});

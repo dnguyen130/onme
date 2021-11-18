@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "react-native-elements";
 
-import Title from "../Title";
+import Title from "../text/Title";
 
 const OrderCardCont = styled.View`
   flex-direction: row;
