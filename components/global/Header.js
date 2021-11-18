@@ -3,14 +3,13 @@ import styled from 'styled-components/native';
 import { View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import Title from '../Title';
-import BackButton from '../BackButton';
+import Title from '../text/Title';
+import BackButton from './BackButton';
 
 const ImgBg = styled.ImageBackground`
   flex: 1;
   justify-content: space-between;
   max-height: 25%;
-  /* padding: 5%; */
   min-width: 100%;
   `
 ;

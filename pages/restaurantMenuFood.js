@@ -1,16 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState }  from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, View } from 'react-native';
-
-import Input from '../comps/Input';
-import NavBar from '../comps/NavBar';
-import Card from '../comps/Card';
-import Header from '../comps/Header';
-import CategoryList from '../comps/CategoryList';
-import Toggle from '../comps/Toggle';
-import MenuCard from '../comps/MenuCard';
-
+import React, { useState }  from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+
+import Input from '../components/global/Input';
+import NavBar from '../components/global/NavBar';
+import Header from '../components/global/Header';
+import CategoryList from '../components/menu/CategoryList';
+import Toggle from '../components/menu/Toggle';
+import MenuCard from '../components/cards/MenuCard';
 
 const CenterCont = styled.View`
   align-items: center;
@@ -31,6 +29,13 @@ const NavBarCont = styled.View`
 const InputCont = styled.View`
   top: -4%;
 `;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2E2E2E'
+  }
+});
 
 export default function RestaurantMenuFood({navigation}) {
   const [toggle, setToggle] = useState(false);
@@ -70,10 +75,3 @@ export default function RestaurantMenuFood({navigation}) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2E2E2E'
-  }
-});
