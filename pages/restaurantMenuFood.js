@@ -57,12 +57,12 @@ export default function RestaurantMenuFood({navigation}) {
           />
           <CategoryList alignSelf="flex-start"/>
           <RowCont>
-            <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
-            <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
+            <MenuCard onPress={() => navigation.navigate('Order Summary')} />
+            <MenuCard onPress={() => navigation.navigate('Order Summary')} />
           </RowCont>
           <RowCont>
-          <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
-            <MenuCard onPress={() => navigation.navigate('OrderSummary')} />
+          <MenuCard onPress={() => navigation.navigate('Order Summary')} />
+            <MenuCard onPress={() => navigation.navigate('Order Summary')} />
           </RowCont>
         </CenterCont>
       <NavBarCont>

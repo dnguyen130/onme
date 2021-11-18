@@ -46,10 +46,6 @@ height: auto;
 
 const EmptyCont = styled.View`
   flex: 0.5;
-`;
-
-const EmptyCont = styled.View`
-  flex: 0.5;
 `
 
 const styles = StyleSheet.create({
