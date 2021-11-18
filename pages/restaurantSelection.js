@@ -10,7 +10,7 @@ import Header from '../components/global/Header';
 
 const ScrollCont = styled.View`
   flex: 1;
-  top: 3%;
+  top: -2%;
   max-height: 60%;
 `;
 
@@ -26,7 +26,6 @@ const NavBarCont = styled.View`
 `;
 
 const InputCont = styled.View`
-  padding-bottom: 5%;
   top: -4%;
 `;
 

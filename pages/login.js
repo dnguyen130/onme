@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
+import { Video } from 'expo-av';
 
 import BigButton from '../components/buttons/BigButton';
 import Input from '../components/global/Input';
@@ -30,6 +31,7 @@ const ColCont = styled.View`
 `;
 
 const RowCont = styled.View`
+  width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 10px;
@@ -42,6 +44,10 @@ width: 100%;
 height: auto;
 `
 
+const EmptyCont = styled.View`
+  flex: 0.5;
+`
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,11 +56,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   backgroundVideo: {
-    height: "100%",
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
-    alignItems: "stretch",
     bottom: 0,
     right: 0
   }
@@ -64,8 +68,18 @@ export default function Login({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <ImgBg source={require("../assets/imgBg.png")} resizeMode="cover">
+      <Video
+        source={require("../assets/video-1.mp4")}
+        style={styles.backgroundVideo}
+        rate={1}
+        shouldPlay={true}
+        isLooping={true}
+        volume={1}
+        isMuted={true}
+        resizeMode="cover"
+      />
         <ColCont>
+          <EmptyCont />
           <Title alignSelf="flex-start" />
           <InputCont>
             <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
@@ -79,14 +93,13 @@ export default function Login({navigation}) {
               bgColor = "#BCB5B7" 
               buttonText = "Sign Up"
             />
-            <TextDivider textColor="#fff" />
           </CenterCont>
+          <TextDivider textColor="#fff" />
           <RowCont>
             <SmallButton iconColor="#699BF7" />
             <SmallButton iconName="logo-google" iconColor="#EC452E"/>
           </RowCont>
         </ColCont>
-      </ImgBg>
     </SafeAreaView>
   );
 }
