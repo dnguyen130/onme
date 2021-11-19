@@ -95,7 +95,7 @@ export default function OrderSummary({navigation}) {
       </PaddingCont>
       <NavBar 
         homeOnPress={() => navigation.navigate('Dashboard')}
-        midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+        midOnPress={() => navigation.navigate('Restaurant Menu')}
         settingsOnPress={() => navigation.navigate('Settings')}
       />
     </View>

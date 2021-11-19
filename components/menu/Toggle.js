@@ -27,15 +27,16 @@ const ButtonText = styled.Text`
 `;
 
 const Toggle = ({
-  x
+  drinksOnPress = ()=>{},
+  foodOnPress = ()=>{},
 }) => {
   const [toggle, setToggle] = useState(false);
 
-  const DrinksOn = () => {
+  const DrinksOn = ({}) => {
     setToggle(false);
   }
 
-  const FoodOn = () => {
+  const FoodOn = ({}) => {
     setToggle(true);
   }
   
@@ -43,13 +44,15 @@ const Toggle = ({
     return (
       <Cont>
         <Button 
-          onPress={DrinksOn}
+          onPress={drinksOnPress}
+          onPressIn={DrinksOn}
           bgColor='#A57760'
         >
           <ButtonText>Drinks</ButtonText>
         </Button>
         <Button 
-          onPress={FoodOn}
+          onPress={foodOnPress}
+          onPressIn={FoodOn}
           bgColor='#838383'
         >
           <ButtonText>Food</ButtonText>
@@ -62,13 +65,15 @@ const Toggle = ({
     return (
       <Cont>
         <Button 
-          onPress={DrinksOn}
+          onPress={drinksOnPress}
+          onPressIn={DrinksOn}
           bgColor='#838383'
           >
           <ButtonText>Drinks</ButtonText>
         </Button>
         <Button 
-          onPress={FoodOn}
+          onPress={foodOnPress}
+          onPressIn={FoodOn}
           bgColor='#A57760'
           >
           <ButtonText>Food</ButtonText>

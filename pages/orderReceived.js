@@ -43,12 +43,12 @@ export default function OrderConfirmation({navigation}) {
           mainTitle="Awesome, Order Received!" mainSize="15px"
           subTitle="We hope you get some :)" subSize="15px" 
         />
-        <BigButton buttonText="Send Another :)" width='50%' onPress={() => navigation.navigate('Restaurant Menu Drinks')}/>
+        <BigButton buttonText="Send Another :)" width='50%' onPress={() => navigation.navigate('Restaurant Menu')}/>
       </CenterCont>
       <NavBarCont>
         <NavBar 
           homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          midOnPress={() => navigation.navigate('Restaurant Menu')}
           settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>

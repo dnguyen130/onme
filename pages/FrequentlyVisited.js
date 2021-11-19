@@ -57,27 +57,27 @@ export default function FrequentlyVisited({navigation}) {
         </InputCont>
         <ScrollCont>
           <CenterScrollCont alignItems='center'>
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
-              <LocButton onPress={() => navigation.navigate('Restaurant Menu Food')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+              <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
           </CenterScrollCont>
         </ScrollCont>
       <NavBarCont>
-        <NavBar 
+      <NavBar 
           homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          midOnPress={() => navigation.navigate('Restaurant Menu')}
           settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>

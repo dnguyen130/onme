@@ -82,7 +82,8 @@ export default function RestaurantSelection({navigation}) {
             </InputCont>
             <CenterCont>
               <Toggle
-                onPress={DrinksOn}
+                drinksOnPress={DrinksOn}
+                foodOnPress={FoodOn}
               />
             </CenterCont>
             <CenterCont>
@@ -142,7 +143,8 @@ export default function RestaurantSelection({navigation}) {
             </InputCont>
             <CenterCont>
               <Toggle
-                onPress={FoodOn}
+                drinksOnPress={DrinksOn}
+                foodOnPress={FoodOn}
               />
             </CenterCont>
             <CenterCont>

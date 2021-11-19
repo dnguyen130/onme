@@ -154,7 +154,7 @@ export default function Dashboard({navigation}) {
       <NavBarCont>
         <NavBar 
           homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+          midOnPress={() => navigation.navigate('Restaurant Menu')}
           settingsOnPress={() => navigation.navigate('Settings')}
         />
       </NavBarCont>

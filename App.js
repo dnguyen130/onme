@@ -10,8 +10,7 @@ import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import OrderSummary from './pages/OrderSummary';
 import RestaurantSelection from './pages/RestaurantSelection';
-import RestaurantMenuFood from './pages/RestaurantMenuFood';
-import RestaurantMenuDrink from './pages/RestaurantMenuDrink';
+import RestaurantMenu from './pages/RestaurantMenu';
 import OrderConfirmation from './pages/OrderReceived';
 import Settings from './pages/Settings';
 import FrequentlyVisited from './pages/FrequentlyVisited';
@@ -45,8 +44,7 @@ export default function App() {
         <Stack.Screen name="Frequently Visited" component={FrequentlyVisited} />
         <Stack.Screen name="Recent Items" component={RecentItems} />
         <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
-        <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} />
-        <Stack.Screen name="Restaurant Menu Drinks" component={RestaurantMenuDrink} />
+        <Stack.Screen name="Restaurant Menu" component={RestaurantMenu} />
         <Stack.Screen name="Order Summary" component={OrderSummary} />
         <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
         <Stack.Screen name="Seat Map" component={SeatMap} />
