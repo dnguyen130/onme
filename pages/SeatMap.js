@@ -11,11 +11,11 @@ import Title from '../components/text/Title';
 const ScrollCont = styled.View`
   flex: 1;
   top: -2%;
-  max-height: 60%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
   flex: 1;
+  max-height: 68%;
   z-index: -9;
 `;
 
@@ -40,7 +40,7 @@ const RowCont = styled.View`
 
 const SeatLegendRowCont = styled.View`
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   margin-bottom: 5%;
 `;
 
@@ -51,15 +51,18 @@ const SeatLegend = styled.View`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin-right: 10%;
 `;
 
 const SeatLegendEmpty = styled.View`
   width: 20%;
   height: 42px;
-  background-color: #626262;
+  border-color: #626262;
+  border-width: 2px;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin-right: 5%;
 `;
 
 const SeatMapCont = styled.View`
@@ -110,28 +113,28 @@ export default function FrequentlyVisited({navigation}) {
           <Input textInputPlaceholder="Search" textAlign="center" />
         </InputCont>
         <ScrollCont>
+          <RowCont>
+            <Title 
+              titleText="What's their"
+              titleWeight="700"
+              titleSize="20px"
+              />
+            <Title 
+              titleText=" seat number?"
+              titleWeight="700"
+              titleSize="20px"
+              titleColor="#A57760"
+              />
+          </RowCont>
+          <SeatLegendRowCont>
+            <SeatLegendEmpty>
+              <Text>Empty</Text>
+            </SeatLegendEmpty>
+            <SeatLegend>
+              <Text>Occupied</Text>
+            </SeatLegend>
+          </SeatLegendRowCont>
           <CenterScrollCont>
-            <RowCont>
-              <Title 
-                titleText="What's their"
-                titleWeight="700"
-                titleSize="20px"
-              />
-              <Title 
-                titleText=" seat number?"
-                titleWeight="700"
-                titleSize="20px"
-                titleColor="#A57760"
-              />
-            </RowCont>
-            <SeatLegendRowCont>
-              <SeatLegendEmpty>
-                <Text>Empty</Text>
-              </SeatLegendEmpty>
-              <SeatLegend>
-                <Text>Occupied</Text>
-              </SeatLegend>
-            </SeatLegendRowCont>
             <SeatMapCont>
               <SeatRow>
                 <Seats onPress={() => navigation.navigate('Order Summary')}>
@@ -175,6 +178,28 @@ export default function FrequentlyVisited({navigation}) {
                 </Seats>
                 <Seats onPress={() => navigation.navigate('Order Summary')}>
                   <Text>12</Text>
+                </Seats>
+              </SeatRow>
+              <SeatRow>
+                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                  <Text>13</Text>
+                </Seats>
+                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                  <Text>14</Text>
+                </Seats>
+                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                  <Text>15</Text>
+                </Seats>
+              </SeatRow>
+              <SeatRow>
+                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                  <Text>16</Text>
+                </Seats>
+                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                  <Text>17</Text>
+                </Seats>
+                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                  <Text>18</Text>
                 </Seats>
               </SeatRow>
             </SeatMapCont>

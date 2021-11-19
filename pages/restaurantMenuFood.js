@@ -72,8 +72,8 @@ export default function RestaurantSelection({navigation}) {
             <Toggle 
               drinksOnPress={() => navigation.navigate('Restaurant Menu Drinks')} 
               foodOnPress={() => navigation.navigate('Restaurant Menu Food')}
-              drinksColor='#838383'
-              foodColor='#A57760'
+              // drinksColor='#838383'
+              // foodColor='#A57760'
             />
           </CenterCont>
           <CenterCont>

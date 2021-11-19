@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components';
 
@@ -55,65 +55,142 @@ const styles = StyleSheet.create({
 });
 
 export default function RestaurantSelection({navigation}) {
-  return (
-    <View style={styles.container}>
-        <StatusBar style="light" />
-        <Header 
-          mainTitle="The Habitat" 
-          subTitle="3700 Willingdon Ave, Burnaby" 
-          subTitleSize="15px"
-          source={require("../assets/headerImg_2.png")} 
-          onPress={() => navigation.goBack()} 
-        />
-        <Cont>
-          <InputCont>
-            <Input textInputPlaceholder="Search" textAlign="center" />
-          </InputCont>
-          <CenterCont>
-            <Toggle 
-              drinksOnPress={() => navigation.navigate('Restaurant Menu Drinks')} 
-              foodOnPress={() => navigation.navigate('Restaurant Menu Food')}
-              drinksColor='#A57760'
-              foodColor='#838383'
-            />
-          </CenterCont>
-          <CenterCont>
-            <CategoryList alignSelf="flex-start"/>
-          </CenterCont>
-          <CenterScrollCont alignItems='center'>
-            <RowCont>
-              <MenuCard 
-                onPress={() => navigation.navigate('Seat Map')}
-                addOnPress={() => navigation.navigate('Seat Map')} 
-                itemText='Ravioli Martini'
-                priceText='$5.99'
+  const [toggle, setToggle] = useState(false);
+
+  const DrinksOn = () => {
+    setToggle(false);
+  }
+
+  const FoodOn = () => {
+    setToggle(true);
+  }
+  
+  if (toggle === false) {
+    return (
+      <View style={styles.container}>
+          <StatusBar style="light" />
+          <Header 
+            mainTitle="The Habitat" 
+            subTitle="3700 Willingdon Ave, Burnaby" 
+            subTitleSize="15px"
+            source={require("../assets/headerImg_2.png")} 
+            onPress={() => navigation.goBack()} 
+          />
+          <Cont>
+            <InputCont>
+              <Input textInputPlaceholder="Search" textAlign="center" />
+            </InputCont>
+            <CenterCont>
+              <Toggle
+                onPress={DrinksOn}
               />
-              <MenuCard 
-                onPress={() => navigation.navigate('Seat Map')} 
-                addOnPress={() => navigation.navigate('Seat Map')} 
-                itemText='Moscow Mule'
-                priceText='$5.99'
-                cardImg = {require('../assets/drink_2.png')}
+            </CenterCont>
+            <CenterCont>
+              <CategoryList alignSelf="flex-start"/>
+            </CenterCont>
+            <CenterScrollCont alignItems='center'>
+              <RowCont>
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')}
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Ravioli Martini'
+                  priceText='$5.99'
+                />
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')} 
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Moscow Mule'
+                  priceText='$5.99'
+                  cardImg = {require('../assets/drink_2.png')}
+                />
+              </RowCont>
+              <RowCont>
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')} 
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Purple Goddess'
+                  priceText='$5.99'
+                  cardImg = {require('../assets/drink_3.png')}
+                />
+              </RowCont>
+            </CenterScrollCont>
+          </Cont>
+        <NavBarCont>
+          <NavBar 
+            homeOnPress={() => navigation.navigate('Dashboard')}
+            midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+            settingsOnPress={() => navigation.navigate('Settings')}
+          />
+        </NavBarCont>
+      </View>
+    );
+  }
+  else {
+    return (
+      <View style={styles.container}>
+          <StatusBar style="light" />
+          <Header 
+            mainTitle="The Habitat" 
+            subTitle="3700 Willingdon Ave, Burnaby" 
+            subTitleSize="15px" 
+            source={require("../assets/headerImg_2.png")} 
+            onPress={() => navigation.goBack()} 
+          />
+          <Cont>
+            <InputCont>
+              <Input textInputPlaceholder="Search" textAlign="center" />
+            </InputCont>
+            <CenterCont>
+              <Toggle
+                onPress={FoodOn}
               />
-             </RowCont>
-             <RowCont>
-              <MenuCard 
-                onPress={() => navigation.navigate('Seat Map')} 
-                addOnPress={() => navigation.navigate('Seat Map')} 
-                itemText='Purple Goddess'
-                priceText='$5.99'
-                cardImg = {require('../assets/drink_3.png')}
-              />
-             </RowCont>
-          </CenterScrollCont>
-        </Cont>
-      <NavBarCont>
-        <NavBar 
-          homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
-          settingsOnPress={() => navigation.navigate('Settings')}
-        />
-      </NavBarCont>
-    </View>
-  );
+            </CenterCont>
+            <CenterCont>
+              <CategoryList alignSelf="flex-start"/>
+            </CenterCont>
+            <CenterScrollCont alignItems='center'>
+              <RowCont>
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')}
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Zesty Calimari'
+                  priceText='$9.99'
+                  cardImg = {require('../assets/food_2.png')}
+                />
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')}
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Cheese Sticks'
+                  priceText='$9.99'
+                  cardImg = {require('../assets/food_1.png')}
+                />
+               </RowCont>
+               <RowCont>
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')}
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Dry Ribs'
+                  priceText='$9.99'
+                  cardImg = {require('../assets/food_3.png')}
+                />
+                <MenuCard 
+                  onPress={() => navigation.navigate('Seat Map')}
+                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  itemText='Winner C'
+                  priceText='$9.99'
+                  cardImg = {require('../assets/food_4.png')}
+                />
+               </RowCont>
+            </CenterScrollCont>
+          </Cont>
+        <NavBarCont>
+          <NavBar 
+            homeOnPress={() => navigation.navigate('Dashboard')}
+            midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+            settingsOnPress={() => navigation.navigate('Settings')}
+          />
+        </NavBarCont>
+      </View>
+    );
+  }
 }
