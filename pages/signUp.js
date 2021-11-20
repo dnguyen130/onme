@@ -57,10 +57,10 @@ export default function SignUp({navigation}) {
         <Input textInputLabel="Email"/>
       </RowCont>
       <RowCont>
-        <Input textInputLabel="Create Password"/>
+        <Input password={true} textInputLabel="Create Password"/>
       </RowCont>
       <RowCont>
-        <Input textInputLabel="Confirm Password"/>
+        <Input password={true} textInputLabel="Confirm Password"/>
       </RowCont>
       <CenterCont>
         <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />

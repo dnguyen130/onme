@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components/native';
 import { Video } from 'expo-av';
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 
 export default function Login({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar style="light" />
       <Video
         source={require("../assets/video-1.mp4")}
@@ -74,7 +74,7 @@ export default function Login({navigation}) {
           <Title alignSelf="flex-start" />
           <InputCont>
             <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
-            <Input textInputPlaceholder = "Password" textInputLabelSize="0px" />
+            <Input password={true} textInputPlaceholder = "Password" textInputLabelSize="0px" />
             <TextLink 
               textColor="#fff" 
               alignSelf="flex-end" 
@@ -95,6 +95,6 @@ export default function Login({navigation}) {
             <SmallButton iconName="logo-google" iconColor="#EC452E"/>
           </RowCont>
         </ColCont>
-    </SafeAreaView>
+    </View>
   );
 }

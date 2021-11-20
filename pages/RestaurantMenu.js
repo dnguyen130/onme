@@ -87,7 +87,11 @@ export default function RestaurantSelection({navigation}) {
               />
             </CenterCont>
             <CenterCont>
-              <CategoryList alignSelf="flex-start"/>
+              <CategoryList 
+              alignSelf="flex-start"
+              listTwo='Cocktails'
+              listThree='Shooters'
+              listFour='Mocktails'/>
             </CenterCont>
             <CenterScrollCont alignItems='center'>
               <RowCont>
@@ -119,7 +123,7 @@ export default function RestaurantSelection({navigation}) {
         <NavBarCont>
           <NavBar 
             homeOnPress={() => navigation.navigate('Dashboard')}
-            midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
+            midOnPress={() => navigation.navigate('Restaurant Menu')}
             settingsOnPress={() => navigation.navigate('Settings')}
           />
         </NavBarCont>
@@ -148,7 +152,7 @@ export default function RestaurantSelection({navigation}) {
               />
             </CenterCont>
             <CenterCont>
-              <CategoryList alignSelf="flex-start"/>
+              <CategoryList alignSelf="flex-start" />
             </CenterCont>
             <CenterScrollCont alignItems='center'>
               <RowCont>

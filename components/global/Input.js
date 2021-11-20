@@ -25,12 +25,17 @@ const Input = ({
   textInputLabel = "",
   textInputLabelSize = "14px",
   borderRadius="20px",
-  textAlign="auto"
+  textAlign="auto",
+  password=false
 }) => {
   return (
     <InputCont>
       <InputLabel textInputLabelSize={textInputLabelSize}>{textInputLabel}</InputLabel>
-      <InputField placeholder={textInputPlaceholder} borderRadius={borderRadius} textAlign={textAlign}></InputField>
+      <InputField 
+        secureTextEntry={password}
+        placeholder={textInputPlaceholder} 
+        borderRadius={borderRadius} 
+        textAlign={textAlign}></InputField>
     </InputCont>
   );
 }

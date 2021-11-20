@@ -4,6 +4,7 @@ import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
@@ -18,6 +19,7 @@ import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const MyTheme = {
   dark: false,
@@ -36,18 +38,18 @@ const MyTheme = {
 export default function App() {
   return (
     <NavigationContainer styles={styles.centerCont} theme={MyTheme}>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
-        <Stack.Screen name="Settings" component={Settings} />
-        <Stack.Screen name="Frequently Visited" component={FrequentlyVisited} />
-        <Stack.Screen name="Recent Items" component={RecentItems} />
-        <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} />
-        <Stack.Screen name="Restaurant Menu" component={RestaurantMenu} />
-        <Stack.Screen name="Order Summary" component={OrderSummary} />
+        <Tab.Screen name="Dashboard" component={Dashboard} />
+        <Tab.Screen name="Settings" component={Settings} />
+        <Tab.Screen name="Frequently Visited" component={FrequentlyVisited} />
+        <Tab.Screen name="Recent Items" component={RecentItems} />
+        <Tab.Screen name="Restaurant Selection" component={RestaurantSelection} />
+        <Tab.Screen name="Restaurant Menu" component={RestaurantMenu} />
+        <Tab.Screen name="Order Summary" component={OrderSummary} />
         <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
-        <Stack.Screen name="Seat Map" component={SeatMap} />
+        <Tab.Screen name="Seat Map" component={SeatMap} />
       </Stack.Navigator>
     </NavigationContainer>
   );
