@@ -24,12 +24,16 @@ const InputLabel = styled.Text`
 const FlexInput = ({
   textInputPlaceholder = "",
   textInputLabel = "",
-  textInputLabelSize = "14px"
+  textInputLabelSize = "14px",
+  onChangeText = () => {},
+  value="",
+  autoCompleteType = "off",
+  secureTextEntry = false
 }) => {
   return (
     <InputCont>
       <InputLabel textInputLabelSize={textInputLabelSize}>{textInputLabel}</InputLabel>
-      <InputField placeholder={textInputPlaceholder}></InputField>
+      <InputField placeholder={textInputPlaceholder} onChangeText={onChangeText} value={value} autoCompleteType={autoCompleteType} secureTextEntry={secureTextEntry} />
     </InputCont>
   );
 }
