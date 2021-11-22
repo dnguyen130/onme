@@ -76,13 +76,13 @@ export default function Settings({navigation}) {
           <Input />
         </PaddingContHorizontal>
       </PaddingCont>
-      <NavBarCont>
+      {/* <NavBarCont>
         <NavBar 
           homeOnPress={() => navigation.navigate('Dashboard')}
           midOnPress={() => navigation.navigate('Restaurant Menu')}
           settingsOnPress={() => navigation.navigate('Settings')}
         />
-      </NavBarCont>
+      </NavBarCont> */}
     </View>
   );
 }

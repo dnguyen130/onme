@@ -82,7 +82,7 @@ export default function Login({navigation}) {
             />
           </InputCont>
           <CenterCont>
-            <BigButton onPress={() => navigation.navigate('Dashboard')} />
+            <BigButton onPress={() => navigation.navigate('OnMeTabs')} />
             <BigButton 
               onPress={() => navigation.navigate('Sign Up')}
               bgColor = "#BCB5B7" 

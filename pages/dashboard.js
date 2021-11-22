@@ -12,13 +12,12 @@ import MenuCard from '../components/cards/MenuCard';
 import Input from '../components/global/Input';
 
 const ScrollView = styled.ScrollView`
-  
+  margin-left: 3%;
 `;
 
 const Cont = styled.View`
   flex: 1;
-  top: -4%;
-  margin-bottom: 20%;
+  /* border-width: 1px; */
 `;
 
 const TitleCont = styled.View`
@@ -30,19 +29,14 @@ const TitleCont = styled.View`
 const RowCont = styled.ScrollView`
   flex-direction: row;
   flex: 1;
+  margin: 3% 0 3% 0;
 `;
 
 const InputCont = styled.View`
   align-items: center;
+  top: -4%;
   margin-left: 5%;
   margin-right: 5%;
-`;
-
-const NavBarCont = styled.View`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
 `;
 
 const styles = StyleSheet.create({
@@ -60,10 +54,10 @@ export default function Dashboard({navigation}) {
         mainTitle="Welcome," 
         subTitle="Min" 
         onPress={() => navigation.goBack()} />
-      <Cont>
         <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
         </InputCont>
+      <Cont>
         <ScrollView>
           <TitleCont>
             <Icon 
@@ -151,13 +145,6 @@ export default function Dashboard({navigation}) {
             </RowCont>
           </ScrollView>
         </Cont>
-      <NavBarCont>
-        <NavBar 
-          homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu')}
-          settingsOnPress={() => navigation.navigate('Settings')}
-        />
-      </NavBarCont>
     </View>
   );
 }

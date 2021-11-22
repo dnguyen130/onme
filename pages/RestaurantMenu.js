@@ -12,12 +12,9 @@ import MenuCard from '../components/cards/MenuCard';
 
 const Cont = styled.View`
   flex: 1;
-  top: -4%;
-  padding-bottom: 17%;
 `;
 
 const CenterCont = styled.View`
-  /* flex: 1; */
   align-items: center;
   justify-content: center;
   padding-bottom: 3%;
@@ -27,18 +24,10 @@ const CenterScrollCont = styled.ScrollView`
   z-index: -9;
 `;
 
-const NavBarCont = styled.View`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`;
-
 const InputCont = styled.View`
-  align-items: center;
+  top: -6%;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 3%;
 `;
 
 const RowCont = styled.View`
@@ -120,13 +109,6 @@ export default function RestaurantSelection({navigation}) {
               </RowCont>
             </CenterScrollCont>
           </Cont>
-        <NavBarCont>
-          <NavBar 
-            homeOnPress={() => navigation.navigate('Dashboard')}
-            midOnPress={() => navigation.navigate('Restaurant Menu')}
-            settingsOnPress={() => navigation.navigate('Settings')}
-          />
-        </NavBarCont>
       </View>
     );
   }
@@ -189,13 +171,6 @@ export default function RestaurantSelection({navigation}) {
                </RowCont>
             </CenterScrollCont>
           </Cont>
-        <NavBarCont>
-          <NavBar 
-            homeOnPress={() => navigation.navigate('Dashboard')}
-            midOnPress={() => navigation.navigate('Restaurant Menu Drinks')}
-            settingsOnPress={() => navigation.navigate('Settings')}
-          />
-        </NavBarCont>
       </View>
     );
   }

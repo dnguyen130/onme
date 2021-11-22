@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+import { Icon } from 'react-native-elements';
+import styled from 'styled-components/native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -25,31 +27,140 @@ const MyTheme = {
   dark: false,
   colors: {
     primary: 'rgb(254, 67, 112)',
-    background: 'rgb(255, 255, 255)',
-    card: 'rgb(255, 255, 255)',
-    text: 'rgb(254, 67, 112)',
-    border: 'rgb(199, 199, 204)',
+    background: 'rgb(46, 46, 46)',
+    card: 'rgb(46, 46, 46)',
+    text: 'rgb(138, 138, 138)',
+    border: 'rgb(83, 83, 83)',
     notification: 'rgb(255, 255, 255)',
   },
 };
+
+const MidIcon = styled.Image`
+  width: 65px;
+  height: 65px;
+`;
+
+function OnMeTabs() {
+  return (
+    <Tab.Navigator screenOptions={{ 
+        headerShown: false, 
+        tabBarStyle: { 
+          height: '11%',
+          borderTopWidth: 2,
+        },
+        tabBarLabelStyle: {
+          fontSize: 14,
+          fontWeight: '600',
+        }
+      }}
+    >      
+      <Tab.Screen 
+        name="OnMeRoot" 
+        component={OnMeRoot} 
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({}) => (
+            <Icon 
+              name='home'
+              type='foundation'
+              color='#8A8A8A'
+              size={30}
+            />
+          ),
+          tabBarIconStyle: {
+            top: '10%'
+          }
+        }}
+      />
+      <Tab.Screen 
+        name="Restaurant Menu" 
+        component={RestaurantMenu} 
+        options={{
+          tabBarLabel: ' ',
+          tabBarIcon: ({}) => (
+            <MidIcon source={require('./assets/midIcon.png')}/>
+          ),
+          tabBarIconStyle: {
+            top: '20%'
+          }
+        }}
+      />
+      <Tab.Screen 
+        name="Settings" 
+        component={Settings} 
+        options={{
+          tabBarLabel: 'Settings',
+          tabBarIcon: ({}) => (
+            <Icon 
+              name='widget'
+              type='foundation'
+              color='#8A8A8A'
+              size={30}
+            />
+          ),
+          tabBarIconStyle: {
+            top: '10%'
+          }
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+function OnMeRoot() {
+  return(
+    <Stack.Navigator screenOptions={{ headerShown: false,  }}>
+      <Stack.Screen 
+        name="Dashboard" 
+        component={Dashboard} 
+        
+      />
+      <Stack.Screen 
+        name="Frequently Visited" 
+        component={FrequentlyVisited} 
+        
+      />
+      <Stack.Screen 
+        name="Recent Items" 
+        component={RecentItems} 
+        
+      />
+      <Stack.Screen 
+        name="Restaurant Selection" 
+        component={RestaurantSelection} 
+        
+      />
+      <Stack.Screen 
+        name="Order Summary" 
+        component={OrderSummary} 
+        
+      />
+      <Stack.Screen 
+        name="Seat Map" 
+        component={SeatMap} 
+        
+      />
+      <Stack.Screen 
+        name="Order Confirmation" 
+        component={OrderConfirmation} 
+        
+      />
+    </Stack.Navigator>
+  );
+}
 
 // export {default} from './storybook'; 
 
 export default function App() {
   return (
     <NavigationContainer styles={styles.centerCont} theme={MyTheme}>
-      <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Sign Up" component={SignUp} />
-        <Tab.Screen name="Dashboard" component={Dashboard} />
-        <Tab.Screen name="Settings" component={Settings} />
-        <Tab.Screen name="Frequently Visited" component={FrequentlyVisited} />
-        <Tab.Screen name="Recent Items" component={RecentItems} />
-        <Tab.Screen name="Restaurant Selection" component={RestaurantSelection} />
-        <Tab.Screen name="Restaurant Menu" component={RestaurantMenu} />
-        <Tab.Screen name="Order Summary" component={OrderSummary} />
-        <Stack.Screen name="Order Confirmation" component={OrderConfirmation} />
-        <Tab.Screen name="Seat Map" component={SeatMap} />
+        <Stack.Screen 
+          name="OnMeTabs" 
+          component={OnMeTabs}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -58,7 +169,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#2E2E2E',
     alignItems: 'center',
     justifyContent: 'center',
   },

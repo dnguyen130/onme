@@ -10,20 +10,11 @@ import Title from '../components/text/Title';
 
 const ScrollCont = styled.View`
   flex: 1;
-  top: -2%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
   flex: 1;
-  max-height: 68%;
   z-index: -9;
-`;
-
-const NavBarCont = styled.View`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
 `;
 
 const InputCont = styled.View`
@@ -205,13 +196,6 @@ export default function FrequentlyVisited({navigation}) {
             </SeatMapCont>
           </CenterScrollCont>
         </ScrollCont>
-      <NavBarCont>
-        <NavBar 
-          homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu')}
-          settingsOnPress={() => navigation.navigate('Settings')}
-        />
-      </NavBarCont>
     </View>
   );
 }

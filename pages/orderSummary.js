@@ -8,7 +8,6 @@ import BigButton from '../components/buttons/BigButton';
 import Title from '../components/text/Title';
 import Header from '../components/global/Header';
 import OrderCard from '../components/cards/OrderCard';
-import NavBar from '../components/global/NavBar';
 import RoundedButton from '../components/buttons/RoundedButton';
 import MessageBox from '../components/summary/MessageBox';
 
@@ -93,11 +92,6 @@ export default function OrderSummary({navigation}) {
         <MessageBox />
         <BigButton buttonText="Proceed to Payment" onPress={() => navigation.navigate('Order Confirmation')} />
       </PaddingCont>
-      <NavBar 
-        homeOnPress={() => navigation.navigate('Dashboard')}
-        midOnPress={() => navigation.navigate('Restaurant Menu')}
-        settingsOnPress={() => navigation.navigate('Settings')}
-      />
     </View>
     )
 }

@@ -63,7 +63,7 @@ export default function SignUp({navigation}) {
         <Input password={true} textInputLabel="Confirm Password"/>
       </RowCont>
       <CenterCont>
-        <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
+        <BigButton onPress={() => navigation.navigate('OnMeTabs')} buttonText="Sign Up" />
         <TextDivider textColor="#fff" borderColor="#888" />
         <RowCont>
           <SmallButton iconColor="#699BF7" />

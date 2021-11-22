@@ -5,25 +5,15 @@ import styled from 'styled-components';
 
 import LocButton from '../components/buttons/LocButton';
 import Input from '../components/global/Input';
-import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 
 const ScrollCont = styled.View`
   flex: 1;
-  top: -2%;
-  max-height: 60%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
   flex: 1;
   z-index: -9;
-`;
-
-const NavBarCont = styled.View`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
 `;
 
 const InputCont = styled.View`
@@ -53,7 +43,7 @@ export default function FrequentlyVisited({navigation}) {
           onPress={() => navigation.goBack()} 
         />
         <InputCont>
-          <Input textInputPlaceholder="Search" borderRadius="30px" textAlign="center" />
+          <Input textInputPlaceholder="Search" textAlign="center" />
         </InputCont>
         <ScrollCont>
           <CenterScrollCont alignItems='center'>
@@ -74,13 +64,6 @@ export default function FrequentlyVisited({navigation}) {
               <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
           </CenterScrollCont>
         </ScrollCont>
-      <NavBarCont>
-      <NavBar 
-          homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu')}
-          settingsOnPress={() => navigation.navigate('Settings')}
-        />
-      </NavBarCont>
     </View>
   );
 }

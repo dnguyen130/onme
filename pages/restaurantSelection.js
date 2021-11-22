@@ -10,24 +10,15 @@ import Header from '../components/global/Header';
 
 const Cont = styled.View`
   flex: 1;
-  top: -4%;
-  padding-bottom: 17%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
   z-index: -9;
-  margin-top: 3%;
-`;
-
-const NavBarCont = styled.View`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
 `;
 
 const InputCont = styled.View`
   align-items: center;
+  top: -4%;
   margin-left: 5%;
   margin-right: 5%;
 `;
@@ -72,13 +63,6 @@ export default function RestaurantSelection({navigation}) {
             <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
           </CenterScrollCont>
         </Cont>
-      <NavBarCont>
-        <NavBar 
-          homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu')}
-          settingsOnPress={() => navigation.navigate('Settings')}
-        />
-      </NavBarCont>
     </View>
   );
 }
