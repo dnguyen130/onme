@@ -1,15 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, SafeAreaView, View, TouchableWithoutFeedback, Modal, Alert } from 'react-native';
 import styled from 'styled-components';
 
 import LocButton from '../components/buttons/LocButton';
 import Input from '../components/global/Input';
-import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
+import BottomOverlay from '../components/cards/BottomOverlay';
 
 const Cont = styled.View`
   flex: 1;
+`;
+
+const ModalFlexEnd = styled.View`
+  align-items: flex-end;
+`;
+
+const ModalCont = styled.View`
+  top: 42%;
 `;
 
 const CenterScrollCont = styled.ScrollView`
@@ -26,13 +34,15 @@ const InputCont = styled.View`
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2E2E2E',
+    backgroundColor: '#2E2E2E'
   }
 });
 
 export default function RestaurantSelection({navigation}) {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
         <StatusBar style="light" />
         <Header 
           mainTitle="The Habitat" 
@@ -46,7 +56,7 @@ export default function RestaurantSelection({navigation}) {
             <Input textInputPlaceholder="Search" textAlign="center" />
           </InputCont>
           <CenterScrollCont alignItems='center'>
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
             <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
             <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
             <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
@@ -63,6 +73,21 @@ export default function RestaurantSelection({navigation}) {
             <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
           </CenterScrollCont>
         </Cont>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <ModalFlexEnd>
+            <ModalCont>
+              <BottomOverlay />
+            </ModalCont>
+          </ModalFlexEnd>
+        </Modal>
     </View>
   );
 }

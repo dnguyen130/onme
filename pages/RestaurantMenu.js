@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Modal } from 'react-native';
 import styled from 'styled-components';
 
 import Input from '../components/global/Input';
-import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 import CategoryList from '../components/menu/CategoryList';
 import Toggle from '../components/menu/Toggle';
@@ -36,6 +35,21 @@ const RowCont = styled.View`
   padding: 10px;
 `;
 
+const ModalCont = styled.View`
+  top: 79%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 80px;
+  border-radius: 30px;
+  background-color: #A57760;
+`;
+
+const ModalText = styled.Text`
+
+`;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -53,6 +67,12 @@ export default function RestaurantSelection({navigation}) {
   const FoodOn = () => {
     setToggle(true);
   }
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  setTimeout(() => {
+    setModalVisible(false);
+  }, 3000);
   
   if (toggle === false) {
     return (
@@ -85,8 +105,8 @@ export default function RestaurantSelection({navigation}) {
             <CenterScrollCont alignItems='center'>
               <RowCont>
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')}
-                  addOnPress={() => navigation.navigate('Seat Map')} 
+                  // onPress={() => navigation.navigate('Seat Map')}
+                  addOnPress={() => setModalVisible(!modalVisible)}
                   itemText='Ravioli Martini'
                   priceText='$5.99'
                 />
@@ -108,6 +128,21 @@ export default function RestaurantSelection({navigation}) {
                 />
               </RowCont>
             </CenterScrollCont>
+            <Modal
+              animationType="slide"
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() => {
+                Alert.alert("Modal has been closed.");
+                setModalVisible(!modalVisible);
+              }}
+            >
+              <ModalCont>
+                <ModalText>
+                  (Item Name Here) has been added to your cart  
+                </ModalText>
+              </ModalCont>
+            </Modal>
           </Cont>
       </View>
     );

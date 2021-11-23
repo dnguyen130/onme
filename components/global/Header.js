@@ -10,7 +10,7 @@ import BackButton from './BackButton';
 const ImgBg = styled.ImageBackground`
   flex: 1;
   justify-content: space-between;
-  max-height: 29%;
+  max-height: ${props => props.height};
   min-width: 100%;
   `
 ;
@@ -38,20 +38,25 @@ const Header = ({
   iconSubName='',
   iconSubType='',
   iconSubColor='',
+  display='flex',
+  maxHeight="29%",
+  opacity="1",
   onPress = ()=>{}
 }) => {
   return (
     <ImgBg 
       source={source} 
       resizeMode="cover"
+      height={maxHeight}
     >
       <LinearGradient 
         colors={['rgba(0,0,0,1)', 'rgba(165, 119, 96, 0.5)']} 
-        style={{flex: 1, width: "100%", height: "100%", padding: "5%", justifyContent: "space-between"}}
+        style={{flex: 1, width: "100%", height: "100%", padding: "5%", justifyContent: "space-between", opacity: opacity }}
         start={{ x: 0, y: 0.98 }}
         end={{ x: 0, y: 0 }}
+        
       >
-        <BackButton paddingTop='7%' onPress={onPress} />
+        <BackButton paddingTop='7%' onPress={onPress} display={display} />
         <TitleCont>
           <RowCont>
             <Title titleText={mainTitle} titleWeight={mainWeight} /> 

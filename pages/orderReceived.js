@@ -25,7 +25,9 @@ export default function OrderConfirmation({navigation}) {
     <View style={styles.container}>
         <StatusBar style="light" />
         <Header 
-          subTitle="Order Confirmation" subWeight="700" 
+          subTitle="Order Confirmation" 
+          subWeight="700" 
+          source={require("../assets/headerImg_4.png")}
           onPress={() => navigation.goBack()} 
         />
       <CenterCont>
