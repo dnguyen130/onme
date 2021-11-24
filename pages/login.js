@@ -88,7 +88,7 @@ export default function Login({navigation}) {
         androidClientId: "108300065119-dff8fg1n852gm6rqltstmc3m3docl4gr.apps.googleusercontent.com",
         iosClientId: "108300065119-7eujeanfp5k38hmtpa7gngmco603egse.apps.googleusercontent.com",
         expoClientId: "108300065119-hrp12dvecq7kdbo1mkvj14l23javki8t.apps.googleusercontent.com",
-        scopes: ['profile', 'email', 'https://www.googleapis.com/auth/user.birthday.read'],
+        scopes: ['profile', 'email'],
       });
   
       if (result.type === 'success') {
