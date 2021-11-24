@@ -11,7 +11,7 @@ import Title from '../components/text/Title';
 import TextDivider from '../components/text/TextDivider';
 
 //back-end
-import app from '../utils/firebase';
+import app from '../utils/firebase.js';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const CenterCont = styled.View`
@@ -42,9 +42,17 @@ export default function SignUp({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const SignUpUser = async(email, password) {
+  const SignUpUser = async() => {
     const auth = getAuth();
-    const result = await createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential)=> {
+        const user = userCredential.user;
+        console.log(user.email);
+        navigation.navigate("Dashboard");
+      })
+      .catch((err)=>{
+        alert(err.message);
+      })
   }
 
 
@@ -85,7 +93,9 @@ export default function SignUp({navigation}) {
         <Input textInputLabel="Confirm Password"/>
       </RowCont>
       <CenterCont>
-        <BigButton onPress={() => navigation.navigate('Dashboard')} buttonText="Sign Up" />
+        <BigButton 
+        onPress={SignUpUser}
+        buttonText="Sign Up" />
         <TextDivider />
         <RowCont>
           <SmallButton />
