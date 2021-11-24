@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
 
@@ -9,6 +9,10 @@ import FlexInput from '../components/global/FlexInput';
 import SmallButton from '../components/buttons/SmallButton';
 import Title from '../components/text/Title';
 import TextDivider from '../components/text/TextDivider';
+
+//back-end
+import app from '../utils/firebase';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const CenterCont = styled.View`
   justify-content: center;
@@ -34,6 +38,16 @@ const styles = StyleSheet.create({
 });
 
 export default function SignUp({navigation}) {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const SignUpUser = async(email, password) {
+    const auth = getAuth();
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+  }
+
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
@@ -49,10 +63,23 @@ export default function SignUp({navigation}) {
         <FlexInput textInputPlaceholder="Year"/>
       </RowCont>
       <RowCont>
-        <Input textInputLabel="Email"/>
+        <Input 
+        textInputLabel="Email"
+        textInputPlaceholder="Email"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
+        autoCompleteType="email"
+        textContentType="emailAddress"/>
       </RowCont>
       <RowCont>
-        <Input textInputLabel="Create Password"/>
+        <Input 
+          textInputLabel="Create Password"
+          textInputPlaceholder="Password"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          autoCompleteType="password"
+          textContentType="newPassword"
+          secureTextEntry={true} />
       </RowCont>
       <RowCont>
         <Input textInputLabel="Confirm Password"/>

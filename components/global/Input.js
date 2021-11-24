@@ -23,12 +23,23 @@ const InputLabel = styled.Text`
 const Input = ({
   textInputPlaceholder = "",
   textInputLabel = "",
-  textInputLabelSize = "14px"
+  textInputLabelSize = "14px",
+  value = "",
+  secureTextEntry = false,
+  onChangeText = () => {},
+  autoCompleteType = 'off',
+  textContentType = 'none'
 }) => {
   return (
     <InputCont>
       <InputLabel textInputLabelSize={textInputLabelSize}>{textInputLabel}</InputLabel>
-      <InputField placeholder={textInputPlaceholder}></InputField>
+      <InputField 
+        placeholder={textInputPlaceholder} 
+        value={value} 
+        secureTextEntry={secureTextEntry}
+        onChangeText={onChangeText}
+        autoCompleteType={autoCompleteType}
+        textContentType={textContentType} />
     </InputCont>
   );
 }
