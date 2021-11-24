@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
 
 import BigButton from '../components/buttons/BigButton';
