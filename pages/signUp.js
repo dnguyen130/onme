@@ -42,7 +42,7 @@ export default function SignUp({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const SignUpUser = async() => {
+  const SignUpUser = async () => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential)=> {

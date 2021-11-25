@@ -11,6 +11,11 @@ import Title from '../components/text/Title';
 import TextLink from '../components/text/TextLink';
 import TextDivider from '../components/text/TextDivider';
 
+//back-end
+import app from '../utils/firebase';
+import { GoogleAuthProvider, getAuth, signInWithCredential } from '@firebase/auth';
+import * as Google from 'expo-google-app-auth';
+
 const ImgBg = styled.ImageBackground`
   flex: 1;
   justify-content: flex-end;
@@ -65,6 +70,35 @@ const styles = StyleSheet.create({
 });
 
 export default function Login({navigation}) {
+
+  const SignInGoogle = async () => {
+    try {
+    const result = await Google.logInAsync({
+      androidClientId: '108300065119-dff8fg1n852gm6rqltstmc3m3docl4gr.apps.googleusercontent.com',
+      iosClientId: '108300065119-7eujeanfp5k38hmtpa7gngmco603egse.apps.googleusercontent.com',
+      expoClientId: '108300065119-hrp12dvecq7kdbo1mkvj14l23javki8t.apps.googleusercontent.com',
+      scopes: ['profile', 'email']
+    });
+
+    console.log(result);
+    if (result.type === 'success') {
+      const auth = getAuth();
+      const provider = GoogleAuthProvider.credential(
+        result.idToken,
+        result.accessToken
+      )
+
+      const fbresult = await signInWithCredential(auth, provider);
+      console.log('added to firebase', fbresult);
+      return result.accessToken;
+    } else {
+      return { cancelled: true };
+    }
+  } catch (e) {
+    return { error: true };
+  }
+}
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
@@ -96,8 +130,7 @@ export default function Login({navigation}) {
           </CenterCont>
           <TextDivider textColor="#fff" />
           <RowCont>
-            <SmallButton iconColor="#699BF7" />
-            <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+            <SmallButton iconName="logo-google" iconColor="#EC452E" onPress={SignInGoogle} />
           </RowCont>
         </ColCont>
     </SafeAreaView>

@@ -34,10 +34,11 @@ const SmallButton = ({
   buttonTextcolor = "#000",
   buttonColor = "#FFF",
   buttonTextWeight = "400",
-  buttonBorderWidth = "1px"
+  buttonBorderWidth = "1px",
+  onPress = () => {}
 }) => {
   return (
-    <Button buttonColor={buttonColor} buttonBorderWidth={buttonBorderWidth}>
+    <Button buttonColor={buttonColor} buttonBorderWidth={buttonBorderWidth} onPress={onPress}>
       <Icon 
         name={iconName}
         type={iconBrand}
