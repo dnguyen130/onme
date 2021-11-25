@@ -102,16 +102,6 @@ export default function SignUp({navigation}) {
         textContentType="emailAddress"/>
       </RowCont>
       <RowCont>
-<<<<<<< HEAD
-        <Input password={true} textInputLabel="Create Password"/>
-      </RowCont>
-      <RowCont>
-        <Input password={true} textInputLabel="Confirm Password"/>
-      </RowCont>
-      <CenterCont>
-        <BigButton onPress={() => navigation.navigate('OnMeTabs')} buttonText="Sign Up" />
-        <TextDivider textColor="#fff" borderColor="#888" />
-=======
         <Input 
           textInputLabel="Create Password"
           textInputPlaceholder="Password"
@@ -134,7 +124,6 @@ export default function SignUp({navigation}) {
         onPress={SignUpUser}
         buttonText="Sign Up" />
         <TextDivider />
->>>>>>> 63366192354f6c43984a57f1bafa8c8c7a32af79
         <RowCont>
           <SmallButton iconColor="#699BF7" />
           <SmallButton iconName="logo-google" iconColor="#EC452E"/>
