@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 
 const Cont = styled.View`
@@ -29,23 +29,57 @@ const ButtonText = styled.Text`
 const Toggle = ({
   drinksOnPress = ()=>{},
   foodOnPress = ()=>{},
-  toggleColor = "#838383"
 }) => {
-  return (
-    <Cont>
-      <Button 
-        onPress={drinksOnPress}
-        bgColor={toggleColor}
-      >
-        <ButtonText>Drinks</ButtonText>
-      </Button>
-      <Button 
-        onPress={foodOnPress} 
-        bgColor={toggleColor}
-      >
-        <ButtonText>Food</ButtonText>
-      </Button>
-    </Cont>
-  );
+  const [toggle, setToggle] = useState(false);
+
+  const DrinksOn = ({}) => {
+    setToggle(false);
+  }
+
+  const FoodOn = ({}) => {
+    setToggle(true);
+  }
+  
+  if (toggle === false) {
+    return (
+      <Cont>
+        <Button 
+          onPress={drinksOnPress}
+          onPressIn={DrinksOn}
+          bgColor='#A57760'
+        >
+          <ButtonText>Drinks</ButtonText>
+        </Button>
+        <Button 
+          onPress={foodOnPress}
+          onPressIn={FoodOn}
+          bgColor='#838383'
+        >
+          <ButtonText>Food</ButtonText>
+        </Button>
+      </Cont>
+    );
+  }
+
+  else {
+    return (
+      <Cont>
+        <Button 
+          onPress={drinksOnPress}
+          onPressIn={DrinksOn}
+          bgColor='#838383'
+          >
+          <ButtonText>Drinks</ButtonText>
+        </Button>
+        <Button 
+          onPress={foodOnPress}
+          onPressIn={FoodOn}
+          bgColor='#A57760'
+          >
+          <ButtonText>Food</ButtonText>
+        </Button>
+      </Cont>
+    );
+  }
 }
 export default Toggle;

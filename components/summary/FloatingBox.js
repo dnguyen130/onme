@@ -10,6 +10,7 @@ const FloatingBoxCont = styled.View`
   padding: 15px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10%;
 
   border-top-color: rgba(117, 117, 117, 0.5);
   border-top-width: 5px;

@@ -13,14 +13,19 @@ const ListText = styled.Text`
 `;
 
 const CategoryList = ({
+  listOne='All',
+  listTwo='Appetizers',
+  listThree='Desserts',
+  listFour='Seasonal',
+  listFive='Trending'
 }) => {
   return (
     <Cont horizontal>
-      <ListText>All</ListText>
-      <ListText>Appetizers</ListText>
-      <ListText>Desserts</ListText>
-      <ListText>Seasonal</ListText>
-      <ListText>Trending</ListText>
+      <ListText>{listOne}</ListText>
+      <ListText>{listTwo}</ListText>
+      <ListText>{listThree}</ListText>
+      <ListText>{listFour}</ListText>
+      <ListText>{listFive}</ListText>
     </Cont>
   );
 }
