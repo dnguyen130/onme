@@ -26,16 +26,24 @@ const Input = ({
   textInputLabelSize = "14px",
   borderRadius="20px",
   textAlign="auto",
-  password=false
+  value = "",
+  secureTextEntry = false,
+  onChangeText = () => {},
+  autoCompleteType = 'off',
+  textContentType = 'none'
 }) => {
   return (
     <InputCont>
       <InputLabel textInputLabelSize={textInputLabelSize}>{textInputLabel}</InputLabel>
       <InputField 
-        secureTextEntry={password}
-        placeholder={textInputPlaceholder} 
         borderRadius={borderRadius} 
-        textAlign={textAlign}></InputField>
+        textAlign={textAlign}
+        placeholder={textInputPlaceholder} 
+        value={value} 
+        secureTextEntry={secureTextEntry}
+        onChangeText={onChangeText}
+        autoCompleteType={autoCompleteType}
+        textContentType={textContentType} />
     </InputCont>
   );
 }

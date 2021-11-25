@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
 
@@ -19,6 +19,9 @@ const Cont = styled.View`
   flex: 1;
   /* border-width: 1px; */
 `;
+
+//back-end
+import { getAuth } from 'firebase/auth';
 
 const TitleCont = styled.View`
   flex-direction: row;
@@ -47,6 +50,10 @@ const styles = StyleSheet.create({
 });
 
 export default function Dashboard({navigation}) {
+  
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   return (
     <View style={styles.container}>
         <StatusBar style="light" />

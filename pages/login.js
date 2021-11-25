@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
 import { Video } from 'expo-av';
 
@@ -10,6 +10,17 @@ import SmallButton from '../components/buttons/SmallButton';
 import Title from '../components/text/Title';
 import TextLink from '../components/text/TextLink';
 import TextDivider from '../components/text/TextDivider';
+
+//back-end
+import app from '../utils/firebase';
+import { GoogleAuthProvider, getAuth, signInWithCredential, signInWithEmailAndPassword, onAuthStateChanged, signOut } from '@firebase/auth';
+import * as Google from 'expo-google-app-auth';
+
+const ImgBg = styled.ImageBackground`
+  flex: 1;
+  justify-content: flex-end;
+  width: 100%;
+`;
 
 const CenterCont = styled.View`
   align-items: center;
@@ -56,6 +67,60 @@ const styles = StyleSheet.create({
 });
 
 export default function Login({navigation}) {
+
+  const auth = getAuth();
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigation.navigate('Dashboard');
+    }
+    else {
+      console.log("Not Signed In");
+    }
+  })
+
+  const SignInEmail = () => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      navigation.navigate('Dashboard');
+    }).catch((err) => {
+      alert(err.message);
+    })
+  }
+
+  const SignInGoogle = async () => {
+    try {
+    const result = await Google.logInAsync({
+      androidClientId: '108300065119-dff8fg1n852gm6rqltstmc3m3docl4gr.apps.googleusercontent.com',
+      iosClientId: '108300065119-7eujeanfp5k38hmtpa7gngmco603egse.apps.googleusercontent.com',
+      expoClientId: '108300065119-hrp12dvecq7kdbo1mkvj14l23javki8t.apps.googleusercontent.com',
+      scopes: ['profile', 'email']
+    });
+
+    console.log(result);
+    if (result.type === 'success') {
+      const provider = GoogleAuthProvider.credential(
+        result.idToken,
+        result.accessToken
+      )
+
+      const fbresult = await signInWithCredential(auth, provider);
+      console.log('added to firebase', fbresult);
+      navigation.navigate('Dashboard');
+      return result.accessToken;
+    } else {
+      return { cancelled: true };
+    }
+    } catch (e) {
+      return { error: true };
+  };
+
+}
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -73,16 +138,25 @@ export default function Login({navigation}) {
           <EmptyCont />
           <Title alignSelf="flex-start" />
           <InputCont>
-            <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
-            <Input password={true} textInputPlaceholder = "Password" textInputLabelSize="0px" />
-            <TextLink 
-              textColor="#fff" 
-              alignSelf="flex-end" 
-              paddingTop='5%'
-            />
+            <Input 
+              textInputPlaceholder = "Email" 
+              textInputLabelSize="0px"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+              autoCompleteType="email"
+              textContentType="emailAddress"/>
+            <Input 
+              textInputPlaceholder = "Password" 
+              textInputLabelSize="0px"
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+              autoCompleteType="password"
+              textContentType="newPassword"
+              secureTextEntry={true} />
+            <TextLink textColor="#fff" alignSelf="flex-end" />
           </InputCont>
           <CenterCont>
-            <BigButton onPress={() => navigation.navigate('OnMeTabs')} />
+            <BigButton onPress={SignInEmail} />
             <BigButton 
               onPress={() => navigation.navigate('Sign Up')}
               bgColor = "#BCB5B7" 
@@ -91,8 +165,7 @@ export default function Login({navigation}) {
           </CenterCont>
           <TextDivider textColor="#fff" borderColor="#888" />
           <RowCont>
-            <SmallButton iconColor="#699BF7" />
-            <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+            <SmallButton iconName="logo-google" iconColor="#EC452E" onPress={SignInGoogle} />
           </RowCont>
         </ColCont>
     </View>

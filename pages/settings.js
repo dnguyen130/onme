@@ -8,6 +8,8 @@ import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 import SmallButton from '../components/buttons/SmallButton';
 
+import { getAuth, signOut } from 'firebase/auth';
+
 const NavBarCont = styled.View`
   position: absolute;
   left: 0;
@@ -36,6 +38,17 @@ const styles = StyleSheet.create({
 });
 
 export default function Settings({navigation}) {
+
+  const auth = getAuth();
+  const UserSignOut = () => {
+    signOut(auth).then(() => {
+      navigation.navigate('Login');
+      console.log('Logged out');
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -62,7 +75,8 @@ export default function Settings({navigation}) {
           buttonBorderWidth="0px"
           iconName="login" 
           iconBrand="entypo" 
-          iconColor="#FE4370"/>
+          iconColor="#FE4370"
+          onPress={UserSignOut} />
         </RowCont>
         <PaddingContHorizontal>
           <RowCont>
