@@ -13,7 +13,7 @@ import TextDivider from '../components/text/TextDivider';
 
 //back-end
 import app from '../utils/firebase';
-import { GoogleAuthProvider, getAuth, signInWithCredential, onAuthStateChanged, signOut } from '@firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithCredential, signInWithEmailAndPassword, onAuthStateChanged, signOut } from '@firebase/auth';
 import * as Google from 'expo-google-app-auth';
 
 const ImgBg = styled.ImageBackground`
@@ -72,16 +72,28 @@ const styles = StyleSheet.create({
 export default function Login({navigation}) {
 
   const auth = getAuth();
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
       navigation.navigate('Dashboard');
-      console.log(user.email);
     }
     else {
       console.log("Not Signed In");
     }
   })
+
+  const SignInEmail = () => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      navigation.navigate('Dashboard');
+    }).catch((err) => {
+      alert(err.message);
+    })
+  }
 
   const SignInGoogle = async () => {
     try {
@@ -101,6 +113,7 @@ export default function Login({navigation}) {
 
       const fbresult = await signInWithCredential(auth, provider);
       console.log('added to firebase', fbresult);
+      navigation.navigate('Dashboard');
       return result.accessToken;
     } else {
       return { cancelled: true };
@@ -129,12 +142,24 @@ export default function Login({navigation}) {
           <Title alignSelf="flex-start" />
           <InputCont>
             <Input 
-              textInputPlaceholder = "Email" textInputLabelSize="0px" />
-            <Input textInputPlaceholder = "Password" textInputLabelSize="0px" />
+              textInputPlaceholder = "Email" 
+              textInputLabelSize="0px"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+              autoCompleteType="email"
+              textContentType="emailAddress"/>
+            <Input 
+              textInputPlaceholder = "Password" 
+              textInputLabelSize="0px"
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+              autoCompleteType="password"
+              textContentType="newPassword"
+              secureTextEntry={true} />
             <TextLink textColor="#fff" alignSelf="flex-end" />
           </InputCont>
           <CenterCont>
-            <BigButton onPress={() => navigation.navigate('Dashboard')} />
+            <BigButton onPress={SignInEmail} />
             <BigButton 
               onPress={() => navigation.navigate('Sign Up')}
               bgColor = "#BCB5B7" 

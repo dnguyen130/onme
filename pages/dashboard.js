@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -8,6 +8,9 @@ import Title from '../components/text/Title';
 import Card from '../components/cards/Card';
 import Header from '../components/global/Header';
 import MenuCard from '../components/cards/MenuCard';
+
+//back-end
+import { getAuth } from 'firebase/auth';
 
 const TitleCont = styled.View`
   flex-direction: row;
@@ -42,10 +45,15 @@ const styles = StyleSheet.create({
 });
 
 export default function Dashboard({navigation}) {
+  
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   return (
+
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <Header mainTitle="Welcome," subTitle="Min" />
+      <Header mainTitle="Welcome," subTitle={user.displayName} />
       <TitleCont>
         <TitleIcon source={require('../assets/star.png')} />
         <Title 

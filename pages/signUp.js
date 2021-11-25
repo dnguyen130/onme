@@ -12,7 +12,7 @@ import TextDivider from '../components/text/TextDivider';
 
 //back-end
 import app from '../utils/firebase.js';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 const CenterCont = styled.View`
   justify-content: center;
@@ -41,18 +41,34 @@ export default function SignUp({navigation}) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
   const SignUpUser = async () => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential)=> {
-        const user = userCredential.user;
-        console.log(user.email);
-        navigation.navigate("Dashboard");
-      })
-      .catch((err)=>{
-        alert(err.message);
-      })
+    if(password === passwordConfirm)
+    {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential)=> {
+          const user = userCredential.user;
+          console.log(auth.currentUser);
+
+          updateProfile(auth.currentUser, {
+            displayName: firstName
+          }).then(() => {
+            console.log(auth.currentUser.displayName);
+          })
+
+          navigation.navigate("Dashboard");
+        })
+        .catch((err)=>{
+          alert(err.message);
+        })
+    } else {
+      alert("Passwords do not match");
+    }
   }
 
   return (
@@ -61,13 +77,15 @@ export default function SignUp({navigation}) {
       <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
       <Title titleSize="32px" titleText="Create your account" />
       <RowCont>
-        <FlexInput textInputLabel="Name" textInputPlaceholder="First Name"/>
-        <FlexInput textInputPlaceholder="Last Name" />
-      </RowCont>
-      <RowCont>
-        <FlexInput textInputLabel="Date of Birth" textInputPlaceholder="Month" />
-        <FlexInput textInputPlaceholder="Day"/>
-        <FlexInput textInputPlaceholder="Year"/>
+        <FlexInput 
+        textInputLabel="Name" 
+        textInputPlaceholder="First Name"
+        value={firstName} 
+        onChangeText={(text) => setFirstName(text)} />
+        <FlexInput 
+        textInputPlaceholder="Last Name"
+        value={lastName}
+        onChangeText={(text) => setLastName(text)} />
       </RowCont>
       <RowCont>
         <Input 
@@ -89,7 +107,12 @@ export default function SignUp({navigation}) {
           secureTextEntry={true} />
       </RowCont>
       <RowCont>
-        <Input textInputLabel="Confirm Password"/>
+        <Input 
+        textInputLabel="Confirm Password"
+        textInputPlaceholder="Confirm Password"
+        value={passwordConfirm}
+        onChangeText={(text) => setPasswordConfirm(text)}
+        secureTextEntry={true}/>
       </RowCont>
       <CenterCont>
         <BigButton 
