@@ -55,7 +55,6 @@ export default function SignUp({navigation}) {
       })
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
