@@ -21,10 +21,11 @@ const BigButton = ({
   buttonText = "Sign In",
   bgColor = "#FE4370;",
   width = '100%',
-  onPress = ()=>{}
+  onPress = ()=>{},
+  onPressIn = ()=>{}
 }) => {
   return (
-    <Button changeButtonColor={bgColor} width={width} onPress={onPress}>
+    <Button changeButtonColor={bgColor} width={width} onPress={onPress} onPressIn={onPressIn}>
       <ButtonText>{buttonText}</ButtonText>
     </Button>
   );

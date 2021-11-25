@@ -2,7 +2,7 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 
-const CardCont = styled.TouchableOpacity`
+const CardCont = styled.Pressable`
   align-items: center;
   justify-content: center;
   width: 152px;

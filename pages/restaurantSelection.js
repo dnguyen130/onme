@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, View, TouchableWithoutFeedback, Modal, Alert } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 import LocButton from '../components/buttons/LocButton';
 import Input from '../components/global/Input';
@@ -12,12 +12,8 @@ const Cont = styled.View`
   flex: 1;
 `;
 
-const ModalFlexEnd = styled.View`
-  align-items: flex-end;
-`;
-
-const ModalCont = styled.View`
-  top: 42%;
+const ModalPressable = styled.Pressable`
+  flex: 1;
 `;
 
 const CenterScrollCont = styled.ScrollView`
@@ -26,7 +22,7 @@ const CenterScrollCont = styled.ScrollView`
 
 const InputCont = styled.View`
   align-items: center;
-  top: -4%;
+  top: -6%;
   margin-left: 5%;
   margin-right: 5%;
 `;
@@ -77,16 +73,11 @@ export default function RestaurantSelection({navigation}) {
           animationType="slide"
           transparent={true}
           visible={modalVisible}
-          onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-            setModalVisible(!modalVisible);
-          }}
         >
-          <ModalFlexEnd>
-            <ModalCont>
-              <BottomOverlay />
-            </ModalCont>
-          </ModalFlexEnd>
+          <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
+            <BottomOverlay 
+              send={()=> navigation.navigate('Restaurant Menu')}
+            />
         </Modal>
     </View>
   );

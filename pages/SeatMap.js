@@ -98,7 +98,7 @@ export default function FrequentlyVisited({navigation}) {
           subWeight="700"
           subTitleSize="24px"
           source={require("../assets/headerImg_3.png")} 
-          onPress={() => navigation.goBack()} 
+          onPress={() => navigation.navigate('Restaurant Menu')} 
         />
         <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
