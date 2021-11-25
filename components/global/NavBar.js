@@ -8,7 +8,7 @@ const Cont = styled.View`
   border-top-width: 2px;
   border-left-width: 0.5px;
   border-right-width: 0.5px;
-  border-color: rgba(100, 100, 100, 1);
+  border-color: rgba(83, 83, 83, 1);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 10px;
@@ -41,7 +41,7 @@ const NavBar = ({
       <IconCont onPress={homeOnPress}>
         <Icon 
           name='home'
-          type='ionicon'
+          type='foundation'
           color='#fff'
         />
         <NavBarText>Home</NavBarText>
@@ -51,8 +51,8 @@ const NavBar = ({
       </IconCont>
       <IconCont onPress={settingsOnPress}>
         <Icon 
-          name='settings'
-          type='ionicon'
+          name='widget'
+          type='foundation'
           color='#fff'
         />
         <NavBarText>Settings</NavBarText>

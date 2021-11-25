@@ -6,13 +6,13 @@ import { Icon } from 'react-native-elements';
 const Button = styled.TouchableOpacity`
   flex-direction: row;
   background-color: ${props => props.buttonColor};
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 10px;
   border-width: ${props => props.buttonBorderWidth};
+  border-color: #BFBFBF;
   border-radius: 10px;
   width: 117px;
-  min-height: 37px;
+  height: 37px;
 `;
 
 const ButtonText = styled.Text`
