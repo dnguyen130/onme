@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components/native';
 import { Video } from 'expo-av';
 
@@ -75,7 +75,7 @@ export default function Login({navigation}) {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      navigation.navigate('Dashboard');
+      navigation.navigate('OnMeTabs');
     }
     else {
       console.log("Not Signed In");
@@ -86,7 +86,7 @@ export default function Login({navigation}) {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      navigation.navigate('Dashboard');
+      navigation.navigate('OnMeTabs');
     }).catch((err) => {
       alert(err.message);
     })
@@ -110,7 +110,7 @@ export default function Login({navigation}) {
 
       const fbresult = await signInWithCredential(auth, provider);
       console.log('added to firebase', fbresult);
-      navigation.navigate('Dashboard');
+      navigation.navigate('OnMeTabs');
       return result.accessToken;
     } else {
       return { cancelled: true };
@@ -153,7 +153,11 @@ export default function Login({navigation}) {
               autoCompleteType="password"
               textContentType="newPassword"
               secureTextEntry={true} />
-            <TextLink textColor="#fff" alignSelf="flex-end" />
+            <TextLink 
+              textColor="#fff" 
+              alignSelf="flex-end" 
+              paddingTop='5%'
+            />
           </InputCont>
           <CenterCont>
             <BigButton onPress={SignInEmail} />

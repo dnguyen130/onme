@@ -80,14 +80,48 @@ export default function Settings({navigation}) {
         </RowCont>
         <PaddingContHorizontal>
           <RowCont>
-            <Input label="Name" containerStyle={{flex: 2}}/>
-            <Input label="Age" containerStyle={{flex: 1}} />
+            <Input 
+              label="Name" 
+              labelStyle={{color: '#fff' }}
+              containerStyle={{flex: 2}}
+              inputStyle={{color: '#fff'}}  
+              inputContainerStyle={{borderBottomColor: '#A57760'}}  
+            />
+            <Input 
+              label="Age" 
+              labelStyle={{color: '#fff' }}
+              containerStyle={{flex: 1}}
+              inputStyle={{color: '#fff'}}  
+              inputContainerStyle={{borderBottomColor: '#A57760'}}  
+            />
           </RowCont>
-          <Input label="Email" />
-          <Input label="Password" />
-          <Input label="Two Truths and a Lie" />
-          <Input />
-          <Input />
+          <Input 
+            label="Email" 
+            labelStyle={{color: '#fff' }}
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}}  
+          />
+          <Input 
+            label="Password"
+            secureTextEntry={true}
+            labelStyle={{color: '#fff' }}
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}}  
+          />
+          <Input
+            label="Two Truths and a Lie" 
+            labelStyle={{color: '#fff' }}
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}}  
+          />
+          <Input 
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}} 
+          />
+          <Input 
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}} 
+          />
         </PaddingContHorizontal>
       </PaddingCont>
       {/* <NavBarCont>

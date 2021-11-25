@@ -123,7 +123,7 @@ export default function SignUp({navigation}) {
         <BigButton 
         onPress={SignUpUser}
         buttonText="Sign Up" />
-        <TextDivider />
+        <TextDivider textColor="#888" borderColor="#888" />
         <RowCont>
           <SmallButton iconColor="#699BF7" />
           <SmallButton iconName="logo-google" iconColor="#EC452E"/>
