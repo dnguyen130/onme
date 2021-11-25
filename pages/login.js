@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
 import { Video } from 'expo-av';
@@ -13,7 +13,7 @@ import TextDivider from '../components/text/TextDivider';
 
 //back-end
 import app from '../utils/firebase';
-import { GoogleAuthProvider, getAuth, signInWithCredential } from '@firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithCredential, onAuthStateChanged, signOut } from '@firebase/auth';
 import * as Google from 'expo-google-app-auth';
 
 const ImgBg = styled.ImageBackground`
@@ -71,6 +71,18 @@ const styles = StyleSheet.create({
 
 export default function Login({navigation}) {
 
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigation.navigate('Dashboard');
+      console.log(user.email);
+    }
+    else {
+      console.log("Not Signed In");
+    }
+  })
+
   const SignInGoogle = async () => {
     try {
     const result = await Google.logInAsync({
@@ -82,7 +94,6 @@ export default function Login({navigation}) {
 
     console.log(result);
     if (result.type === 'success') {
-      const auth = getAuth();
       const provider = GoogleAuthProvider.credential(
         result.idToken,
         result.accessToken
@@ -94,9 +105,10 @@ export default function Login({navigation}) {
     } else {
       return { cancelled: true };
     }
-  } catch (e) {
-    return { error: true };
-  }
+    } catch (e) {
+      return { error: true };
+  };
+
 }
 
   return (
@@ -116,7 +128,8 @@ export default function Login({navigation}) {
           <EmptyCont />
           <Title alignSelf="flex-start" />
           <InputCont>
-            <Input textInputPlaceholder = "Email" textInputLabelSize="0px" />
+            <Input 
+              textInputPlaceholder = "Email" textInputLabelSize="0px" />
             <Input textInputPlaceholder = "Password" textInputLabelSize="0px" />
             <TextLink textColor="#fff" alignSelf="flex-end" />
           </InputCont>
