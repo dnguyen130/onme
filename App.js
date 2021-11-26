@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+import React, {useRef, useEffect, useState} from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import styled from 'styled-components/native';
+import LottieView from 'lottie-react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,6 +19,7 @@ import Settings from './pages/Settings';
 import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
+import PasswordSettings from './pages/PasswordSettings'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -153,10 +154,32 @@ function OnMeRoot() {
 // export {default} from './storybook'; 
 
 export default function App() {
+  var anim = useRef();
+  const [load, setLoad] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoad(false);
+    }, 4000);
+  }, []);
+
+  if (load === true) {
+    return <View style={styles.container}>
+      <LottieView
+        ref={(ref) => {
+          anim = ref;
+        }}
+        source={require('./assets/data.json')}
+        autoPlay={true}
+        speed={2}
+      />
+    </View>
+  }
   return (
     <NavigationContainer styles={styles.centerCont} theme={MyTheme}>
       <Stack.Navigator screenOptions={{ headerShown: false, }}>
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Password Settings" component={PasswordSettings} />
         <Stack.Screen name="Sign Up" component={SignUp} />
         <Stack.Screen 
           name="OnMeTabs" 
