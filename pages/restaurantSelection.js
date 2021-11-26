@@ -37,6 +37,10 @@ const styles = StyleSheet.create({
 export default function RestaurantSelection({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
 
+  const modalFunction = () => {
+    setModalVisible(!modalVisible);
+    navigation.navigate('Restaurant Menu');
+  }
   return (
     <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
         <StatusBar style="light" />
@@ -53,20 +57,21 @@ export default function RestaurantSelection({navigation}) {
           </InputCont>
           <CenterScrollCont alignItems='center'>
             <LocButton onPress={() => setModalVisible(!modalVisible)} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
-            <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
+            <LocButton onPress={() => setModalVisible(!modalVisible)} />
           </CenterScrollCont>
         </Cont>
         <Modal
@@ -76,7 +81,7 @@ export default function RestaurantSelection({navigation}) {
         >
           <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
             <BottomOverlay 
-              send={()=> navigation.navigate('Restaurant Menu')}
+              send={modalFunction}
             />
         </Modal>
     </View>
