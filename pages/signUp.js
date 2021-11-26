@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView} from 'react-native';
 import styled from 'styled-components';
 
 import BigButton from '../components/buttons/BigButton';
@@ -15,19 +15,28 @@ import BackButton from '../components/global/BackButton';
 import app from '../utils/firebase.js';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
+const ScrollCont = styled.ScrollView`
+
+`;
+
 const CenterCont = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
   flex: 1;
-`
+`;
 
 const RowCont = styled.View`
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
   flex: 1;
-`
+`;
+
+const ColCont = styled.View`
+  flex-direction: column;
+  flex: 1;
+`;
 
 const styles = StyleSheet.create({
   container: {
@@ -35,6 +44,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#2E2E2E',
     alignItems: 'flex-start',
     padding: 30,
+    marginLeft: '8%',
+    marginRight: '8%',
   }
 });
 
@@ -75,60 +86,70 @@ export default function SignUp({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
-      <BackButton 
-        onPress={() => navigation.navigate('Login')} 
-        onPress={() => navigation.goBack()} 
-      />
-      <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
-      <Title titleSize="32px" titleText="Create your account" />
-      <RowCont>
-        <FlexInput 
-        textInputLabel="Name" 
-        textInputPlaceholder="First Name"
-        value={firstName} 
-        onChangeText={(text) => setFirstName(text)} />
-        <FlexInput 
-        textInputPlaceholder="Last Name"
-        value={lastName}
-        onChangeText={(text) => setLastName(text)} />
-      </RowCont>
-      <RowCont>
-        <Input 
-        textInputLabel="Email"
-        textInputPlaceholder="Email"
-        value={email}
-        onChangeText={(text) => setEmail(text)}
-        autoCompleteType="email"
-        textContentType="emailAddress"/>
-      </RowCont>
-      <RowCont>
-        <Input 
-          textInputLabel="Create Password"
-          textInputPlaceholder="Password"
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-          autoCompleteType="password"
-          textContentType="newPassword"
-          secureTextEntry={true} />
-      </RowCont>
-      <RowCont>
-        <Input 
-        textInputLabel="Confirm Password"
-        textInputPlaceholder="Confirm Password"
-        value={passwordConfirm}
-        onChangeText={(text) => setPasswordConfirm(text)}
-        secureTextEntry={true}/>
-      </RowCont>
-      <CenterCont>
-        <BigButton 
-        onPress={SignUpUser}
-        buttonText="Sign Up" />
-        <TextDivider textColor="#888" borderColor="#888" />
+      {/* <ScrollView> */}
+      <ColCont>
+        <BackButton 
+          onPress={() => navigation.navigate('Login')} 
+          onPress={() => navigation.goBack()} 
+        />
+      </ColCont>
+        <ColCont>
+          <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
+          <Title titleSize="32px" titleText="Create your account" />
+        </ColCont>
         <RowCont>
-          <SmallButton iconColor="#699BF7" />
-          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+          <FlexInput 
+          textInputLabel="Name" 
+          textInputPlaceholder="First Name"
+          value={firstName} 
+          onChangeText={(text) => setFirstName(text)} />
+          <FlexInput 
+          textInputPlaceholder="Last Name"
+          value={lastName}
+          onChangeText={(text) => setLastName(text)} />
         </RowCont>
-      </CenterCont>
+        <RowCont>
+          <Input 
+          textInputLabel="Email"
+          textInputPlaceholder="Email"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+          autoCompleteType="email"
+          textContentType="emailAddress"/>
+        </RowCont>
+        <RowCont>
+          <Input 
+            textInputLabel="Create Password"
+            textInputPlaceholder="Password"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            autoCompleteType="password"
+            textContentType="newPassword"
+            secureTextEntry={true} />
+        </RowCont>
+        <RowCont>
+          <Input 
+          textInputLabel="Confirm Password"
+          textInputPlaceholder="Confirm Password"
+          value={passwordConfirm}
+          onChangeText={(text) => setPasswordConfirm(text)}
+          secureTextEntry={true}/>
+        </RowCont>
+        {/* <CenterCont> */}
+          <CenterCont>
+            <BigButton 
+            onPress={SignUpUser}
+            buttonText="Sign Up" />
+          </CenterCont>
+          <RowCont>
+            <TextDivider textColor="#888" borderColor="#888" />
+          </RowCont>
+          <RowCont>
+            <SmallButton iconColor="#699BF7" />
+            <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+          </RowCont>
+        {/* </CenterCont> */}
+      {/* </ScrollView> */}
     </SafeAreaView>
   );
 }

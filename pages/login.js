@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { Video } from 'expo-av';
 
@@ -153,11 +153,13 @@ export default function Login({navigation}) {
               autoCompleteType="password"
               textContentType="newPassword"
               secureTextEntry={true} />
-            <TextLink 
-              textColor="#fff" 
-              alignSelf="flex-end" 
-              paddingTop='5%'
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('Password Settings')}>
+              <TextLink 
+                textColor="#fff" 
+                alignSelf="flex-end" 
+                paddingTop='5%'
+              />
+            </TouchableOpacity>
           </InputCont>
           <CenterCont>
             <BigButton onPress={SignInEmail} />
