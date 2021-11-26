@@ -8,6 +8,8 @@ import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 import SmallButton from '../components/buttons/SmallButton';
 
+import { getAuth, signOut } from 'firebase/auth';
+
 const NavBarCont = styled.View`
   position: absolute;
   left: 0;
@@ -36,6 +38,17 @@ const styles = StyleSheet.create({
 });
 
 export default function Settings({navigation}) {
+
+  const auth = getAuth();
+  const UserSignOut = () => {
+    signOut(auth).then(() => {
+      navigation.navigate('Login');
+      console.log('Logged out');
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -62,18 +75,53 @@ export default function Settings({navigation}) {
           buttonBorderWidth="0px"
           iconName="login" 
           iconBrand="entypo" 
-          iconColor="#FE4370"/>
+          iconColor="#FE4370"
+          onPress={UserSignOut} />
         </RowCont>
         <PaddingContHorizontal>
           <RowCont>
-            <Input label="Name" containerStyle={{flex: 2}}/>
-            <Input label="Age" containerStyle={{flex: 1}} />
+            <Input 
+              label="Name" 
+              labelStyle={{color: '#fff' }}
+              containerStyle={{flex: 2}}
+              inputStyle={{color: '#fff'}}  
+              inputContainerStyle={{borderBottomColor: '#A57760'}}  
+            />
+            <Input 
+              label="Age" 
+              labelStyle={{color: '#fff' }}
+              containerStyle={{flex: 1}}
+              inputStyle={{color: '#fff'}}  
+              inputContainerStyle={{borderBottomColor: '#A57760'}}  
+            />
           </RowCont>
-          <Input label="Email" />
-          <Input label="Password" />
-          <Input label="Two Truths and a Lie" />
-          <Input />
-          <Input />
+          <Input 
+            label="Email" 
+            labelStyle={{color: '#fff' }}
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}}  
+          />
+          <Input 
+            label="Password"
+            secureTextEntry={true}
+            labelStyle={{color: '#fff' }}
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}}  
+          />
+          <Input
+            label="Two Truths and a Lie" 
+            labelStyle={{color: '#fff' }}
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}}  
+          />
+          <Input 
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}} 
+          />
+          <Input 
+            inputStyle={{color: '#fff'}} 
+            inputContainerStyle={{borderBottomColor: '#A57760'}} 
+          />
         </PaddingContHorizontal>
       </PaddingCont>
       {/* <NavBarCont>

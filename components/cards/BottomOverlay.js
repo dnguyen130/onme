@@ -31,8 +31,7 @@ const PrimaryBtnCont = styled.View`
 
 const BottomOverlay = ({
   send = ()=>{},
-  directions = ()=>{},
-  removeModal = ()=>{}
+  directions = ()=>{}
 }) => {
   return (
     <Cont>
@@ -59,14 +58,12 @@ const BottomOverlay = ({
             width='35%' 
             buttonText='Send a drink'
             onPress={send}
-            onPressIn={removeModal}
           />
           <BigButton 
             width='35%' 
             buttonText='Directions'
             bgColor='#A57760'
             onPress={directions}
-            // onPressIn={removeModal}
           />
         </PrimaryBtnCont>
     </Cont>

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
 
 import BigButton from '../components/buttons/BigButton';
@@ -10,6 +10,10 @@ import SmallButton from '../components/buttons/SmallButton';
 import Title from '../components/text/Title';
 import TextDivider from '../components/text/TextDivider';
 import BackButton from '../components/global/BackButton';
+
+//back-end
+import app from '../utils/firebase.js';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 const CenterCont = styled.View`
   justify-content: center;
@@ -35,6 +39,39 @@ const styles = StyleSheet.create({
 });
 
 export default function SignUp({navigation}) {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  const SignUpUser = async () => {
+    const auth = getAuth();
+    if(password === passwordConfirm)
+    {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential)=> {
+          const user = userCredential.user;
+          console.log(auth.currentUser);
+
+          updateProfile(auth.currentUser, {
+            displayName: firstName
+          }).then(() => {
+            console.log(auth.currentUser.displayName);
+          })
+
+          navigation.navigate("Dashboard");
+        })
+        .catch((err)=>{
+          alert(err.message);
+        })
+    } else {
+      alert("Passwords do not match");
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
@@ -45,26 +82,48 @@ export default function SignUp({navigation}) {
       <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
       <Title titleSize="32px" titleText="Create your account" />
       <RowCont>
-        <FlexInput textInputLabel="Name" textInputPlaceholder="First Name"/>
-        <FlexInput textInputPlaceholder="Last Name" />
+        <FlexInput 
+        textInputLabel="Name" 
+        textInputPlaceholder="First Name"
+        value={firstName} 
+        onChangeText={(text) => setFirstName(text)} />
+        <FlexInput 
+        textInputPlaceholder="Last Name"
+        value={lastName}
+        onChangeText={(text) => setLastName(text)} />
       </RowCont>
       <RowCont>
-        <FlexInput textInputLabel="Date of Birth" textInputPlaceholder="Month" />
-        <FlexInput textInputPlaceholder="Day"/>
-        <FlexInput textInputPlaceholder="Year"/>
+        <Input 
+        textInputLabel="Email"
+        textInputPlaceholder="Email"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
+        autoCompleteType="email"
+        textContentType="emailAddress"/>
       </RowCont>
       <RowCont>
-        <Input textInputLabel="Email"/>
+        <Input 
+          textInputLabel="Create Password"
+          textInputPlaceholder="Password"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          autoCompleteType="password"
+          textContentType="newPassword"
+          secureTextEntry={true} />
       </RowCont>
       <RowCont>
-        <Input password={true} textInputLabel="Create Password"/>
-      </RowCont>
-      <RowCont>
-        <Input password={true} textInputLabel="Confirm Password"/>
+        <Input 
+        textInputLabel="Confirm Password"
+        textInputPlaceholder="Confirm Password"
+        value={passwordConfirm}
+        onChangeText={(text) => setPasswordConfirm(text)}
+        secureTextEntry={true}/>
       </RowCont>
       <CenterCont>
-        <BigButton onPress={() => navigation.navigate('OnMeTabs')} buttonText="Sign Up" />
-        <TextDivider textColor="#fff" borderColor="#888" />
+        <BigButton 
+        onPress={SignUpUser}
+        buttonText="Sign Up" />
+        <TextDivider textColor="#888" borderColor="#888" />
         <RowCont>
           <SmallButton iconColor="#699BF7" />
           <SmallButton iconName="logo-google" iconColor="#EC452E"/>
