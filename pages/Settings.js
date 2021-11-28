@@ -1,25 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
-import { Input } from 'react-native-elements';
+import { Input, Avatar } from 'react-native-elements';
 import styled from 'styled-components/native';
 
-import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 import SmallButton from '../components/buttons/SmallButton';
 
 import { getAuth, signOut } from 'firebase/auth';
 
-const NavBarCont = styled.View`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`;
-
 const PaddingCont = styled.View`
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
+  flex: 1;
 `
+
+const ScrollCont = styled.ScrollView`
+  flex: 1;
+`;
 
 const PaddingContHorizontal = styled.View`
   padding: 0 30px;
@@ -29,6 +26,13 @@ const RowCont = styled.View`
   flex-direction: row;
   align-self: flex-end;
 `
+
+const AvatarCont = styled.View`
+  flex-direction: row;
+  align-self: flex-start;
+  justify-content: space-between;
+  width: 100%;
+`;
 
 const styles = StyleSheet.create({
   container: {
@@ -78,59 +82,96 @@ export default function Settings({navigation}) {
           iconColor="#FE4370"
           onPress={UserSignOut} />
         </RowCont>
-        <PaddingContHorizontal>
-          <RowCont>
+        <ScrollCont>
+          <PaddingContHorizontal>
+            <RowCont>
+              <Input 
+                label="Name" 
+                placeholder='Name'
+                labelStyle={{color: '#fff' }}
+                containerStyle={{flex: 2}}
+                inputStyle={{color: '#fff'}}  
+                inputContainerStyle={{borderBottomColor: '#A57760'}}  
+              />
+              <Input 
+                label="Age" 
+                placeholder='Name'
+                labelStyle={{color: '#fff' }}
+                containerStyle={{flex: 1}}
+                inputStyle={{color: '#fff'}}  
+                inputContainerStyle={{borderBottomColor: '#A57760'}}  
+              />
+            </RowCont>
             <Input 
-              label="Name" 
+              label="Email" 
+              placeholder='Email'
               labelStyle={{color: '#fff' }}
-              containerStyle={{flex: 2}}
-              inputStyle={{color: '#fff'}}  
+              inputStyle={{color: '#fff'}} 
               inputContainerStyle={{borderBottomColor: '#A57760'}}  
             />
             <Input 
-              label="Age" 
+              label="Password"
+              placeholder='Password'
+              secureTextEntry={true}
               labelStyle={{color: '#fff' }}
-              containerStyle={{flex: 1}}
-              inputStyle={{color: '#fff'}}  
+              inputStyle={{color: '#fff'}} 
               inputContainerStyle={{borderBottomColor: '#A57760'}}  
             />
-          </RowCont>
-          <Input 
-            label="Email" 
-            labelStyle={{color: '#fff' }}
-            inputStyle={{color: '#fff'}} 
-            inputContainerStyle={{borderBottomColor: '#A57760'}}  
-          />
-          <Input 
-            label="Password"
-            secureTextEntry={true}
-            labelStyle={{color: '#fff' }}
-            inputStyle={{color: '#fff'}} 
-            inputContainerStyle={{borderBottomColor: '#A57760'}}  
-          />
-          <Input
-            label="Two Truths and a Lie" 
-            labelStyle={{color: '#fff' }}
-            inputStyle={{color: '#fff'}} 
-            inputContainerStyle={{borderBottomColor: '#A57760'}}  
-          />
-          <Input 
-            inputStyle={{color: '#fff'}} 
-            inputContainerStyle={{borderBottomColor: '#A57760'}} 
-          />
-          <Input 
-            inputStyle={{color: '#fff'}} 
-            inputContainerStyle={{borderBottomColor: '#A57760'}} 
-          />
-        </PaddingContHorizontal>
+            <Input
+              label="Two Truths and a Lie" 
+              placeholder='1'
+              labelStyle={{color: '#fff' }}
+              inputStyle={{color: '#fff'}} 
+              inputContainerStyle={{borderBottomColor: '#A57760'}}  
+            />
+            <Input 
+              placeholder='2'
+              inputStyle={{color: '#fff'}} 
+              inputContainerStyle={{borderBottomColor: '#A57760'}} 
+            />
+            <Input 
+              placeholder='3'
+              inputStyle={{color: '#fff'}} 
+              inputContainerStyle={{borderBottomColor: '#A57760'}} 
+            />
+            <AvatarCont>
+              <Avatar
+                rounded
+                size="large"
+                icon={{name: 'user', type: 'font-awesome'}}
+                onPress={() => console.log("Works!")}
+                activeOpacity={0.7}
+                containerStyle={{backgroundColor: '#B5B5B5', borderColor: '#FE4370', borderWidth: 3}}
+                source={{uri:'http://placekitten.com/300/300'}}
+              />
+              <Avatar
+                rounded
+                size="large"
+                icon={{name: 'user', type: 'font-awesome'}}
+                onPress={() => console.log("Works!")}
+                activeOpacity={0.7}
+                containerStyle={{backgroundColor: '#B5B5B5'}}
+              />
+              <Avatar
+                rounded
+                size="large"
+                icon={{name: 'user', type: 'font-awesome'}}
+                onPress={() => console.log("Works!")}
+                activeOpacity={0.7}
+                containerStyle={{backgroundColor: '#B5B5B5'}}
+              />
+              <Avatar
+                rounded
+                size="large"
+                icon={{name: 'plus', type: 'font-awesome'}}
+                onPress={() => console.log("Works!")}
+                activeOpacity={0.7}
+                containerStyle={{backgroundColor: '#FE4370'}}
+              />
+            </AvatarCont>
+          </PaddingContHorizontal>
+        </ScrollCont>
       </PaddingCont>
-      {/* <NavBarCont>
-        <NavBar 
-          homeOnPress={() => navigation.navigate('Dashboard')}
-          midOnPress={() => navigation.navigate('Restaurant Menu')}
-          settingsOnPress={() => navigation.navigate('Settings')}
-        />
-      </NavBarCont> */}
     </View>
   );
 }

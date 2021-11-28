@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, View, TouchableWithoutFeedback, Modal, Alert } from 'react-native';
+import { StyleSheet, SafeAreaView, View,  Modal, Linking} from 'react-native';
 import styled from 'styled-components/native';
 
 import LocButton from '../components/buttons/LocButton';
@@ -40,6 +40,11 @@ export default function RestaurantSelection({navigation}) {
   const modalFunction = () => {
     setModalVisible(!modalVisible);
     navigation.navigate('Restaurant Menu');
+  }
+
+  const Habitat = () => {
+    Linking.openURL('http://maps.google.com/?q=49.251539,-123.0039377');
+    // http://maps.google.com/?q=49.251539,-123.0039377
   }
   return (
     <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
@@ -82,6 +87,7 @@ export default function RestaurantSelection({navigation}) {
           <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
             <BottomOverlay 
               send={modalFunction}
+              directions={Habitat}
             />
         </Modal>
     </View>

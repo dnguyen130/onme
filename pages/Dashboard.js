@@ -17,7 +17,6 @@ const ScrollView = styled.ScrollView`
 
 const Cont = styled.View`
   flex: 1;
-  /* border-width: 1px; */
 `;
 
 //back-end
@@ -59,7 +58,7 @@ export default function Dashboard({navigation}) {
         <StatusBar style="light" />
         <Header 
         mainTitle="Welcome," 
-        subTitle="Min" 
+        subTitle={user.displayName} 
         onPress={() => navigation.goBack()} />
         <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
@@ -78,6 +77,7 @@ export default function Dashboard({navigation}) {
               titleSize="20px" 
               titleText="Frequently visited" 
               titleMarginRight="3%"
+              poppinsFont="PoppinsMedium"
             />
             <Title 
               titleColor="#FE4370" 
@@ -86,6 +86,7 @@ export default function Dashboard({navigation}) {
               textDecorationLine="underline"
               titleAlignSelf="center"
               onPress={() => navigation.navigate('Frequently Visited')} 
+              poppinsFont="PoppinsLight"
             />
           </TitleCont>
             <RowCont horizontal>
@@ -108,6 +109,7 @@ export default function Dashboard({navigation}) {
                 titleSize="20px" 
                 titleText="Recent items" 
                 titleMarginRight="3%" 
+                poppinsFont="PoppinsMedium"
               />
               <Title 
                 titleColor="#FE4370" 
@@ -115,7 +117,8 @@ export default function Dashboard({navigation}) {
                 titleText="See All" 
                 textDecorationLine="underline"
                 titleAlignSelf="center"
-                onPress={() => navigation.navigate('Recent Items')} 
+                onPress={() => navigation.navigate('Recent Items')}
+                poppinsFont="PoppinsLight"
               />
             </TitleCont>
             <RowCont horizontal>

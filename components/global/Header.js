@@ -68,7 +68,11 @@ const Header = ({
             />
           </RowCont>
           <RowCont>
-            <Title titleText={subTitle} titleWeight={subWeight} titleSize={subTitleSize} />
+            <Title 
+              titleText={subTitle} 
+              titleWeight={subWeight} 
+              titleSize={subTitleSize} 
+              poppinsFont="PoppinsRegular"/>
             <Icon 
               name={iconSubName}
               type={iconSubType}

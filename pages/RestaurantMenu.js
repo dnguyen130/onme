@@ -21,6 +21,12 @@ const CenterCont = styled.View`
   padding-bottom: 3%;
 `;
 
+const BtnCont = styled.View`
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+`;
+
 const CenterScrollCont = styled.ScrollView`
   z-index: -9;
 `;
@@ -137,9 +143,9 @@ export default function RestaurantSelection({navigation}) {
                   cardImg = {require('../assets/drink_3.png')}
                 />
               </RowCont>
-              <CenterCont>
-                <BigButton width='60%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
-              </CenterCont>
+              <BtnCont>
+                <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
+              </BtnCont>
             </CenterScrollCont>
             <Modal
               animationType="slide"
@@ -224,9 +230,9 @@ export default function RestaurantSelection({navigation}) {
                   cardImg = {require('../assets/food_4.png')}
                 />
                </RowCont>
-               <CenterCont>
-                <BigButton width='60%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
-               </CenterCont>
+               <BtnCont>
+                <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
+               </BtnCont>
             </CenterScrollCont>
             <Modal
               animationType="slide"

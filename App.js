@@ -20,6 +20,7 @@ import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
 import PasswordSettings from './pages/PasswordSettings'
+import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -165,6 +166,7 @@ export default function App() {
 
   if (load === true) {
     return <View style={styles.container}>
+      <StatusBar style='light' />
       <LottieView
         ref={(ref) => {
           anim = ref;
