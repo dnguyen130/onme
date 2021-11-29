@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, SafeAreaView, View, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { Video } from 'expo-av';
-import SvgUri from 'react-native-svg-uri';
 
 import BigButton from '../components/buttons/BigButton';
 import Input from '../components/global/Input';
@@ -135,13 +134,6 @@ export default function Login({navigation}) {
         isMuted={true}
         resizeMode="cover"
       />
-      {/* <RowCont>
-        <SvgUri 
-          width='100'
-          height='100'
-          source={{uri:'../assets/onme_rightone.svg'}}
-        />
-      </RowCont> */}
         <ColCont>
           <EmptyCont />
           <Title alignSelf="flex-start" />
