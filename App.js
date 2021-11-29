@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
+import { useFonts } from 'expo-font';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -43,6 +44,17 @@ const MidIcon = styled.Image`
 `;
 
 function OnMeTabs() {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('./assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('./assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('./assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('./assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('./assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <Tab.Navigator screenOptions={{ 
         headerShown: false, 
@@ -52,7 +64,7 @@ function OnMeTabs() {
         },
         tabBarLabelStyle: {
           fontSize: 14,
-          fontWeight: '600',
+          fontFamily: 'PoppinsMedium'
         }
       }}
     >      

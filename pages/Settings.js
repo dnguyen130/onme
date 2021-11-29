@@ -57,7 +57,7 @@ export default function Settings({navigation}) {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Header 
-        subTitle="My Settings" subWeight="700"
+        mainTitle="My Settings"
         onPress={() => navigation.goBack()} 
       />
       <PaddingCont>

@@ -41,16 +41,19 @@ const BottomOverlay = ({
             titleText='The Habitat'
             titleSize='30px'
             titleMargin='0 0 10px 0'
+            titleColor='#A57760'
           />
           <Title 
             titleText='3700 Willingdon, Burnaby'
             titleSize='15px'
             titleMargin='0 0 10px 0'
+            poppinsFont='PoppinsMedium'
           />
           <Title 
             titleText='Monday to Sunday 10am to 10pm'
             titleSize='15px'
             titleMargin='0 0 10px 0'
+            poppinsFont='PoppinsMedium'
           />
         </TitleCont>
         <PrimaryBtnCont>

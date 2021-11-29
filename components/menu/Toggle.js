@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 const Cont = styled.View`
   flex-direction: row;
@@ -23,12 +24,14 @@ const Button = styled.Pressable`
 `;
 
 const ButtonText = styled.Text`
+  font-family: ${props => props.poppinsFont};
   color: #fff;
 `;
 
 const Toggle = ({
   drinksOnPress = ()=>{},
   foodOnPress = ()=>{},
+  poppinsFont="PoppinsMedium"
 }) => {
   const [toggle, setToggle] = useState(false);
 
@@ -39,8 +42,20 @@ const Toggle = ({
   const FoodOn = ({}) => {
     setToggle(true);
   }
+
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   
-  if (toggle === false) {
+  else if (toggle === false) {
     return (
       <Cont>
         <Button 
@@ -48,14 +63,14 @@ const Toggle = ({
           onPressIn={DrinksOn}
           bgColor='#A57760'
         >
-          <ButtonText>Drinks</ButtonText>
+          <ButtonText poppinsFont={poppinsFont}>Drinks</ButtonText>
         </Button>
         <Button 
           onPress={foodOnPress}
           onPressIn={FoodOn}
           bgColor='#838383'
         >
-          <ButtonText>Food</ButtonText>
+          <ButtonText poppinsFont={poppinsFont}>Food</ButtonText>
         </Button>
       </Cont>
     );
@@ -69,14 +84,14 @@ const Toggle = ({
           onPressIn={DrinksOn}
           bgColor='#838383'
           >
-          <ButtonText>Drinks</ButtonText>
+          <ButtonText poppinsFont={poppinsFont}>Drinks</ButtonText>
         </Button>
         <Button 
           onPress={foodOnPress}
           onPressIn={FoodOn}
           bgColor='#A57760'
           >
-          <ButtonText>Food</ButtonText>
+          <ButtonText poppinsFont={poppinsFont}>Food</ButtonText>
         </Button>
       </Cont>
     );

@@ -11,6 +11,13 @@ import OrderCard from '../components/cards/OrderCard';
 import RoundedButton from '../components/buttons/RoundedButton';
 import MessageBox from '../components/summary/MessageBox';
 
+const TitleCont = styled.View`
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+`;
+
 const OrderList = styled.View`
   flex: 1;
   width: 100%;
@@ -59,10 +66,16 @@ export default function OrderSummary({navigation}) {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Header 
-        subTitle="Order Summary" 
+        mainTitle="Order Summary" 
         onPress={() => navigation.goBack()} 
       />
-      <Title titleText="Your orders for table C1" />
+      <TitleCont>
+        <Title 
+          titleText="Your orders for table 08" 
+          titleSize="20px"
+          titleAlignSelf="center"
+        />
+      </TitleCont>
       <PaddingCont contentContainerStyle={styles.scrollList}>
         <OrderList>
           <OrderCard />
@@ -78,7 +91,7 @@ export default function OrderSummary({navigation}) {
         <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
         <TotalCont>
           <PinkCircleCont>
-            <Title titleText="3" titleSize="14px" />
+            <Title titleText="3" titleSize="14px" titleAlignSelf="center" />
           </PinkCircleCont>
           <Title titleText="Total:" titleSize="17px" />
           <Title titleText="$27.97" titleSize="17px " />

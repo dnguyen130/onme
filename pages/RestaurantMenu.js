@@ -237,7 +237,7 @@ export default function RestaurantSelection({navigation}) {
             <Modal
               animationType="slide"
               transparent={true}
-              visible={modalVisible}
+              visible={itemModalVisible}
             >
               <ModalCont>
                 <ModalText>

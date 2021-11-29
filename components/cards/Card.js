@@ -1,6 +1,7 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 const CardCont = styled.TouchableOpacity`
   align-items: center;
@@ -22,12 +23,14 @@ const CardBackground = styled.ImageBackground`
 `;
 
 const Name = styled.Text`
+  font-family: ${props => props.poppinsFont};
   color: #fff;
   font-size: 13px;
   font-weight: 700;
 `;
 
 const Address = styled.Text`
+  font-family: ${props => props.poppinsFont};
   color: #fff;
   font-size: 10px;
 `;
@@ -36,8 +39,20 @@ const Card = ({
   cardImg = require('../../assets/food_1.png'),
   restaurantName = "The Habitat",
   restaurantAddress = "3700 Willingdon Ave",
-  onPress = ()=>{}
+  onPress = ()=>{},
+  poppinsFont="PoppinsBold"
 }) => {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <CardCont onPress={onPress}>
       <CardBackground source={cardImg} resizeMode="cover" opacity={0.8}>
@@ -47,8 +62,8 @@ const Card = ({
           start={{ x: 0.5, y: 1 }}
           end={{ x: 0.2, y: 0.2 }}
           >
-        <Name>{restaurantName}</Name>
-        <Address>{restaurantAddress}</Address>
+        <Name poppinsFont={poppinsFont}>{restaurantName}</Name>
+        <Address poppinsFont="PoppinsRegular">{restaurantAddress}</Address>
         </LinearGradient>
       </CardBackground>
     </CardCont>

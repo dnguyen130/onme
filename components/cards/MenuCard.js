@@ -1,6 +1,7 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 const CardCont = styled.Pressable`
   align-items: center;
@@ -40,9 +41,10 @@ const ColCont = styled.View`
 
 const Title = styled.Text`
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   padding-bottom: 5px;
+  font-family: ${props => props.poppinsFont};
 `;
 
 const Name = styled.Text`
@@ -50,12 +52,19 @@ const Name = styled.Text`
   font-size: 12px;
   font-weight: 700;
   padding-bottom: 5px;
-
+  font-family: ${props => props.poppinsFont};
 `;
 
 const Price = styled.Text`
   color: #fff;
   font-size: 10px;
+  font-family: ${props => props.poppinsFont};
+`;
+
+const Plus = styled.Text`
+  color: #fff;
+  font-size: 15px;
+  font-family: ${props => props.poppinsFont};
 `;
 
 const MenuCard = ({
@@ -65,7 +74,19 @@ const MenuCard = ({
   priceText = "$9.99",
   onPress = ()=>{},
   addOnPress = ()=>{},
+  poppinsFont="PoppinsMedium"
 }) => {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <CardCont onPress={onPress}>
       <CardBackground 
@@ -79,14 +100,14 @@ const MenuCard = ({
           start={{ x: 0.5, y: 1 }}
           end={{ x: 0.2, y: 0.2 }}
           >
-        <Title>{restaurantText}</Title>
+        <Title poppinsFont={poppinsFont}>{restaurantText}</Title>
         <RowCont>
           <ColCont>
-            <Name>{itemText}</Name>
-            <Price>{priceText}</Price>
+            <Name poppinsFont={poppinsFont}>{itemText}</Name>
+            <Price poppinsFont="PoppinsLight">{priceText}</Price>
           </ColCont>
           <PrimaryButton onPress={addOnPress}>
-            <Name>+</Name>
+            <Plus poppinsFont="PoppinsBold">+</Plus>
           </PrimaryButton>
         </RowCont>
       </LinearGradient>

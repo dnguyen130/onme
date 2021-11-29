@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components';
+import { useFonts } from 'expo-font';
 
 import Input from '../components/global/Input';
-import NavBar from '../components/global/NavBar';
 import Header from '../components/global/Header';
 import Title from '../components/text/Title';
 
@@ -79,6 +79,7 @@ const Text = styled.Text`
   font-size: 15px;
   font-weight: 700;
   color: #fff;
+  font-family: "PoppinsRegular";
 `;
 
 const styles = StyleSheet.create({
@@ -88,7 +89,18 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function FrequentlyVisited({navigation}) {
+export default function SeatMap({navigation}) {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <View style={styles.container}>
         <StatusBar style="light" />

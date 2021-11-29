@@ -50,9 +50,7 @@ export default function RestaurantSelection({navigation}) {
     <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
         <StatusBar style="light" />
         <Header 
-          mainTitle="The Habitat" 
-          subTitle="3700 Willingdon Ave, Burnaby" 
-          subTitleSize="15px" 
+          mainTitle="Where would you like to go?"
           source={require("../assets/headerImg_2.png")} 
           onPress={() => navigation.goBack()} 
         />
