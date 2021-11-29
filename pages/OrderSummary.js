@@ -103,7 +103,7 @@ export default function OrderSummary({navigation}) {
           <RoundedButton titleText="20%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
         </TipCont>
         <MessageBox />
-        <BigButton buttonText="Proceed to Payment" onPress={() => navigation.navigate('Order Confirmation')} />
+        <BigButton buttonText="Proceed to Payment" onPress={() => navigation.navigate('Check Out Page')} />
       </PaddingCont>
     </View>
     )

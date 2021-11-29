@@ -8,7 +8,7 @@ import Header from '../components/global/Header';
 import CategoryList from '../components/menu/CategoryList';
 import Toggle from '../components/menu/Toggle';
 import MenuCard from '../components/cards/MenuCard';
-import BottomOverlay from '../components/cards/BottomOverlay';
+import MenuBottomOverlay from '../components/cards/MenuBottomOverlay';
 import BigButton from '../components/buttons/BigButton';
 
 const Cont = styled.View`
@@ -60,7 +60,7 @@ const ModalText = styled.Text`
   font-weight: 700;
 `;
 const ModalPressable = styled.Pressable`
-  flex: 1;
+  flex: 0.5;
 `;
 
 const styles = StyleSheet.create({
@@ -92,7 +92,7 @@ export default function RestaurantSelection({navigation}) {
   
   if (toggle === false) {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
           <StatusBar style="light" />
           <Header 
             mainTitle="The Habitat" 
@@ -121,13 +121,13 @@ export default function RestaurantSelection({navigation}) {
             <CenterScrollCont alignItems='center'>
               <RowCont>
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')} 
+                  onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)}
                   itemText='Ravioli Martini'
                   priceText='$5.99'
                 />
                 <MenuCard
-                  onPress={() => navigation.navigate('Seat Map')} 
+                  onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Moscow Mule'
                   priceText='$5.99'
@@ -136,7 +136,7 @@ export default function RestaurantSelection({navigation}) {
               </RowCont>
               <RowCont>
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')} 
+                  onPress={() => setModalVisible(!modalVisible)} 
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Purple Goddess'
                   priceText='$5.99'
@@ -165,7 +165,7 @@ export default function RestaurantSelection({navigation}) {
               visible={modalVisible}
             >
               <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
-                <BottomOverlay 
+                <MenuBottomOverlay
                   send={()=> navigation.navigate('Restaurant Menu')}
                 />
             </Modal>
@@ -200,14 +200,14 @@ export default function RestaurantSelection({navigation}) {
             <CenterScrollCont alignItems='center'>
               <RowCont>
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')}
+                  onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Zesty Calimari'
                   priceText='$9.99'
                   cardImg = {require('../assets/food_2.png')}
                 />
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')}
+                  onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Cheese Sticks'
                   priceText='$9.99'
@@ -216,14 +216,14 @@ export default function RestaurantSelection({navigation}) {
                </RowCont>
                <RowCont>
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')}
+                  onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Dry Ribs'
                   priceText='$9.99'
                   cardImg = {require('../assets/food_3.png')}
                 />
                 <MenuCard 
-                  onPress={() => navigation.navigate('Seat Map')}
+                  onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Winner C'
                   priceText='$9.99'
@@ -252,7 +252,7 @@ export default function RestaurantSelection({navigation}) {
               visible={modalVisible}
             >
               <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
-                <BottomOverlay 
+                <MenuBottomOverlay 
                   send={()=> navigation.navigate('Restaurant Menu')}
                 />
             </Modal>

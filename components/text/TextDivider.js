@@ -7,6 +7,7 @@ const Cont = styled.View`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  margin: ${props => props.addMargin};
 `;
 
 const Text = styled.Text`
@@ -27,7 +28,8 @@ const TextDivider = ({
   changeText = "or continue with",
   textColor = "#000",
   borderColor = "#000",
-  poppinsFont="PoppinsMedium"
+  poppinsFont="PoppinsMedium",
+  addMargin="0px"
 }) => {
   const [loaded] = useFonts({
     PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
@@ -41,7 +43,7 @@ const TextDivider = ({
     return null;
   }
   return (
-    <Cont>
+    <Cont addMargin={addMargin}>
       <Line borderColor={borderColor} />
       <Text changeTextColor={textColor} poppinsFont={poppinsFont}>{changeText}</Text>
       <Line borderColor={borderColor} />

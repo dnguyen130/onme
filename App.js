@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
+import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,7 +22,7 @@ import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
 import PasswordSettings from './pages/PasswordSettings'
-import { StatusBar } from 'expo-status-bar';
+import CheckOutPage from './pages/CheckOutPage'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -146,13 +147,18 @@ function OnMeRoot() {
       />
 
       <Stack.Screen 
+        name="Seat Map" 
+        component={SeatMap} 
+        
+      />
+      <Stack.Screen 
         name="Order Summary" 
         component={OrderSummary} 
         
       />
       <Stack.Screen 
-        name="Seat Map" 
-        component={SeatMap} 
+        name="Check Out Page" 
+        component={CheckOutPage} 
         
       />
       <Stack.Screen 
