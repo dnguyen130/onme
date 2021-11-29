@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 const Cont = styled.View`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  margin: ${props => props.addMargin};
 `;
 
 const Text = styled.Text`
+  font-family: ${props => props.poppinsFont};
   font-size: 16px;
   font-weight: 700;
   color: ${props => props.changeTextColor};
@@ -24,12 +27,25 @@ const Line = styled.View`
 const TextDivider = ({
   changeText = "or continue with",
   textColor = "#000",
-  borderColor = "#000"
+  borderColor = "#000",
+  poppinsFont="PoppinsMedium",
+  addMargin="0px"
 }) => {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
-    <Cont>
+    <Cont addMargin={addMargin}>
       <Line borderColor={borderColor} />
-      <Text changeTextColor={textColor}>{changeText}</Text>
+      <Text changeTextColor={textColor} poppinsFont={poppinsFont}>{changeText}</Text>
       <Line borderColor={borderColor} />
     </Cont>
   );

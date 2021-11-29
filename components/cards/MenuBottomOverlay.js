@@ -14,7 +14,7 @@ const Cont = styled.View`
 
 const Img = styled.Image`
   flex: 1;
-  max-height: 40%;
+  max-height: 50%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 `;
@@ -30,44 +30,37 @@ const PrimaryBtnCont = styled.View`
 `;
 
 const BottomOverlay = ({
-  overlayImg = require('../../assets/btmOverlayImg.png'),
-  send = ()=>{},
-  directions = ()=>{}
+  overlayImg = require('../../assets/drinksOverlay_1.png'),
+  add = ()=>{},
 }) => {
   return (
     <Cont>
       <Img source={overlayImg} />
         <TitleCont>
           <Title 
-            titleText='The Habitat'
-            titleSize='30px'
+            titleText='Ravioli Martini'
+            titleSize='20px'
+            titleMargin='0 0 10px 0'
+            poppinsFont='PoppinsMedium'
+          />
+          <Title 
+            titleText='$5.99'
+            titleSize='18px'
             titleMargin='0 0 10px 0'
             titleColor='#A57760'
           />
           <Title 
-            titleText='3700 Willingdon, Burnaby'
-            titleSize='15px'
+            titleText='A delicious martini made out of ravioli, made of gin, rum and all the good stuff.'
+            titleSize='18px'
             titleMargin='0 0 10px 0'
-            poppinsFont='PoppinsMedium'
-          />
-          <Title 
-            titleText='Monday to Sunday 10am to 10pm'
-            titleSize='15px'
-            titleMargin='0 0 10px 0'
-            poppinsFont='PoppinsMedium'
+            poppinsFont='PoppinsRegular'
           />
         </TitleCont>
         <PrimaryBtnCont>
           <BigButton 
-            width='35%' 
-            buttonText='Send a drink'
-            onPress={send}
-          />
-          <BigButton 
-            width='35%' 
-            buttonText='Directions'
-            bgColor='#A57760'
-            onPress={directions}
+            width='50%' 
+            buttonText='Add to cart'
+            onPress={add}
           />
         </PrimaryBtnCont>
     </Cont>

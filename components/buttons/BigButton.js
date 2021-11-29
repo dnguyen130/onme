@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 const Button = styled.TouchableOpacity`
   background-color: ${props => props.changeButtonColor};
@@ -12,6 +13,7 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
+  font-family: ${props => props.poppinsFont};
   color: #fff;
   font-weight: 700;
   font-size: 15px;
@@ -22,11 +24,23 @@ const BigButton = ({
   bgColor = "#FE4370;",
   width = '100%',
   onPress = ()=>{},
-  onPressIn = ()=>{}
+  onPressIn = ()=>{},
+  poppinsFont="PoppinsBold"
 }) => {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <Button changeButtonColor={bgColor} width={width} onPress={onPress} onPressIn={onPressIn}>
-      <ButtonText>{buttonText}</ButtonText>
+      <ButtonText poppinsFont={poppinsFont}>{buttonText}</ButtonText>
     </Button>
   );
 }

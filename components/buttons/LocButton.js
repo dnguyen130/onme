@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 const Cont = styled.TouchableOpacity`
   flex-direction: row;
@@ -36,17 +37,19 @@ const IconCont = styled.View`
 const Name = styled.Text`
   font-size: 15px;
   color: #fff;
+  font-family: ${props => props.poppinsFont};
 `;
 
 const City = styled.Text`
   font-size: 12px;
   color: #fff;
-
+  font-family: ${props => props.poppinsFont};
 `;
 
 const Address = styled.Text`
   font-size: 10px;
   color: #fff;
+  font-family: ${props => props.poppinsFont};
 `;
 
 const LocIcon = styled.Image`
@@ -66,8 +69,20 @@ const LocButton = ({
   name = "The Habitat",
   city = "Burnaby",
   address = "3700 Willingdon Ave",
-  onPress = ()=>{}
+  onPress = ()=>{},
+  poppinsFont="PoppinsRegular"
 }) => {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <Cont onPress={onPress}>
       <LocCont>
@@ -75,14 +90,14 @@ const LocButton = ({
       </LocCont>
       <TextCont>
         <NameCont>
-          <Name>{name}</Name>
+          <Name poppinsFont="PoppinsBold">{name}</Name>
           <IconCont>
             <SmallIcon source={require('../../assets/forkKnife.png')} />
             <SmallIcon source={require('../../assets/wineGlass.png')} />
           </IconCont>
         </NameCont>
-        <City>{city}</City>
-        <Address>{address}</Address>
+        <City poppinsFont={poppinsFont}>{city}</City>
+        <Address poppinsFont={poppinsFont}>{address}</Address>
       </TextCont>
     </Cont>
   );

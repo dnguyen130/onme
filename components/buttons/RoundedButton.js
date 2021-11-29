@@ -27,7 +27,7 @@ const RoundedButton = ({
 }) => {
   return (
     <RoundedCont roundedColor={roundedColor} roundedBorderWidth={roundedBorderWidth} onPress={onPress}>
-      <Title titleText={titleText} titleSize={titleSize} />
+      <Title titleText={titleText} titleSize={titleSize} titleAlignSelf="center" />
     </RoundedCont>
   );
 }

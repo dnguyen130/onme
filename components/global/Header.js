@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Icon } from 'react-native-elements';
 
@@ -68,7 +67,11 @@ const Header = ({
             />
           </RowCont>
           <RowCont>
-            <Title titleText={subTitle} titleWeight={subWeight} titleSize={subTitleSize} />
+            <Title 
+              titleText={subTitle} 
+              titleWeight={subWeight} 
+              titleSize={subTitleSize} 
+              poppinsFont="PoppinsRegular"/>
             <Icon 
               name={iconSubName}
               type={iconSubType}

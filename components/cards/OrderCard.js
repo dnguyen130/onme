@@ -16,6 +16,7 @@ const OrderCardCont = styled.View`
 const OrderCardImage = styled.Image`
   width: 100px;
   height: 80px;
+  border-radius: 15px;
 `
 
 const ColumnCont = styled.View`

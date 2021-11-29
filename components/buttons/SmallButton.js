@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { useFonts } from 'expo-font';
 
 import { Icon } from 'react-native-elements';
 
@@ -16,14 +17,10 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
+  font-family: ${props => props.poppinsFont};
   color: ${props => props.buttonTextcolor};
   font-size: 15px;
   font-weight: ${props => props.buttonTextWeight};
-`;
-
-const SmallIcon = styled.Image`
-  width: 13px;
-  height: 13px;
 `;
 
 const SmallButton = ({
@@ -31,12 +28,24 @@ const SmallButton = ({
   iconName = "logo-facebook",
   iconBrand = 'ionicon',
   iconColor = "#000",
-  buttonTextcolor = "#000",
+  buttonTextcolor = "#777777",
   buttonColor = "#FFF",
   buttonTextWeight = "400",
   buttonBorderWidth = "1px",
-  onPress = () => {}
+  onPress = () => {},
+  poppinsFont="PoppinsRegular"
 }) => {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <Button buttonColor={buttonColor} buttonBorderWidth={buttonBorderWidth} onPress={onPress}>
       <Icon 
@@ -44,7 +53,10 @@ const SmallButton = ({
         type={iconBrand}
         color={iconColor}
       />
-      <ButtonText buttonTextcolor={buttonTextcolor} buttonTextWeight={buttonTextWeight} >{buttonText}</ButtonText>
+      <ButtonText 
+        buttonTextcolor={buttonTextcolor} 
+        buttonTextWeight={buttonTextWeight} 
+        poppinsFont={poppinsFont}>{buttonText}</ButtonText>
     </Button>
   );
 }

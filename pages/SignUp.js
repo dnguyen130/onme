@@ -15,10 +15,6 @@ import BackButton from '../components/global/BackButton';
 import app from '../utils/firebase.js';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
-const ScrollCont = styled.ScrollView`
-
-`;
-
 const CenterCont = styled.View`
   justify-content: center;
   align-items: center;
@@ -94,8 +90,17 @@ export default function SignUp({navigation}) {
         />
       </ColCont>
         <ColCont>
-          <Title titleColor="#A57760" titleSize="32px" titleWeight="700" titleText="Sign Up" />
-          <Title titleSize="32px" titleText="Create your account" />
+          <Title 
+            titleColor="#A57760" 
+            titleSize="32px" 
+            titleWeight="700" 
+            titleText="Sign Up"
+          />
+          <Title 
+            titleSize="32px" 
+            titleText="Create your account" 
+            poppinsFont="PoppinsMedium"  
+          />
         </ColCont>
         <RowCont>
           <FlexInput 
@@ -104,6 +109,7 @@ export default function SignUp({navigation}) {
           value={firstName} 
           onChangeText={(text) => setFirstName(text)} />
           <FlexInput 
+          textInputLabel=" " 
           textInputPlaceholder="Last Name"
           value={lastName}
           onChangeText={(text) => setLastName(text)} />
@@ -135,21 +141,18 @@ export default function SignUp({navigation}) {
           onChangeText={(text) => setPasswordConfirm(text)}
           secureTextEntry={true}/>
         </RowCont>
-        {/* <CenterCont> */}
-          <CenterCont>
-            <BigButton 
-            onPress={SignUpUser}
-            buttonText="Sign Up" />
-          </CenterCont>
-          <RowCont>
-            <TextDivider textColor="#888" borderColor="#888" />
-          </RowCont>
-          <RowCont>
-            <SmallButton iconColor="#699BF7" />
-            <SmallButton iconName="logo-google" iconColor="#EC452E"/>
-          </RowCont>
-        {/* </CenterCont> */}
-      {/* </ScrollView> */}
+        <CenterCont>
+          <BigButton 
+          onPress={SignUpUser}
+          buttonText="Sign Up" />
+        </CenterCont>
+        <RowCont>
+          <TextDivider textColor="#888" borderColor="#888" />
+        </RowCont>
+        <RowCont>
+          <SmallButton iconColor="#699BF7" />
+          <SmallButton iconName="logo-google" iconColor="#EC452E"/>
+        </RowCont>
     </SafeAreaView>
   );
 }

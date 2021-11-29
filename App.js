@@ -3,6 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
+import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,6 +22,7 @@ import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
 import PasswordSettings from './pages/PasswordSettings'
+import CheckOutPage from './pages/CheckOutPage'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -42,6 +45,17 @@ const MidIcon = styled.Image`
 `;
 
 function OnMeTabs() {
+  const [loaded] = useFonts({
+    PoppinsRegular: require('./assets/Poppins-Regular.ttf'),
+    PoppinsLight: require('./assets/Poppins-Light.ttf'),
+    PoppinsMedium: require('./assets/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('./assets/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('./assets/Poppins-Bold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <Tab.Navigator screenOptions={{ 
         headerShown: false, 
@@ -51,7 +65,7 @@ function OnMeTabs() {
         },
         tabBarLabelStyle: {
           fontSize: 14,
-          fontWeight: '600',
+          fontFamily: 'PoppinsMedium'
         }
       }}
     >      
@@ -133,13 +147,18 @@ function OnMeRoot() {
       />
 
       <Stack.Screen 
+        name="Seat Map" 
+        component={SeatMap} 
+        
+      />
+      <Stack.Screen 
         name="Order Summary" 
         component={OrderSummary} 
         
       />
       <Stack.Screen 
-        name="Seat Map" 
-        component={SeatMap} 
+        name="Check Out Page" 
+        component={CheckOutPage} 
         
       />
       <Stack.Screen 
@@ -165,6 +184,7 @@ export default function App() {
 
   if (load === true) {
     return <View style={styles.container}>
+      <StatusBar style='light' />
       <LottieView
         ref={(ref) => {
           anim = ref;
