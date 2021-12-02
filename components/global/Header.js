@@ -39,7 +39,7 @@ const Header = ({
   iconSubColor='',
   display='flex',
   maxHeight="29%",
-  opacity="1",
+  // opacity="1",
   onPress = ()=>{}
 }) => {
   return (
@@ -50,7 +50,14 @@ const Header = ({
     >
       <LinearGradient 
         colors={['rgba(0,0,0,1)', 'rgba(165, 119, 96, 0.5)']} 
-        style={{flex: 1, width: "100%", height: "100%", padding: "5%", justifyContent: "space-between", opacity: opacity }}
+        style={{
+          flex: 1, 
+          width: "100%", 
+          height: "100%", 
+          padding: "5%", 
+          justifyContent: "space-between", 
+          // opacity: opacity 
+        }}
         start={{ x: 0, y: 0.98 }}
         end={{ x: 0, y: 0 }}
         
