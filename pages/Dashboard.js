@@ -11,6 +11,8 @@ import Header from '../components/global/Header';
 import MenuCard from '../components/cards/MenuCard';
 import Input from '../components/global/Input';
 
+import axios from 'axios';
+
 const ScrollView = styled.ScrollView`
   margin-left: 3%;
 `;
@@ -52,6 +54,10 @@ export default function Dashboard({navigation}) {
   
   const auth = getAuth();
   const user = auth.currentUser;
+
+  // const GetRestaurants = async() => {
+  //   const firebase_id = user.firebase_id;
+  // }
 
   return (
     <View style={styles.container}>

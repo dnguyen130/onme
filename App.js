@@ -21,8 +21,11 @@ import Settings from './pages/Settings';
 import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
-import PasswordSettings from './pages/PasswordSettings'
-import CheckOutPage from './pages/CheckOutPage'
+import PasswordSettings from './pages/PasswordSettings';
+import CheckOutPage from './pages/CheckOutPage';
+
+import axios from 'axios';
+axios.defaults.baseURL = "https://serene-retreat-19125.herokuapp.com/api";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
