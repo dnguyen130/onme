@@ -64,6 +64,7 @@ export default function SignUp({navigation}) {
         .then((userCredential)=> {
           const user = userCredential.user;
           console.log(auth.currentUser);
+          navigation.navigate("OnMeTabs");
 
           axios.post('/user.php', {
             firebase_id: user.uid,
@@ -76,8 +77,6 @@ export default function SignUp({navigation}) {
           }).then(() => {
             console.log(auth.currentUser.displayName);
           })
-
-          navigation.navigate("OnMeTabs");
         })
         .catch((err)=>{
           alert(err.message);

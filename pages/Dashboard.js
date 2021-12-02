@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
@@ -23,6 +23,7 @@ const Cont = styled.View`
 
 //back-end
 import { getAuth } from 'firebase/auth';
+import { useFocusEffect } from '@react-navigation/core';
 
 const TitleCont = styled.View`
   flex-direction: row;
@@ -43,6 +44,10 @@ const InputCont = styled.View`
   margin-right: 5%;
 `;
 
+const RestaurantWrapper = styled.View`
+
+`
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -55,9 +60,19 @@ export default function Dashboard({navigation}) {
   const auth = getAuth();
   const user = auth.currentUser;
 
-  // const GetRestaurants = async() => {
-  //   const firebase_id = user.firebase_id;
-  // }
+  const [restaurants, setRestaurants] = useState([]);
+
+  const GetRestaurants = async() => {
+    const firebase_id = user.uid;
+    const result = await axios.get('/restaurant.php', { params: {firebase_id: firebase_id}});
+    setRestaurants(result.data);
+  }
+
+  useFocusEffect(
+    React.useCallback(() => {
+      GetRestaurants();
+    }, [])
+  )
 
   return (
     <View style={styles.container}>
@@ -96,12 +111,17 @@ export default function Dashboard({navigation}) {
             />
           </TitleCont>
             <RowCont horizontal>
-              <Card onPress={() => navigation.navigate('Restaurant Selection')} />
-              <Card onPress={() => navigation.navigate('Restaurant Selection')} />
-              <Card onPress={() => navigation.navigate('Restaurant Selection')} />
-              <Card onPress={() => navigation.navigate('Restaurant Selection')} />
-              <Card onPress={() => navigation.navigate('Restaurant Selection')} />
-              <Card onPress={() => navigation.navigate('Restaurant Selection')} />
+              {/* {
+                restaurants.map((o, i) => {
+                  <RestaurantWrapper key={i}>
+                    <Card
+                      restaurantName={o.name}
+                      restaurantAddress={o.address}
+                      cardImg = {o.picture}
+                    />
+                  </RestaurantWrapper>
+                })
+              } */}
             </RowCont>
             <TitleCont>
               <Icon 
