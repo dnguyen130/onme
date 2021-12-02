@@ -13,6 +13,8 @@ import Input from '../components/global/Input';
 
 import axios from 'axios';
 
+import { MyImages } from '../components/global/imglist';
+
 const ScrollView = styled.ScrollView`
   margin-left: 3%;
 `;
@@ -23,7 +25,7 @@ const Cont = styled.View`
 
 //back-end
 import { getAuth } from 'firebase/auth';
-import { useFocusEffect } from '@react-navigation/core';
+import { useFocusEffect } from '@react-navigation/native';
 
 const TitleCont = styled.View`
   flex-direction: row;
@@ -45,7 +47,6 @@ const InputCont = styled.View`
 `;
 
 const RestaurantWrapper = styled.View`
-
 `
 
 const styles = StyleSheet.create({
@@ -64,9 +65,10 @@ export default function Dashboard({navigation}) {
 
   const GetRestaurants = async() => {
     const firebase_id = user.uid;
-    const result = await axios.get('/restaurant.php', { params: {firebase_id: firebase_id}});
+    const result = await axios.get('/restaurant.php');
     setRestaurants(result.data);
   }
+
 
   useFocusEffect(
     React.useCallback(() => {
@@ -111,17 +113,17 @@ export default function Dashboard({navigation}) {
             />
           </TitleCont>
             <RowCont horizontal>
-              {/* {
-                restaurants.map((o, i) => {
+              {
+                restaurants.map((o, i) => (
                   <RestaurantWrapper key={i}>
                     <Card
                       restaurantName={o.name}
                       restaurantAddress={o.address}
-                      cardImg = {o.picture}
+                      cardImg = {MyImages[o.picture]}
                     />
                   </RestaurantWrapper>
-                })
-              } */}
+                ))
+              }
             </RowCont>
             <TitleCont>
               <Icon 

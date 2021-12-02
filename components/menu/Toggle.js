@@ -44,11 +44,11 @@ const Toggle = ({
   }
 
   const [loaded] = useFonts({
-    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('../../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf')
   });
 
   if (!loaded) {
