@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const Text = styled.Text`
   font-family: ${props => props.poppinsFont};
@@ -36,7 +37,7 @@ const Title = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Text 

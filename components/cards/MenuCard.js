@@ -2,6 +2,7 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const CardCont = styled.Pressable`
   align-items: center;
@@ -85,7 +86,7 @@ const MenuCard = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <CardCont onPress={onPress}>

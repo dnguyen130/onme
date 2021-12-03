@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const Cont = styled.View`
   flex-direction: row;
@@ -40,7 +41,7 @@ const TextDivider = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Cont addMargin={addMargin}>

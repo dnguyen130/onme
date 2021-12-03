@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const InputCont = styled.View`
   min-height: 55px;
@@ -46,7 +47,7 @@ const Input = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <InputCont>

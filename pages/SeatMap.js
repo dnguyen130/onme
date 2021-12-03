@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 import Input from '../components/global/Input';
 import Header from '../components/global/Header';
@@ -99,7 +100,7 @@ export default function SeatMap({navigation}) {
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <View style={styles.container}>

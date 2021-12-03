@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const Cont = styled.View`
   flex-direction: row;
@@ -52,7 +53,7 @@ const Toggle = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   
   else if (toggle === false) {

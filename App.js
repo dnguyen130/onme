@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -57,7 +58,7 @@ function OnMeTabs() {
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Tab.Navigator screenOptions={{ 

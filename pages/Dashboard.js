@@ -4,16 +4,16 @@ import { StyleSheet, SafeAreaView, View, Modal } from 'react-native';
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
 import * as WebBrowser from 'expo-web-browser';
+import AppLoading from 'expo-app-loading';
 
 import Title from '../components/text/Title';
 import Card from '../components/cards/Card';
 import Header from '../components/global/Header';
 import MenuCard from '../components/cards/MenuCard';
 import Input from '../components/global/Input';
+import BottomOverlay from '../components/cards/BottomOverlay';
 
 import axios from 'axios';
-
-import BottomOverlay from '../components/cards/BottomOverlay';
 
 import { MyImages } from '../components/global/imglist';
 

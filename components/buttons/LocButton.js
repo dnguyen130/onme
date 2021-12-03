@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const Cont = styled.TouchableOpacity`
   flex-direction: row;
@@ -81,7 +82,7 @@ const LocButton = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Cont onPress={onPress}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 import { Icon } from 'react-native-elements';
 
@@ -44,7 +45,7 @@ const SmallButton = ({
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Button buttonColor={buttonColor} buttonBorderWidth={buttonBorderWidth} onPress={onPress}>
