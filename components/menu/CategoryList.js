@@ -9,7 +9,7 @@ const Cont = styled.ScrollView`
 
 const ListText = styled.Text`
   font-size: 15px;
-  color: #fff;
+  color: ${props => props.textColor};
   margin-left: 15px;
   font-weight: 700;
   font-family: ${props => props.poppinsFont};
@@ -21,7 +21,8 @@ const CategoryList = ({
   listThree='Desserts',
   listFour='Seasonal',
   listFive='Trending',
-  poppinsFont="PoppinsMedium"
+  poppinsFont="PoppinsMedium",
+  textColor="#fff"
 }) => {
   const [loaded] = useFonts({
     PoppinsRegular: require('../../assets/fonts/Poppins-Regular.ttf'),
@@ -36,11 +37,11 @@ const CategoryList = ({
   }
   return (
     <Cont horizontal>
-      <ListText poppinsFont={poppinsFont}>{listOne}</ListText>
-      <ListText poppinsFont={poppinsFont}>{listTwo}</ListText>
-      <ListText poppinsFont={poppinsFont}>{listThree}</ListText>
-      <ListText poppinsFont={poppinsFont}>{listFour}</ListText>
-      <ListText poppinsFont={poppinsFont}>{listFive}</ListText>
+      <ListText poppinsFont={poppinsFont} textColor={textColor}>{listOne}</ListText>
+      <ListText poppinsFont={poppinsFont} textColor='#A57760'>{listTwo}</ListText>
+      <ListText poppinsFont={poppinsFont} textColor={textColor}>{listThree}</ListText>
+      <ListText poppinsFont={poppinsFont} textColor={textColor}>{listFour}</ListText>
+      <ListText poppinsFont={poppinsFont} textColor={textColor}>{listFive}</ListText>
     </Cont>
   );
 }
