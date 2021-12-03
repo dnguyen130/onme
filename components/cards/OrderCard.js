@@ -21,6 +21,7 @@ const OrderCardImage = styled.Image`
 
 const ColumnCont = styled.View`
   flex-direction: column;
+  margin-left: 10px;
 `
 
 const EndColumnCont = styled.View`
@@ -38,7 +39,7 @@ const RowCont = styled.View`
 `
 
 const OrderCard = ({
-  source=require("../../assets/imgBg.png")
+  source=require("../../assets/images/menu/drink/onmedrink.png")
 }) => {
   return (
     <OrderCardCont>

@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components';
 import { useFonts } from 'expo-font';
@@ -8,6 +8,8 @@ import AppLoading from 'expo-app-loading';
 import Input from '../components/global/Input';
 import Header from '../components/global/Header';
 import Title from '../components/text/Title';
+import BigButton from '../components/buttons/BigButton';
+
 
 const ScrollCont = styled.View`
   flex: 1;
@@ -76,15 +78,6 @@ const Seats = styled.TouchableOpacity`
   border-radius: 10px;
 `;
 
-const HotSeats = styled.TouchableOpacity`
-  width: 60px;
-  height: 60px;
-  background-color: #ff00ff;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-`;
-
 const Text = styled.Text`
   font-size: 15px;
   font-weight: 700;
@@ -92,11 +85,18 @@ const Text = styled.Text`
   font-family: "PoppinsRegular";
 `;
 
+const BtnCont = styled.View`
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+`;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#2E2E2E',
   }
+
 });
 
 export default function SeatMap({
@@ -109,6 +109,8 @@ export default function SeatMap({
     PoppinsSemiBold: require('../assets/fonts/Poppins-SemiBold.ttf'),
     PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf')
   });
+
+  const [selected, setSelected] = useState(false);
 
   if (!loaded) {
     return <AppLoading />
@@ -177,9 +179,11 @@ export default function SeatMap({
                 <Seats>
                   <Text>07</Text>
                 </Seats>
-                <HotSeats>
+                <Seats 
+                style={[selected ? {backgroundColor: '#FE4370'} : {backgroundColor: '#A57760'}]}
+                onPress={()=>{setSelected(!selected)}}>
                   <Text>08</Text>
-                </HotSeats>
+                </Seats>
                 <Seats>
                   <Text>09</Text>
                 </Seats>
@@ -218,6 +222,9 @@ export default function SeatMap({
                 </Seats>
               </SeatRow>
             </SeatMapCont>
+            <BtnCont>
+          <BigButton width='50%' buttonText='Order Summary' onPress={() => navigation.navigate('Order Summary')} />
+        </BtnCont>
           </CenterScrollCont>
         </ScrollCont>
     </View>

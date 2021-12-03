@@ -35,7 +35,7 @@ export default function OrderConfirmation({navigation}) {
           boxHeight="50%" 
           boxWidth="70%" 
           mainTitle="Awesome, Order Received!" mainSize="15px"
-          subTitle="We hope you get some :)" subSize="15px" 
+          subTitle="" subSize="15px" 
         />
         <BigButton buttonText="Send Another :)" width='50%' onPress={() => navigation.navigate('Restaurant Menu')}/>
       </CenterCont>
