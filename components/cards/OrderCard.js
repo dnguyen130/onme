@@ -45,7 +45,7 @@ const OrderCard = ({
     <OrderCardCont>
       <OrderCardImage source={source} />
       <ColumnCont>
-        <Title titleText="Cheese Sticks" titleSize="17px" />
+        <Title titleText="OnMe Special" titleSize="17px" />
         <Title titleText="$9.99" titleSize="14px" />
       </ColumnCont>
       <EndColumnCont>
