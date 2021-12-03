@@ -76,6 +76,15 @@ const Seats = styled.TouchableOpacity`
   border-radius: 10px;
 `;
 
+const HotSeats = styled.TouchableOpacity`
+  width: 60px;
+  height: 60px;
+  background-color: #ff00ff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+`;
+
 const Text = styled.Text`
   font-size: 15px;
   font-weight: 700;
@@ -90,7 +99,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function SeatMap({navigation}) {
+export default function SeatMap({
+  navigation
+}) {
   const [loaded] = useFonts({
     PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
     PoppinsLight: require('../assets/fonts/Poppins-Light.ttf'),
@@ -141,68 +152,68 @@ export default function SeatMap({navigation}) {
           <CenterScrollCont>
             <SeatMapCont>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>01</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>02</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>03</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>04</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>05</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>06</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>07</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <HotSeats>
                   <Text>08</Text>
-                </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                </HotSeats>
+                <Seats>
                   <Text>09</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>10</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>11</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>12</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>13</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>14</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>15</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>16</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>17</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>18</Text>
                 </Seats>
               </SeatRow>
