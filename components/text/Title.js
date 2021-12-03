@@ -24,7 +24,6 @@ const Title = ({
   titleAlign = "left",
   titleMarginRight = "0px",
   textDecorationLine = "none",
-  onPress = () => {},
   titleAlignSelf = "flex-start",
   poppinsFont = "PoppinsSemiBold"
 }) => {
@@ -49,7 +48,6 @@ const Title = ({
       titleAlign={titleAlign}
       textDecorationLine={textDecorationLine}
       titleMarginRight={titleMarginRight}
-      onPress={onPress}
       titleAlignSelf={titleAlignSelf}
       poppinsFont={poppinsFont}
       >
