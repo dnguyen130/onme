@@ -27,7 +27,7 @@ export default function OrderConfirmation({navigation}) {
         <Header 
           subTitle="Order Confirmation" 
           subWeight="700" 
-          source={require("../assets/headerImg_4.png")}
+          source={require("../assets/images/header/headerImg_4.png")}
           onPress={() => navigation.goBack()} 
         />
       <CenterCont>

@@ -25,7 +25,7 @@ const RowCont = styled.View`
 `;
 
 const Header = ({
-  source=require("../../assets/headerImg.png"),
+  source=require("../../assets/images/header/headerImg.png"),
   mainTitle="",
   mainWeight="700",
   subTitle="",

@@ -103,7 +103,7 @@ export default function RestaurantSelection({route, navigation}) {
             mainTitle="The Habitat" 
             subTitle="3700 Willingdon Ave, Burnaby" 
             subTitleSize="15px"
-            source={require("../assets/headerImg_2.png")} 
+            source={require("../assets/images/header/headerImg_2.png")} 
             onPress={() => navigation.goBack()} 
           />
           <Cont>
@@ -136,7 +136,7 @@ export default function RestaurantSelection({route, navigation}) {
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Moscow Mule'
                   priceText='$5.99'
-                  cardImg = {require('../assets/drink_2.png')}
+                  cardImg = {require('../assets/images/menu/drink/drink_2.png')}
                 />
               </RowCont>
               <RowCont>
@@ -145,7 +145,7 @@ export default function RestaurantSelection({route, navigation}) {
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Purple Goddess'
                   priceText='$5.99'
-                  cardImg = {require('../assets/drink_3.png')}
+                  cardImg = {require('../assets/images/menu/drink/drink_3.png')}
                 />
               </RowCont>
               <BtnCont>
@@ -186,7 +186,7 @@ export default function RestaurantSelection({route, navigation}) {
             mainTitle="The Habitat" 
             subTitle="3700 Willingdon Ave, Burnaby" 
             subTitleSize="15px" 
-            source={require("../assets/headerImg_2.png")} 
+            source={require("../assets/images/header/headerImg_2.png")} 
             onPress={() => navigation.goBack()} 
           />
           <Cont>
@@ -209,35 +209,35 @@ export default function RestaurantSelection({route, navigation}) {
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Zesty Calimari'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_2.png')}
+                  cardImg = {require('../assets/images/menu/food/food_2.png')}
                 />
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Cheese Sticks'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_1.png')}
+                  cardImg = {require('../assets/images/menu/food/food_1.png')}
                 />
-               </RowCont>
-               <RowCont>
+              </RowCont>
+              <RowCont>
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Dry Ribs'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_3.png')}
+                  cardImg = {require('../assets/images/menu/food/food_3.png')}
                 />
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Winner C'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_4.png')}
+                  cardImg = {require('../assets/images/menu/food/food_4.png')}
                 />
-               </RowCont>
-               <BtnCont>
+              </RowCont>
+              <BtnCont>
                 <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
-               </BtnCont>
+              </BtnCont>
             </CenterScrollCont>
             <Modal
               animationType="slide"

@@ -110,7 +110,7 @@ export default function SeatMap({navigation}) {
           subTitle="Who caught your eye?" 
           subWeight="700"
           subTitleSize="24px"
-          source={require("../assets/headerImg_3.png")} 
+          source={require("../assets/images/header/headerImg_3.png")} 
           onPress={() => navigation.navigate('Restaurant Menu')} 
         />
         <InputCont>

@@ -45,7 +45,7 @@ export default function OrderSummary({navigation}) {
       <StatusBar style="light" />
       <Header 
         mainTitle="Confirm Order" 
-        source={require("../assets/headerImg_4.png")}
+        source={require("../assets/images/header/headerImg_4.png")}
         onPress={() => navigation.goBack()} 
       />
       <TitleCont>

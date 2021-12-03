@@ -97,7 +97,7 @@ function OnMeTabs() {
         options={{
           tabBarLabel: ' ',
           tabBarIcon: ({}) => (
-            <MidIcon source={require('./assets/midIcon.png')}/>
+            <MidIcon source={require('./assets/icons/midIcon.png')}/>
           ),
           tabBarIconStyle: {
             top: '20%'

@@ -66,7 +66,7 @@ const SmallIcon = styled.Image`
 `;
 
 const LocButton = ({
-  icon = require('../../assets/resImg.png'),
+  icon = require('../../assets/icons/resImg.png'),
   name = "The Habitat",
   city = "Burnaby",
   address = "3700 Willingdon Ave",
@@ -93,8 +93,8 @@ const LocButton = ({
         <NameCont>
           <Name poppinsFont="PoppinsBold">{name}</Name>
           <IconCont>
-            <SmallIcon source={require('../../assets/forkKnife.png')} />
-            <SmallIcon source={require('../../assets/wineGlass.png')} />
+            <SmallIcon source={require('../../assets/icons/forkKnife.png')} />
+            <SmallIcon source={require('../../assets/icons/wineGlass.png')} />
           </IconCont>
         </NameCont>
         <City poppinsFont={poppinsFont}>{city}</City>

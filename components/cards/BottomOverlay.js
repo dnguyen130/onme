@@ -30,7 +30,7 @@ const PrimaryBtnCont = styled.View`
 `;
 
 const BottomOverlay = ({
-  overlayImg = require('../../assets/btmOverlayImg.png'),
+  overlayImg = require('../../assets/images/restaurant/habitat.png'),
   send = ()=>{},
   directions = ()=>{},
   mainTitle = "The Habitat",

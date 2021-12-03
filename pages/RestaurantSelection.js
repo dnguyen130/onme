@@ -51,7 +51,7 @@ export default function RestaurantSelection({navigation}) {
         <StatusBar style="light" />
         <Header 
           mainTitle="Where would you like to go?"
-          source={require("../assets/headerImg_2.png")} 
+          source={require("../assets/images/header/headerImg_2.png")} 
           onPress={() => navigation.goBack()} 
         />
         <Cont>

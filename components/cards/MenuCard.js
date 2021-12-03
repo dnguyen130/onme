@@ -69,7 +69,7 @@ const Plus = styled.Text`
 `;
 
 const MenuCard = ({
-  cardImg = require('../../assets/drink_1.png'),
+  cardImg = require('../../assets/images/menu/drink/drink_1.png'),
   restaurantText = "",
   itemText = "Zesty Calimari",
   priceText = "$9.99",

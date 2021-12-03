@@ -30,7 +30,7 @@ const PrimaryBtnCont = styled.View`
 `;
 
 const BottomOverlay = ({
-  overlayImg = require('../../assets/drinksOverlay_1.png'),
+  overlayImg = require('../../assets/images/menu/drink/drinksOverlay_1.png'),
   add = ()=>{},
 }) => {
   return (

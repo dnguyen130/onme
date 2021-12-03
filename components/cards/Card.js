@@ -37,7 +37,7 @@ const Address = styled.Text`
 `;
 
 const Card = ({
-  cardImg = require('../../assets/food_1.png'),
+  cardImg = require('../../assets/images/menu/food/food_1.png'),
   restaurantName = "The Habitat",
   restaurantAddress = "3700 Willingdon Ave",
   onPress = ()=>{},
