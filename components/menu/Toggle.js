@@ -53,7 +53,7 @@ const Toggle = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   
   else if (toggle === false) {

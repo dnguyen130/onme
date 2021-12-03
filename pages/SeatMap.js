@@ -113,7 +113,7 @@ export default function SeatMap({
   const [selected, setSelected] = useState(false);
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <View style={styles.container}>
@@ -126,9 +126,9 @@ export default function SeatMap({
           source={require("../assets/images/header/headerImg_3.png")} 
           onPress={() => navigation.navigate('Restaurant Menu')} 
         />
-        <InputCont>
+        {/* <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
-        </InputCont>
+        </InputCont> */}
         <ScrollCont>
           <RowCont>
             <Title 

@@ -86,7 +86,7 @@ const MenuCard = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <CardCont onPress={onPress}>

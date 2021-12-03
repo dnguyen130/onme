@@ -68,7 +68,7 @@ function OnMeTabs() {
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Tab.Navigator screenOptions={{ 

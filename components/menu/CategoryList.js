@@ -32,7 +32,7 @@ const CategoryList = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Cont horizontal>

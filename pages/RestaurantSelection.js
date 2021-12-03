@@ -83,9 +83,9 @@ export default function RestaurantSelection({navigation}) {
           onPress={() => navigation.goBack()} 
         />
         <Cont>
-          <InputCont>
+          {/* <InputCont>
             <Input textInputPlaceholder="Search" textAlign="center" />
-          </InputCont>
+          </InputCont> */}
           <CenterScrollCont contentContainerStyle={styles.scrollcontainer}>
             {
                 restaurants.map((o, i) => (

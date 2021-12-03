@@ -29,7 +29,7 @@ const TextLink = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Text 

@@ -40,9 +40,9 @@ export default function RecentItems({navigation}) {
           iconTitleColor='#FE4370'
           onPress={() => navigation.goBack()} 
         />
-        <InputCont>
+        {/* <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
-        </InputCont>
+        </InputCont> */}
         <ScrollCont>
           <CenterScrollCont alignItems='center'>
               <LocButton onPress={() => navigation.navigate('Restaurant Menu')} />

@@ -87,7 +87,7 @@ const LocButton = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Cont onPress={onPress}>

@@ -37,7 +37,7 @@ const BigButton = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Button changeButtonColor={bgColor} width={width} onPress={onPress} onPressIn={onPressIn}>
