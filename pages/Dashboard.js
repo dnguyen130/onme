@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, useCallback } from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Modal, Linking } from 'react-native';
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
 
@@ -12,6 +12,8 @@ import MenuCard from '../components/cards/MenuCard';
 import Input from '../components/global/Input';
 
 import axios from 'axios';
+
+import BottomOverlay from '../components/cards/BottomOverlay';
 
 import { MyImages } from '../components/global/imglist';
 
@@ -49,6 +51,11 @@ const InputCont = styled.View`
 const RestaurantWrapper = styled.View`
 `
 
+const ModalPressable = styled.Pressable`
+  flex: 1;
+`;
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -63,10 +70,23 @@ export default function Dashboard({navigation}) {
 
   const [restaurants, setRestaurants] = useState([]);
 
+  const [selectedImage, setSelectedImage] = useState('');
+
   const GetRestaurants = async() => {
-    const firebase_id = user.uid;
     const result = await axios.get('/restaurant.php');
     setRestaurants(result.data);
+  }
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const modalFunction = () => {
+    setModalVisible(!modalVisible);
+    navigation.navigate('Restaurant Menu');
+  }
+
+  const Habitat = () => {
+    Linking.openURL('http://maps.google.com/?q=49.251539,-123.0039377');
+    // http://maps.google.com/?q=49.251539,-123.0039377
   }
 
 
@@ -77,7 +97,7 @@ export default function Dashboard({navigation}) {
   )
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
         <StatusBar style="light" />
         <Header 
         mainTitle="Welcome," 
@@ -120,6 +140,10 @@ export default function Dashboard({navigation}) {
                       restaurantName={o.name}
                       restaurantAddress={o.address}
                       cardImg = {MyImages[o.picture]}
+                      onPress = {() => {
+                        setSelectedImage(MyImages[o.picture])
+                        setModalVisible(!modalVisible)
+                      }}
                     />
                   </RestaurantWrapper>
                 ))
@@ -183,6 +207,18 @@ export default function Dashboard({navigation}) {
             </RowCont>
           </ScrollView>
         </Cont>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+        >
+          <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
+            <BottomOverlay 
+              send={modalFunction}
+              directions={Habitat}
+              overlayImg={selectedImage}
+            />
+        </Modal>
     </View>
   );
 }
