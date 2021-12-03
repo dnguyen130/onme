@@ -9,12 +9,11 @@ const IconTextCont = styled.View`
 `
 
 const LineCont = styled.View`
-  width: 40px;
-  border-radius: 1px;
+  width: 50px;
   height: 1px;
+  border-width: 1px;
   border-style: dashed;
-  border-top-width: 5px;
-  border-top-color: gray;
+  border-color: #fff;
 `
 
 const RowCont = styled.View`
@@ -23,7 +22,9 @@ const RowCont = styled.View`
 `
 
 const ColCont = styled.View`
-  margin: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50px;
 `
 
 const ProgressCheck = ({
@@ -34,14 +35,14 @@ const ProgressCheck = ({
       <RowCont>
         <ColCont>
           <Icon name='checkmark-circle' type='ionicon' color='#FE4370' />
-          <Title titleText="Order" titleSize="10px" titleAlign="center"/>
-          <Title titleText="Received" titleSize="10px" titleAlign="center"/>
+          <Title titleText="Order" titleSize="10px" titleAlignSelf="center"/>
+          <Title titleText="Received" titleSize="10px" titleAlignSelf="center"/>
         </ColCont>
-        <LineCont />
+          <LineCont />
         <ColCont>
           <Icon name='checkmark-circle' type='ionicon' color='#FE4370' />
-          <Title titleText="Drink" titleSize="10px" titleAlign="center" />
-          <Title titleText="Sent" titleSize="10px" titleAlign="center" />
+          <Title titleText="Drink" titleSize="10px" titleAlignSelf="center" />
+          <Title titleText="Sent" titleSize="10px" titleAlignSelf="center" />
         </ColCont>
       </RowCont>
     </IconTextCont>
