@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, useCallback } from 'react';
-import { StyleSheet, SafeAreaView, View, Modal, Linking } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Modal } from 'react-native';
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
-import * as Linking from 'expo-linking';
+import * as WebBrowser from 'expo-web-browser';
 
 import Title from '../components/text/Title';
 import Card from '../components/cards/Card';
@@ -70,6 +70,7 @@ export default function Dashboard({navigation}) {
 
   const [restaurants, setRestaurants] = useState([]);
 
+  const [selectedId, setSelectedId] = useState(NULL);
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedAddress, setSelectedAddress] = useState('');
@@ -83,11 +84,11 @@ export default function Dashboard({navigation}) {
 
   const modalFunction = () => {
     setModalVisible(!modalVisible);
-    navigation.navigate('Restaurant Menu');
+    navigation.navigate('Restaurant Menu', {restaurantId = selectedId});
   }
 
   const Habitat = () => {
-    Linking.openURL('http://maps.google.com/?q=49.251539,-123.0039377');
+    WebBrowser.openBrowserAsync('http://maps.google.com/?q=49.251539,-123.0039377');
     // http://maps.google.com/?q=49.251539,-123.0039377
   }
 
@@ -143,6 +144,7 @@ export default function Dashboard({navigation}) {
                       restaurantAddress={o.address}
                       cardImg = {MyImages[o.picture]}
                       onPress = {() => {
+                        setSelectedId(o.id)
                         setSelectedImage(MyImages[o.picture])
                         setSelectedAddress(o.address)
                         setSelectedTitle(o.name)

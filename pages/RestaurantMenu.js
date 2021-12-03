@@ -11,6 +11,8 @@ import MenuCard from '../components/cards/MenuCard';
 import MenuBottomOverlay from '../components/cards/MenuBottomOverlay';
 import BigButton from '../components/buttons/BigButton';
 
+
+
 const Cont = styled.View`
   flex: 1;
 `;
@@ -70,7 +72,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function RestaurantSelection({navigation}) {
+export default function RestaurantSelection({route, navigation}) {
+  const restaurantId = route.params;
+  
   const [toggle, setToggle] = useState(false);
 
   const DrinksOn = () => {
@@ -85,6 +89,7 @@ export default function RestaurantSelection({navigation}) {
 
   const [itemModalVisible, setItemModalVisible] = useState(false);
 
+  const GetItems = 
 
   setTimeout(() => {
     setItemModalVisible(false);
