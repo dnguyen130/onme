@@ -15,7 +15,7 @@ import BottomOverlay from '../components/cards/BottomOverlay';
 
 import axios from 'axios';
 
-import { MyImages } from '../components/global/imglist';
+import { MyImages } from '../components/global/Imglist';
 
 const ScrollView = styled.ScrollView`
   margin-left: 3%;
@@ -69,6 +69,7 @@ export default function Dashboard({navigation}) {
   const user = auth.currentUser;
 
   const [restaurants, setRestaurants] = useState([]);
+  const [items, setItems] = useState([]);
 
   const [selectedId, setSelectedId] = useState(null);
   const [selectedImage, setSelectedImage] = useState('');
@@ -78,6 +79,11 @@ export default function Dashboard({navigation}) {
   const GetRestaurants = async() => {
     const result = await axios.get('/restaurant.php');
     setRestaurants(result.data);
+  }
+
+  const GetItems = async() => {
+    const result = await axios.get('/item.php');
+    setItems(result.data);
   }
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -96,6 +102,7 @@ export default function Dashboard({navigation}) {
   useFocusEffect(
     React.useCallback(() => {
       GetRestaurants();
+      GetItems();
     }, [])
   )
 
@@ -180,36 +187,22 @@ export default function Dashboard({navigation}) {
               />
             </TitleCont>
             <RowCont horizontal>
-              <MenuCard 
+              {
+                items.map((o, i) => (
+                  <RestaurantWrapper key={i}>
+                    <MenuCard
+                      itemText={o.i_name}
+                      priceText={o.price}
+                      cardImg = {MyImages[o.picture]}
+                    />
+                  </RestaurantWrapper>
+                ))
+              }
+              {/* <MenuCard 
                 onPress={() => navigation.navigate('Restaurant Selection')} 
                 addOnPress={() => navigation.navigate('Order Summary')} 
                 restaurantText="The Habitat" 
-              />
-              <MenuCard 
-                onPress={() => navigation.navigate('Restaurant Selection')} 
-                addOnPress={() => navigation.navigate('Order Summary')} 
-                restaurantText="The Habitat" 
-              />
-              <MenuCard 
-                onPress={() => navigation.navigate('Restaurant Selection')} 
-                addOnPress={() => navigation.navigate('Order Summary')} 
-                restaurantText="The Habitat" 
-              />
-              <MenuCard 
-                onPress={() => navigation.navigate('Restaurant Selection')} 
-                addOnPress={() => navigation.navigate('Order Summary')} 
-                restaurantText="The Habitat" 
-              />
-              <MenuCard 
-                onPress={() => navigation.navigate('Restaurant Selection')} 
-                addOnPress={() => navigation.navigate('Order Summary')} 
-                restaurantText="The Habitat" 
-              />
-              <MenuCard 
-                onPress={() => navigation.navigate('Restaurant Selection')} 
-                addOnPress={() => navigation.navigate('Order Summary')} 
-                restaurantText="The Habitat" 
-              />
+              /> */}
             </RowCont>
           </ScrollView>
         </Cont>

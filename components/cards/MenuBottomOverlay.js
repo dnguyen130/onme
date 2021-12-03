@@ -30,27 +30,29 @@ const PrimaryBtnCont = styled.View`
 `;
 
 const BottomOverlay = ({
-  overlayImg = require('../../assets/images/menu/drink/drinksOverlay_1.png'),
+  overlayImg = require('../../assets/images/menu/drink/onmedrink.png'),
   add = ()=>{},
+  overlayTitle='OnMe Special',
+  overlayPrice='$8.99'
 }) => {
   return (
     <Cont>
       <Img source={overlayImg} />
         <TitleCont>
           <Title 
-            titleText='Ravioli Martini'
+            titleText={overlayTitle}
             titleSize='20px'
             titleMargin='0 0 10px 0'
             poppinsFont='PoppinsMedium'
           />
           <Title 
-            titleText='$5.99'
+            titleText={overlayPrice}
             titleSize='18px'
             titleMargin='0 0 10px 0'
             titleColor='#A57760'
           />
           <Title 
-            titleText='A delicious martini made out of ravioli, made of gin, rum and all the good stuff.'
+            titleText='Sweet or spicy, depending on your mood.'
             titleSize='18px'
             titleMargin='0 0 10px 0'
             poppinsFont='PoppinsRegular'
