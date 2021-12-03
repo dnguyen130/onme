@@ -32,30 +32,33 @@ const PrimaryBtnCont = styled.View`
 const BottomOverlay = ({
   overlayImg = require('../../assets/btmOverlayImg.png'),
   send = ()=>{},
-  directions = ()=>{}
+  directions = ()=>{},
+  mainTitle = "The Habitat",
+  addressTitle = "3700 Willingdon Ave, Burnaby",
+  openingHours = 'Monday to Sunday 10am to 10pm'
 }) => {
   return (
     <Cont>
       <Img source={overlayImg} />
         <TitleCont>
           <Title 
-            titleText='The Habitat'
+            titleText={mainTitle}
             titleSize='30px'
             titleMargin='0 0 10px 0'
             titleColor='#A57760'
           />
           <Title 
-            titleText='3700 Willingdon, Burnaby'
+            titleText={addressTitle}
             titleSize='15px'
             titleMargin='0 0 10px 0'
             poppinsFont='PoppinsMedium'
           />
-          <Title 
-            titleText='Monday to Sunday 10am to 10pm'
+          {/* <Title 
+            titleText={openingHours}
             titleSize='15px'
             titleMargin='0 0 10px 0'
             poppinsFont='PoppinsMedium'
-          />
+          /> */}
         </TitleCont>
         <PrimaryBtnCont>
           <BigButton 

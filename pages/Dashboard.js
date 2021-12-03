@@ -3,8 +3,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, SafeAreaView, View, Modal, Linking } from 'react-native';
 import styled from 'styled-components/native';
 import { Icon } from 'react-native-elements';
+import * as Linking from 'expo-linking';
 
-import NavBar from '../components/global/NavBar';
 import Title from '../components/text/Title';
 import Card from '../components/cards/Card';
 import Header from '../components/global/Header';
@@ -71,6 +71,8 @@ export default function Dashboard({navigation}) {
   const [restaurants, setRestaurants] = useState([]);
 
   const [selectedImage, setSelectedImage] = useState('');
+  const [selectedTitle, setSelectedTitle] = useState('');
+  const [selectedAddress, setSelectedAddress] = useState('');
 
   const GetRestaurants = async() => {
     const result = await axios.get('/restaurant.php');
@@ -142,6 +144,8 @@ export default function Dashboard({navigation}) {
                       cardImg = {MyImages[o.picture]}
                       onPress = {() => {
                         setSelectedImage(MyImages[o.picture])
+                        setSelectedAddress(o.address)
+                        setSelectedTitle(o.name)
                         setModalVisible(!modalVisible)
                       }}
                     />
@@ -217,6 +221,8 @@ export default function Dashboard({navigation}) {
               send={modalFunction}
               directions={Habitat}
               overlayImg={selectedImage}
+              mainTitle={selectedTitle}
+              addressTitle={selectedAddress}
             />
         </Modal>
     </View>
