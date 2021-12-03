@@ -19,8 +19,6 @@ import RestaurantSelection from './pages/RestaurantSelection';
 import RestaurantMenu from './pages/RestaurantMenu';
 import OrderConfirmation from './pages/OrderReceived';
 import Settings from './pages/Settings';
-import FrequentlyVisited from './pages/FrequentlyVisited';
-import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
 import PasswordSettings from './pages/PasswordSettings';
 import CheckOutPage from './pages/CheckOutPage';
@@ -144,16 +142,7 @@ function OnMeRoot() {
         component={Dashboard} 
         
       />
-      <Stack.Screen 
-        name="Frequently Visited" 
-        component={FrequentlyVisited} 
-        
-      />
-      <Stack.Screen 
-        name="Recent Items" 
-        component={RecentItems} 
-        
-      />
+
       <Stack.Screen 
         name="Restaurant Selection" 
         component={RestaurantSelection} 
