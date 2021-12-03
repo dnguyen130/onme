@@ -102,8 +102,8 @@ function OnMeTabs() {
         }}
       />
       <Tab.Screen 
-        name="Restaurant Menu" 
-        component={RestaurantMenu} 
+        name="Restaurant Selection" 
+        component={RestaurantSelection} 
         options={{
           tabBarLabel: ' ',
           tabBarIcon: ({}) => (
@@ -157,6 +157,12 @@ function OnMeRoot() {
       <Stack.Screen 
         name="Restaurant Selection" 
         component={RestaurantSelection} 
+        
+      />
+
+      <Stack.Screen 
+        name="Restaurant Menu" 
+        component={RestaurantMenu} 
         
       />
 
