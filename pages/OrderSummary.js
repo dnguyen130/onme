@@ -80,21 +80,13 @@ export default function OrderSummary({navigation}) {
         <OrderList>
           <OrderCard />
           <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-          <OrderCard />
-          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-          <OrderCard />
-          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-          <OrderCard />
-          <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
-          <OrderCard />
         </OrderList>
-        <Divider color="#a57760" width={2} style={{margin:10, alignSelf:'stretch'}} />
         <TotalCont>
           <PinkCircleCont>
-            <Title titleText="3" titleSize="14px" titleAlignSelf="center" />
+            <Title titleText="1" titleSize="14px" titleAlignSelf="center" />
           </PinkCircleCont>
           <Title titleText="Total:" titleSize="17px" />
-          <Title titleText="$27.97" titleSize="17px " />
+          <Title titleText="$10.34" titleSize="17px " />
         </TotalCont>
         <Title titleText="Tip:" titleSize="20px" />
         <TipCont>

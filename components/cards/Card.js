@@ -2,6 +2,7 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const CardCont = styled.TouchableOpacity`
   align-items: center;
@@ -36,22 +37,22 @@ const Address = styled.Text`
 `;
 
 const Card = ({
-  cardImg = require('../../assets/food_1.png'),
+  cardImg = require('../../assets/images/menu/food/food_1.png'),
   restaurantName = "The Habitat",
   restaurantAddress = "3700 Willingdon Ave",
   onPress = ()=>{},
   poppinsFont="PoppinsBold"
 }) => {
   const [loaded] = useFonts({
-    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('../../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf')
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />;
   }
   return (
     <CardCont onPress={onPress}>

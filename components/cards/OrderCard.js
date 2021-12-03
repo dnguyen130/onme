@@ -21,6 +21,7 @@ const OrderCardImage = styled.Image`
 
 const ColumnCont = styled.View`
   flex-direction: column;
+  margin-left: 10px;
 `
 
 const EndColumnCont = styled.View`
@@ -38,13 +39,13 @@ const RowCont = styled.View`
 `
 
 const OrderCard = ({
-  source=require("../../assets/imgBg.png")
+  source=require("../../assets/images/menu/drink/onmedrink.png")
 }) => {
   return (
     <OrderCardCont>
       <OrderCardImage source={source} />
       <ColumnCont>
-        <Title titleText="Cheese Sticks" titleSize="17px" />
+        <Title titleText="OnMe Special" titleSize="17px" />
         <Title titleText="$9.99" titleSize="14px" />
       </ColumnCont>
       <EndColumnCont>

@@ -30,7 +30,7 @@ const FloatingBoxCont = styled.View`
 
 const TopTitle = styled.View`
   position: absolute;
-  top: 0px;
+  top: 20px;
 `
 
 const FloatingBox = ({

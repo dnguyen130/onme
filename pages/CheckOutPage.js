@@ -45,7 +45,7 @@ export default function OrderSummary({navigation}) {
       <StatusBar style="light" />
       <Header 
         mainTitle="Confirm Order" 
-        source={require("../assets/headerImg_4.png")}
+        source={require("../assets/images/header/headerImg_4.png")}
         onPress={() => navigation.goBack()} 
       />
       <TitleCont>
@@ -56,15 +56,9 @@ export default function OrderSummary({navigation}) {
         />
       </TitleCont>
       <PaddingCont contentContainerStyle={styles.scrollList}>
-        <BigButton buttonText=" Apple Pay" />
-        <TextDivider 
-          textColor="#fff" 
-          borderColor="#dcdcdc"
-          changeText="or pay with card"
-          addMargin="30px"
-        />
         <Input
           label="Email"
+          value="aliciayien360@gmail.com"
           labelStyle={{color: '#fff', paddingBottom: 3 }}
           inputStyle={{color: '#fff'}} 
           inputContainerStyle={{borderWidth: 2, borderBottomWidth: 2, borderRadius: 10, padding: 3}}
@@ -72,6 +66,7 @@ export default function OrderSummary({navigation}) {
         <Input
           label="Card Information" 
           placeholder='Number'
+          value='1234 4567 8900 9876'
           labelStyle={{color: '#fff', paddingBottom: 3 }}
           inputStyle={{color: '#A57760'}} 
           placeholderTextColor='#A57760' 
@@ -80,6 +75,7 @@ export default function OrderSummary({navigation}) {
         <RowCont>
           <Input
             placeholder='MM / YY'
+            value='12 / 23'
             labelStyle={{color: '#fff'}}
             inputStyle={{color: '#A57760'}} 
             placeholderTextColor='#A57760' 
@@ -88,6 +84,7 @@ export default function OrderSummary({navigation}) {
           />
           <Input
             placeholder='CVC'
+            value='123'
             labelStyle={{color: '#fff'}}
             inputStyle={{color: '#A57760'}} 
             placeholderTextColor='#A57760' 
@@ -98,6 +95,7 @@ export default function OrderSummary({navigation}) {
         <Input
           label="Country or Region" 
           placeholder='Country'
+          value='Canada'
           labelStyle={{color: '#fff', paddingBottom: 3 }}
           inputStyle={{color: '#A57760'}} 
           placeholderTextColor='#A57760' 
@@ -105,6 +103,7 @@ export default function OrderSummary({navigation}) {
         />
         <Input
           placeholder='Postal or Zip Code'
+          value='V1X 7S1'
           labelStyle={{color: '#fff'}}
           inputStyle={{color: '#A57760'}} 
           placeholderTextColor='#A57760' 

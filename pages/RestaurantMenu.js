@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
+import { useFocusEffect } from '@react-navigation/core';
 import { StyleSheet, SafeAreaView, View, Modal } from 'react-native';
 import styled from 'styled-components';
 
@@ -10,6 +11,9 @@ import Toggle from '../components/menu/Toggle';
 import MenuCard from '../components/cards/MenuCard';
 import MenuBottomOverlay from '../components/cards/MenuBottomOverlay';
 import BigButton from '../components/buttons/BigButton';
+
+import axios from 'axios';
+
 
 const Cont = styled.View`
   flex: 1;
@@ -70,7 +74,19 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function RestaurantSelection({navigation}) {
+export default function RestaurantSelection({route, navigation}) {
+  const restaurantId = route.params;
+
+  const GetItems = async() => {
+    const result = await axios.get('/item.php', { params: {id: restaurantId}})
+  }
+
+  useFocusEffect(
+    React.useCallback(() => {
+      GetItems();
+    }, [])
+  )
+  
   const [toggle, setToggle] = useState(false);
 
   const DrinksOn = () => {
@@ -85,20 +101,24 @@ export default function RestaurantSelection({navigation}) {
 
   const [itemModalVisible, setItemModalVisible] = useState(false);
 
-
   setTimeout(() => {
     setItemModalVisible(false);
   }, 3000);
+
+  const AddToCart = () => {
+    setItemModalVisible(!itemModalVisible);
+    setModalVisible(!modalVisible);
+  }
   
   if (toggle === false) {
     return (
       <View style={[styles.container, modalVisible ? {opacity: 0.4} : '']}>
           <StatusBar style="light" />
           <Header 
-            mainTitle="The Habitat" 
+            mainTitle="SW01 Room 1205" 
             subTitle="3700 Willingdon Ave, Burnaby" 
             subTitleSize="15px"
-            source={require("../assets/headerImg_2.png")} 
+            source={require("../assets/images/restaurant/sw01.jpg")} 
             onPress={() => navigation.goBack()} 
           />
           <Cont>
@@ -123,15 +143,16 @@ export default function RestaurantSelection({navigation}) {
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)}
-                  itemText='Ravioli Martini'
-                  priceText='$5.99'
+                  itemText='OnMe Special'
+                  priceText='$8.99'
+                  cardImg= {require('../assets/images/menu/drink/onmedrink.png')}
                 />
                 <MenuCard
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Moscow Mule'
                   priceText='$5.99'
-                  cardImg = {require('../assets/drink_2.png')}
+                  cardImg = {require('../assets/images/menu/drink/drink_2.png')}
                 />
               </RowCont>
               <RowCont>
@@ -140,7 +161,14 @@ export default function RestaurantSelection({navigation}) {
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Purple Goddess'
                   priceText='$5.99'
-                  cardImg = {require('../assets/drink_3.png')}
+                  cardImg = {require('../assets/images/menu/drink/drink_3.png')}
+                />
+                <MenuCard 
+                  onPress={() => setModalVisible(!modalVisible)} 
+                  addOnPress={() => setItemModalVisible(!itemModalVisible)} 
+                  itemText='Dill Cocktail'
+                  priceText='$7.99'
+                  cardImg = {require('../assets/images/menu/drink/dillcocktail.png')}
                 />
               </RowCont>
               <BtnCont>
@@ -154,7 +182,7 @@ export default function RestaurantSelection({navigation}) {
             >
               <ModalCont>
                 <ModalText>
-                  (Item Name Here) has been added to your cart  
+                  OnMe Special has been added to your cart  
                 </ModalText>
               </ModalCont>
             </Modal>
@@ -166,7 +194,7 @@ export default function RestaurantSelection({navigation}) {
             >
               <ModalPressable onPress={()=> setModalVisible(!modalVisible)} />
                 <MenuBottomOverlay
-                  send={()=> navigation.navigate('Restaurant Menu')}
+                  add={AddToCart}
                 />
             </Modal>
           </Cont>
@@ -178,10 +206,10 @@ export default function RestaurantSelection({navigation}) {
       <View style={styles.container}>
           <StatusBar style="light" />
           <Header 
-            mainTitle="The Habitat" 
+            mainTitle="SW01 Room 1205" 
             subTitle="3700 Willingdon Ave, Burnaby" 
-            subTitleSize="15px" 
-            source={require("../assets/headerImg_2.png")} 
+            subTitleSize="15px"
+            source={require("../assets/images/restaurant/sw01.jpg")} 
             onPress={() => navigation.goBack()} 
           />
           <Cont>
@@ -204,35 +232,35 @@ export default function RestaurantSelection({navigation}) {
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Zesty Calimari'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_2.png')}
+                  cardImg = {require('../assets/images/menu/food/food_2.png')}
                 />
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Cheese Sticks'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_1.png')}
+                  cardImg = {require('../assets/images/menu/food/food_1.png')}
                 />
-               </RowCont>
-               <RowCont>
+              </RowCont>
+              <RowCont>
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Dry Ribs'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_3.png')}
+                  cardImg = {require('../assets/images/menu/food/food_3.png')}
                 />
                 <MenuCard 
                   onPress={() => setModalVisible(!modalVisible)}
                   addOnPress={() => setItemModalVisible(!itemModalVisible)} 
                   itemText='Winner C'
                   priceText='$9.99'
-                  cardImg = {require('../assets/food_4.png')}
+                  cardImg = {require('../assets/images/menu/food/food_4.png')}
                 />
-               </RowCont>
-               <BtnCont>
+              </RowCont>
+              <BtnCont>
                 <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
-               </BtnCont>
+              </BtnCont>
             </CenterScrollCont>
             <Modal
               animationType="slide"

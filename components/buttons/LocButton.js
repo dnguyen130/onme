@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const Cont = styled.TouchableOpacity`
   flex-direction: row;
@@ -65,7 +66,7 @@ const SmallIcon = styled.Image`
 `;
 
 const LocButton = ({
-  icon = require('../../assets/resImg.png'),
+  icon = require('../../assets/icons/resImg.png'),
   name = "The Habitat",
   city = "Burnaby",
   address = "3700 Willingdon Ave",
@@ -73,15 +74,15 @@ const LocButton = ({
   poppinsFont="PoppinsRegular"
 }) => {
   const [loaded] = useFonts({
-    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('../../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf')
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Cont onPress={onPress}>
@@ -92,8 +93,8 @@ const LocButton = ({
         <NameCont>
           <Name poppinsFont="PoppinsBold">{name}</Name>
           <IconCont>
-            <SmallIcon source={require('../../assets/forkKnife.png')} />
-            <SmallIcon source={require('../../assets/wineGlass.png')} />
+            <SmallIcon source={require('../../assets/icons/forkKnife.png')} />
+            <SmallIcon source={require('../../assets/icons/wineGlass.png')} />
           </IconCont>
         </NameCont>
         <City poppinsFont={poppinsFont}>{city}</City>

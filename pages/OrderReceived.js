@@ -27,7 +27,7 @@ export default function OrderConfirmation({navigation}) {
         <Header 
           subTitle="Order Confirmation" 
           subWeight="700" 
-          source={require("../assets/headerImg_4.png")}
+          source={require("../assets/images/header/headerImg_4.png")}
           onPress={() => navigation.goBack()} 
         />
       <CenterCont>
@@ -35,7 +35,7 @@ export default function OrderConfirmation({navigation}) {
           boxHeight="50%" 
           boxWidth="70%" 
           mainTitle="Awesome, Order Received!" mainSize="15px"
-          subTitle="We hope you get some :)" subSize="15px" 
+          subTitle="" subSize="15px" 
         />
         <BigButton buttonText="Send Another :)" width='50%' onPress={() => navigation.navigate('Restaurant Menu')}/>
       </CenterCont>

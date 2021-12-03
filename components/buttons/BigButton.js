@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const Button = styled.TouchableOpacity`
   background-color: ${props => props.changeButtonColor};
@@ -28,15 +29,15 @@ const BigButton = ({
   poppinsFont="PoppinsBold"
 }) => {
   const [loaded] = useFonts({
-    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('../../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf')
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Button changeButtonColor={bgColor} width={width} onPress={onPress} onPressIn={onPressIn}>

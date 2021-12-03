@@ -15,6 +15,8 @@ import BackButton from '../components/global/BackButton';
 import app from '../utils/firebase.js';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
+import axios from 'axios';
+
 const CenterCont = styled.View`
   justify-content: center;
   align-items: center;
@@ -62,14 +64,19 @@ export default function SignUp({navigation}) {
         .then((userCredential)=> {
           const user = userCredential.user;
           console.log(auth.currentUser);
+          navigation.navigate("OnMeTabs");
+
+          axios.post('/user.php', {
+            firebase_id: user.uid,
+            first_name: firstName,
+            last_name: lastName
+          })
 
           updateProfile(auth.currentUser, {
             displayName: firstName
           }).then(() => {
             console.log(auth.currentUser.displayName);
           })
-
-          navigation.navigate("Dashboard");
         })
         .catch((err)=>{
           alert(err.message);
@@ -142,7 +149,7 @@ export default function SignUp({navigation}) {
           secureTextEntry={true}/>
         </RowCont>
         <CenterCont>
-          <BigButton 
+          <BigButton
           onPress={SignUpUser}
           buttonText="Sign Up" />
         </CenterCont>

@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -21,8 +22,11 @@ import Settings from './pages/Settings';
 import FrequentlyVisited from './pages/FrequentlyVisited';
 import RecentItems from './pages/RecentItems';
 import SeatMap from './pages/SeatMap';
-import PasswordSettings from './pages/PasswordSettings'
-import CheckOutPage from './pages/CheckOutPage'
+import PasswordSettings from './pages/PasswordSettings';
+import CheckOutPage from './pages/CheckOutPage';
+
+import axios from 'axios';
+axios.defaults.baseURL = "https://serene-retreat-19125.herokuapp.com/api";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -46,15 +50,15 @@ const MidIcon = styled.Image`
 
 function OnMeTabs() {
   const [loaded] = useFonts({
-    PoppinsRegular: require('./assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('./assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('./assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('./assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('./assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('./assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('./assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('./assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('./assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('./assets/fonts/Poppins-Bold.ttf')
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <Tab.Navigator screenOptions={{ 
@@ -93,7 +97,7 @@ function OnMeTabs() {
         options={{
           tabBarLabel: ' ',
           tabBarIcon: ({}) => (
-            <MidIcon source={require('./assets/midIcon.png')}/>
+            <MidIcon source={require('./assets/icons/midIcon.png')}/>
           ),
           tabBarIconStyle: {
             top: '20%'

@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 import Input from '../components/global/Input';
 import Header from '../components/global/Header';
 import Title from '../components/text/Title';
+import BigButton from '../components/buttons/BigButton';
+
 
 const ScrollCont = styled.View`
   flex: 1;
@@ -82,24 +85,35 @@ const Text = styled.Text`
   font-family: "PoppinsRegular";
 `;
 
+const BtnCont = styled.View`
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+`;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#2E2E2E',
   }
+
 });
 
-export default function SeatMap({navigation}) {
+export default function SeatMap({
+  navigation
+}) {
   const [loaded] = useFonts({
-    PoppinsRegular: require('../assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('../assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('../assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('../assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('../assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('../assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('../assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf')
   });
 
+  const [selected, setSelected] = useState(false);
+
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <View style={styles.container}>
@@ -109,7 +123,7 @@ export default function SeatMap({navigation}) {
           subTitle="Who caught your eye?" 
           subWeight="700"
           subTitleSize="24px"
-          source={require("../assets/headerImg_3.png")} 
+          source={require("../assets/images/header/headerImg_3.png")} 
           onPress={() => navigation.navigate('Restaurant Menu')} 
         />
         <InputCont>
@@ -140,72 +154,77 @@ export default function SeatMap({navigation}) {
           <CenterScrollCont>
             <SeatMapCont>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>01</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>02</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>03</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>04</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>05</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>06</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>07</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats 
+                style={[selected ? {backgroundColor: '#FE4370'} : {backgroundColor: '#A57760'}]}
+                onPress={()=>{setSelected(!selected)}}>
                   <Text>08</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>09</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>10</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>11</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>12</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>13</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>14</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>15</Text>
                 </Seats>
               </SeatRow>
               <SeatRow>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>16</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>17</Text>
                 </Seats>
-                <Seats onPress={() => navigation.navigate('Order Summary')}>
+                <Seats>
                   <Text>18</Text>
                 </Seats>
               </SeatRow>
             </SeatMapCont>
+            <BtnCont>
+          <BigButton width='50%' buttonText='Order Summary' onPress={() => navigation.navigate('Order Summary')} />
+        </BtnCont>
           </CenterScrollCont>
         </ScrollCont>
     </View>

@@ -2,6 +2,7 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const CardCont = styled.Pressable`
   align-items: center;
@@ -68,7 +69,7 @@ const Plus = styled.Text`
 `;
 
 const MenuCard = ({
-  cardImg = require('../../assets/drink_1.png'),
+  cardImg = require('../../assets/images/menu/drink/drink_1.png'),
   restaurantText = "",
   itemText = "Zesty Calimari",
   priceText = "$9.99",
@@ -77,15 +78,15 @@ const MenuCard = ({
   poppinsFont="PoppinsMedium"
 }) => {
   const [loaded] = useFonts({
-    PoppinsRegular: require('../../assets/Poppins-Regular.ttf'),
-    PoppinsLight: require('../../assets/Poppins-Light.ttf'),
-    PoppinsMedium: require('../../assets/Poppins-Medium.ttf'),
-    PoppinsSemiBold: require('../../assets/Poppins-SemiBold.ttf'),
-    PoppinsBold: require('../../assets/Poppins-Bold.ttf')
+    PoppinsRegular: require('../../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsLight: require('../../assets/fonts/Poppins-Light.ttf'),
+    PoppinsMedium: require('../../assets/fonts/Poppins-Medium.ttf'),
+    PoppinsSemiBold: require('../../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsBold: require('../../assets/fonts/Poppins-Bold.ttf')
   });
 
   if (!loaded) {
-    return null;
+    return <AppLoading />
   }
   return (
     <CardCont onPress={onPress}>
