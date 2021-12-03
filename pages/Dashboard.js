@@ -70,7 +70,7 @@ export default function Dashboard({navigation}) {
 
   const [restaurants, setRestaurants] = useState([]);
 
-  const [selectedId, setSelectedId] = useState(NULL);
+  const [selectedId, setSelectedId] = useState(null);
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedAddress, setSelectedAddress] = useState('');
@@ -84,7 +84,7 @@ export default function Dashboard({navigation}) {
 
   const modalFunction = () => {
     setModalVisible(!modalVisible);
-    navigation.navigate('Restaurant Menu', {restaurantId = selectedId});
+    navigation.navigate('Restaurant Menu', {restaurantId: selectedId});
   }
 
   const Habitat = () => {

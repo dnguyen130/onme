@@ -149,7 +149,7 @@ export default function SignUp({navigation}) {
           secureTextEntry={true}/>
         </RowCont>
         <CenterCont>
-          <BigButton 
+          <BigButton
           onPress={SignUpUser}
           buttonText="Sign Up" />
         </CenterCont>
