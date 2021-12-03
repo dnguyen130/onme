@@ -222,10 +222,10 @@ export default function SeatMap({
                 </Seats>
               </SeatRow>
             </SeatMapCont>
+          </CenterScrollCont>
             <BtnCont>
           <BigButton width='50%' buttonText='Order Summary' onPress={() => navigation.navigate('Order Summary')} />
         </BtnCont>
-          </CenterScrollCont>
         </ScrollCont>
     </View>
   );

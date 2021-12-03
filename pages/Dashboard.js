@@ -113,9 +113,9 @@ export default function Dashboard({navigation}) {
         mainTitle="Welcome," 
         subTitle={user.displayName} 
         onPress={() => navigation.goBack()} />
-        <InputCont>
+        {/* <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
-        </InputCont>
+        </InputCont> */}
       <Cont>
         <ScrollView>
           <TitleCont>

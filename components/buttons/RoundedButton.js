@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Title from '../text/Title';
 
-const RoundedCont = styled.View`
+const RoundedCont = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   text-align: center;

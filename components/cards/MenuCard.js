@@ -107,9 +107,9 @@ const MenuCard = ({
             <Name poppinsFont={poppinsFont}>{itemText}</Name>
             <Price poppinsFont="PoppinsLight">{priceText}</Price>
           </ColCont>
-          <PrimaryButton onPress={addOnPress}>
+          {/* <PrimaryButton onPress={addOnPress}>
             <Plus poppinsFont="PoppinsBold">+</Plus>
-          </PrimaryButton>
+          </PrimaryButton> */}
         </RowCont>
       </LinearGradient>
       </CardBackground>

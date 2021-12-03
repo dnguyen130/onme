@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import { Divider } from 'react-native-elements';
 import styled from 'styled-components';
@@ -62,6 +62,9 @@ const styles = StyleSheet.create({
 });
 
 export default function OrderSummary({navigation}) {
+
+  const [selected, setSelected] = useState(false);
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -86,11 +89,17 @@ export default function OrderSummary({navigation}) {
             <Title titleText="1" titleSize="14px" titleAlignSelf="center" />
           </PinkCircleCont>
           <Title titleText="Total:" titleSize="17px" />
-          <Title titleText="$10.34" titleSize="17px " />
+          <Title 
+          titleText={selected ? "$10.34" : "$9.99"} 
+          titleSize="17px " />
         </TotalCont>
         <Title titleText="Tip:" titleSize="20px" />
         <TipCont>
-          <RoundedButton titleText="15%" />
+          <RoundedButton 
+            titleText="15%" 
+            roundedColor = {selected ? '#FE4370' : 'rgba(0, 0, 0, 0)' }
+            roundedBorderWidth = {selected ? '0px' : '1px'}
+            onPress = {()=>{setSelected(!selected)}} />
           <RoundedButton titleText="18%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
           <RoundedButton titleText="20%" roundedColor="rgba(0, 0, 0, 0)" roundedBorderWidth="1px" />
         </TipCont>

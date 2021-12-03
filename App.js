@@ -48,6 +48,16 @@ const MidIcon = styled.Image`
   height: 65px;
 `;
 
+function cacheImages(images) {
+  return images.map(image => {
+    if (typeof image === 'string') {
+      return Image.prefetch(image);
+    } else {
+      return Asset.fromModule(image).downloadAsync();
+    }
+  });
+}
+
 function OnMeTabs() {
   const [loaded] = useFonts({
     PoppinsRegular: require('./assets/fonts/Poppins-Regular.ttf'),

@@ -50,7 +50,7 @@ export default function OrderSummary({navigation}) {
       />
       <TitleCont>
         <Title 
-          titleText="Great, that's $27.97" 
+          titleText="Great, that's $10.34" 
           titleSize="20px"
           titleAlignSelf="center"
         />
