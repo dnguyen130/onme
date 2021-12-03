@@ -9,7 +9,8 @@ const Cont = styled.TouchableOpacity`
   border-color: rgba(165, 119, 96, 0.5);
   border-radius: 20px;
   padding: 10px;
-  width: 80%;
+  max-width: 80%;
+  min-width: 80%;
   min-height: 79px;
   margin-bottom: 4%;
   background-color: #2E2E2E;
@@ -19,6 +20,8 @@ const Cont = styled.TouchableOpacity`
 const TextCont = styled.View`
   justify-content: center;
   padding-left: 5%;
+  max-width: 100%;
+  flex: 1;
 `;
 
 const LocCont = styled.View`
@@ -28,11 +31,13 @@ const LocCont = styled.View`
 
 const NameCont = styled.View`
   flex-direction: row;
+  max-width: 100%;
+  justify-content: space-between;
+
 `;
 
 const IconCont = styled.View`
   flex-direction: row;
-  margin-left: 35%;
 `;
 
 const Name = styled.Text`

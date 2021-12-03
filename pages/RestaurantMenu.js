@@ -173,8 +173,8 @@ export default function RestaurantSelection({route, navigation}) {
               </RowCont>
             </CenterScrollCont>
             <BtnCont>
-                <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
-              </BtnCont>
+              <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
+            </BtnCont>
             <Modal
               animationType="slide"
               transparent={true}
@@ -213,9 +213,9 @@ export default function RestaurantSelection({route, navigation}) {
             onPress={() => navigation.goBack()} 
           />
           <Cont>
-            <InputCont>
+            {/* <InputCont>
               <Input textInputPlaceholder="Search" textAlign="center" />
-            </InputCont>
+            </InputCont> */}
             <CenterCont>
               <Toggle
                 drinksOnPress={DrinksOn}
@@ -258,10 +258,10 @@ export default function RestaurantSelection({route, navigation}) {
                   cardImg = {require('../assets/images/menu/food/food_4.png')}
                 />
               </RowCont>
-              <BtnCont>
-                <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
-              </BtnCont>
             </CenterScrollCont>
+            <BtnCont>
+              <BigButton width='50%' buttonText='Pick your recepient' onPress={() => navigation.navigate('Seat Map')} />
+            </BtnCont>
             <Modal
               animationType="slide"
               transparent={true}
