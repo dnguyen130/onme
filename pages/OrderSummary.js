@@ -74,7 +74,7 @@ export default function OrderSummary({navigation}) {
       />
       <TitleCont>
         <Title 
-          titleText="Your orders for table 08" 
+          titleText="Your orders for seat 08" 
           titleSize="20px"
           titleAlignSelf="center"
         />
