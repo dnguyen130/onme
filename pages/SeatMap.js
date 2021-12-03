@@ -126,9 +126,9 @@ export default function SeatMap({
           source={require("../assets/images/header/headerImg_3.png")} 
           onPress={() => navigation.navigate('Restaurant Menu')} 
         />
-        <InputCont>
+        {/* <InputCont>
           <Input textInputPlaceholder="Search" textAlign="center" />
-        </InputCont>
+        </InputCont> */}
         <ScrollCont>
           <RowCont>
             <Title 

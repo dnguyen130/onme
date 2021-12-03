@@ -132,7 +132,7 @@ export default function Dashboard({navigation}) {
               titleMarginRight="3%"
               poppinsFont="PoppinsMedium"
             />
-            <Title 
+            {/* <Title 
               titleColor="#FE4370" 
               titleSize="10px" 
               titleText="See All" 
@@ -140,7 +140,7 @@ export default function Dashboard({navigation}) {
               titleAlignSelf="center"
               onPress={() => navigation.navigate('Frequently Visited')} 
               poppinsFont="PoppinsLight"
-            />
+            /> */}
           </TitleCont>
             <RowCont horizontal>
               {
@@ -176,7 +176,7 @@ export default function Dashboard({navigation}) {
                 titleMarginRight="3%" 
                 poppinsFont="PoppinsMedium"
               />
-              <Title 
+              {/* <Title 
                 titleColor="#FE4370" 
                 titleSize="10px" 
                 titleText="See All" 
@@ -184,7 +184,7 @@ export default function Dashboard({navigation}) {
                 titleAlignSelf="center"
                 onPress={() => navigation.navigate('Recent Items')}
                 poppinsFont="PoppinsLight"
-              />
+              /> */}
             </TitleCont>
             <RowCont horizontal>
               {
