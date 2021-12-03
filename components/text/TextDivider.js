@@ -41,7 +41,7 @@ const TextDivider = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Cont addMargin={addMargin}>

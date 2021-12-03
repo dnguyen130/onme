@@ -43,7 +43,7 @@ const FlexInput = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <InputCont>

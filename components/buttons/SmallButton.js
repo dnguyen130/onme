@@ -45,7 +45,7 @@ const SmallButton = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <Button buttonColor={buttonColor} buttonBorderWidth={buttonBorderWidth} onPress={onPress}>

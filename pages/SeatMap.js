@@ -113,7 +113,7 @@ export default function SeatMap({
   const [selected, setSelected] = useState(false);
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <View style={styles.container}>

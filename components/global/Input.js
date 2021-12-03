@@ -47,7 +47,7 @@ const Input = ({
   });
 
   if (!loaded) {
-    return <AppLoading />
+    return null
   }
   return (
     <InputCont>
