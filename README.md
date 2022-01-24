@@ -1,104 +1,227 @@
-# onme
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
+
+
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">project_title</h3>
+
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 "Create a connection, with a little liquid courage."
 
-Just a few BCIT D3 students developing Vancity's next big dating app!
+OnMe is a cross-platform mobile app dedicated to the lonely residents of Metro Vancouver. It allows the user to order anyone inside the current restaurant a food or drink item based on their table and seat number. 
 
-### File/Folder Creation Conventions
-
-__Indent Tab Size__
-* 2
-
-__Branch Naming__
-  
-* firstinitialLastname (lowercase)
-* Examples: For Jeremy Carmona, branch name would be "jcarmona"
-  
-__Component Location & Naming__
-* Pascal Case (Capitalize each word)
-* Name the file itself and put it in its relative location.
-* Button, card, and text components go in their respective folder. One-shot components go in that page's folder. Any other repeated components go in global
-* Examples: BigButton, SmallButton, Title, Input
-
-__Props__
-
-* ${props => props.name}
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
-```
-const Button = styled.TouchableOpacity`
-  background-color: ${props => props.changeButtonColor};
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 100px;
-  width: 353px;
-  min-height: 53px;
-`;
 
-const BigButton = ({
-  buttonText = "Sign In",
-  bgColor = "#FE4370;",
-  onPress = ()=>{}
-}) => {
-  return (
-    <Button changeButtonColor={bgColor} onPress={onPress}>
-      <ButtonText>{buttonText}</ButtonText>
-    </Button>
-  );
-}
-```
+### Built With
 
-__Coding Conventions__
-* Place global imports at the top (such as React, styled)
-* Create an empty new line
-* Place internal imports (components in components) after the new line
-* Name any styled components used within a component Pascal Case
-* Use '*Cont' for containing View elements
-* Generally, try and use names that are obvious and consistent
-* Name and export the main component the same name as the file
-* Place styles before the main component
+* [Expo](https://expo.dev/)
+* [React.js](https://reactjs.org/)
+* [React-Native](https://reactnative.dev/)
+* [Styled-Components](https://styled-components.com/)
+* [PHP](https://www.php.net/)
 
-__Pages Location & Naming__
-* Pages are all located within the pages folder
-* Pascal Case (refer to component naming convention for examples)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-__Viewing Screens and Components__
 
-Viewing Screens
-* Comment out first export as shown below
-```
-// export {default} from './storybook'; 
 
-export default function App() {
-  return (
-    <NavigationContainer styles={styles.centerCont}>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Sign Up" component={SignUp} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-```
+<!-- GETTING STARTED -->
+## Getting Started
 
-Viewing Components
-* Comment out second export as shown below
-```
-export {default} from './storybook'; 
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-// export default function App() {
-//   return (
-//     <NavigationContainer styles={styles.centerCont}>
-//       <Stack.Navigator>
-//         <Stack.Screen name="Login" component={Login} />
-//         <Stack.Screen name="Sign Up" component={SignUp} />
-//         <Stack.Screen name="Dashboard" component={Dashboard} />
-//         {/* <Stack.Screen name="Restaurant Selection" component={RestaurantSelection} /> */}
-//         {/* <Stack.Screen name="Restaurant Menu Food" component={RestaurantMenuFood} /> */}
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
-```
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+    - [ ] Nested Feature
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* []()
+* []()
+* []()
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-url]: https://github.com/dnguyen130/onme/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-url]: https://github.com/dnguyen130/onme/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo_name/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: images/screenshot.png
