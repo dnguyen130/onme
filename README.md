@@ -50,6 +50,22 @@ OnMe is a cross-platform mobile app dedicated to the lonely residents of Metro V
 
 It was created by D3 BCIT students as our 3rd semester final project. The proof of concept was presented to 200 people, including students, faculty, and industry experts.
 
+Project Managers/Designers
+
+* [Arielle Castro](https://github.com/ariellecastro)
+* [Alicia Yien](https://github.com/aliciayien)
+
+Designers
+
+* [Min Chun](https://github.com/chuncaso90)
+* [Charlene Tran](https://github.com/CharleneTran)
+
+Developers
+
+* [Danny Nguyen](https://github.com/dnguyen130)
+* [Jeremy Carmona](https://github.com/JeremyCarmona3)
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
