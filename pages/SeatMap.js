@@ -119,7 +119,7 @@ export default function SeatMap({
     <View style={styles.container}>
         <StatusBar style="light" />
         <Header 
-          mainTitle="The Habitat" 
+          mainTitle="SW01 Room 1205" 
           subTitle="Who caught your eye?" 
           subWeight="700"
           subTitleSize="24px"
