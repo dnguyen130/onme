@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "onme",
-    "slug": "onme",
+    "name": "OnMe",
+    "slug": "OnMe",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets//OnMeLogo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/OnMeSplash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#2F2D2D"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "OnMe"
     },
     "android": {
       "adaptiveIcon": {
