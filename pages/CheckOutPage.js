@@ -58,7 +58,7 @@ export default function OrderSummary({navigation}) {
       <PaddingCont contentContainerStyle={styles.scrollList}>
         <Input
           label="Email"
-          value="aliciayien360@gmail.com"
+          // value="aliciayien360@gmail.com"
           labelStyle={{color: '#fff', paddingBottom: 3 }}
           inputStyle={{color: '#fff'}} 
           inputContainerStyle={{borderWidth: 2, borderBottomWidth: 2, borderRadius: 10, padding: 3}}
