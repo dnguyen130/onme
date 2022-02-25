@@ -90,7 +90,7 @@ export default function OrderSummary({navigation}) {
           </PinkCircleCont>
           <Title titleText="Total:" titleSize="17px" />
           <Title 
-          titleText={selected ? "$10.34" : "$9.99"} 
+          titleText={selected ? "$10.34" : "$8.99"} 
           titleSize="17px " />
         </TotalCont>
         <Title titleText="Tip:" titleSize="20px" />
