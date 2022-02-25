@@ -21,6 +21,7 @@
       "bundleIdentifier": "OnMe"
     },
     "android": {
+      "package": "com.onme.OnMe",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
